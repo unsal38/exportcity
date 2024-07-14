@@ -6,8 +6,6 @@ https://templatemo.com/tm-581-kind-heart-charity
 
 */
 
-
-
 @font-face {
     font-family: 'Metropolis';
     src: url('../fonts/Metropolis/Metropolis-Regular.woff2') format('woff2'),
@@ -395,6 +393,7 @@ strong {
   position: relative;
   padding-top: 15px;
   padding-bottom: 15px;
+  align-items: center;
 }
 
 .navbar-nav .nav-link.active, 
@@ -1371,8 +1370,14 @@ blockquote::before {
   background: var(--primary-color);
   color: var(--white-color);
 }
-
-
+/*---------------------------------------
+  YENİ EKLENENLER            
+-----------------------------------------*/
+.flag-naw{
+  width: 5vh;
+  display: flex;
+  align-items: center;
+}
 /*---------------------------------------
   RESPONSIVE STYLES               
 -----------------------------------------*/
@@ -1391,7 +1396,21 @@ blockquote::before {
     height: 350px;
   }
 }
+/*
 
+YENİ EKLENENLER
+*/
+@media only screen and (max-width: 1200px) {
+  .d-naw-none {
+    display: none;
+    color: green;
+  }
+}
+
+/*
+
+YENİ EKLENENLER
+*/
 @media screen and (max-width: 1170px) {
   #hero-slide .carousel-image {
     height: 100%;
