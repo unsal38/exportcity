@@ -1414,6 +1414,33 @@ marquee .card p{
 .mySwiper-ref .swiper-slide-thumb-active img {
   width: 100%!important;
 }
+
+
+
+.mySwiper-temsilci {
+  width: 25vw;
+}
+
+.mySwiper-temsilci .social-icon {
+  display: flex;
+  bottom: -60%;
+  position: relative;
+  transform: translate(0%, 10%);
+  justify-content: center;
+}
+.mySwiper-temsilci img{
+  width: 100%;
+  
+}
+.mySwiper-temsilci .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
 /*---------------------------------------
   REFERANS TOOLTİP            
 -----------------------------------------*/

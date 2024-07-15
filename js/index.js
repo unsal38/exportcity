@@ -40,4 +40,8 @@ $(function () {
             disableOnInteraction: false,
           },
       });
+      var swiper = new Swiper(".mySwiper-temsilci", {
+        effect: "cards",
+        grabCursor: true,
+      });
 })
