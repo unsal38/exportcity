@@ -6,7 +6,7 @@ $(function () {
 //SWİPER
 $(function () {
     var swiper1 = new Swiper(".mySwiper-urun", {
-        slidesPerView: 4,
+        slidesPerView: 2,
         centeredSlides: true,
         spaceBetween: 30,
         grabCursor: true,
@@ -14,10 +14,10 @@ $(function () {
           el: ".swiper-pagination",
           clickable: true,
         },
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-          },
+        // autoplay: {
+        //     delay: 2500,
+        //     disableOnInteraction: false,
+        //   },
       });
 
       var swiper = new Swiper(".mySwiper-ref", {
