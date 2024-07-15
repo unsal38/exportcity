@@ -1404,8 +1404,61 @@ marquee .card p{
   border-radius: 20px;
 }
 .mySwiper-ref img{
-  width: 100%;
+  width: 90%;
+  border-radius: 100px;
 }
+.mySwiper2-ref .mt-25vh{
+  margin-bottom: 25vh;
+}
+
+.mySwiper-ref .swiper-slide-thumb-active img {
+  width: 100%!important;
+}
+/*---------------------------------------
+  REFERANS TOOLTİP            
+-----------------------------------------*/
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip1 .tooltiptext1 {
+  font-size: 1.5vw;
+  width: 15rem;
+  background-color:#5ac0aa;
+  color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip1 .tooltiptext1::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #5ac0aa transparent;
+}
+
+.tooltip1:hover .tooltiptext1 {
+  visibility: visible;
+}
+
+
+
+
+
+
 /*---------------------------------------
   RESPONSIVE STYLES               
 -----------------------------------------*/

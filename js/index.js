@@ -22,7 +22,7 @@ $(function () {
 
       var swiper = new Swiper(".mySwiper-ref", {
         spaceBetween: 10,
-        slidesPerView: 4,
+        slidesPerView: 5,
         freeMode: true,
         watchSlidesProgress: true,
       });
@@ -34,6 +34,10 @@ $(function () {
         },
         thumbs: {
           swiper: swiper,
-        },
+        },       
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
       });
 })
