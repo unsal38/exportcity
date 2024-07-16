@@ -77,3 +77,36 @@ $(function () {
   })
 
 })
+// ÖDEME SAYFASI HESAPLAMA
+$(function () {
+  $("#uyelik").on("change", function () {
+    const uyelik_ucret = $("#uyelik option:selected").val()
+    const reklam_ucret = $("#reklam option:selected").val()
+    const urun_gorme = $("#urun-gorme option:selected").val()
+    $("#sonuc-uyelik")[0].textContent = uyelik_ucret
+    const sonuc_toplam = Number(uyelik_ucret) + Number(reklam_ucret) + Number(urun_gorme)
+    $("#sonuc-toplam")[0].textContent = sonuc_toplam
+    if(Number(uyelik_ucret) != 0){
+      $("#uyelik-taksit").removeAttr("disabled")
+    }else if(Number(uyelik_ucret) === 0){
+      $("#uyelik-taksit").attr("disabled", true)
+    }
+  })
+  $("#reklam").on("change", function () {
+    const uyelik_ucret = $("#uyelik option:selected").val()
+    const reklam_ucret = $("#reklam option:selected").val()
+    const urun_gorme = $("#urun-gorme option:selected").val()
+    $("#sonuc-reklam")[0].textContent = reklam_ucret
+    const sonuc_toplam = Number(uyelik_ucret) + Number(reklam_ucret) + Number(urun_gorme)
+    $("#sonuc-toplam")[0].textContent = sonuc_toplam
+  })
+  $("#urun-gorme").on("change", function () {
+    const uyelik_ucret = $("#uyelik option:selected").val()
+    const reklam_ucret = $("#reklam option:selected").val()
+    const urun_gorme = $("#urun-gorme option:selected").val()
+    $("#sonuc-urun-gorme")[0].textContent = urun_gorme
+    const sonuc_toplam = Number(uyelik_ucret) + Number(reklam_ucret) + Number(urun_gorme)
+    $("#sonuc-toplam")[0].textContent = sonuc_toplam
+  })
+
+})
