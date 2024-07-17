@@ -1483,6 +1483,17 @@ marquee .card p {
   width: 50%;
 }
 
+#panel .flag {
+  width: 4vw;
+  height: auto;
+}
+#panel button[data-bs-target="#yan-menu"]{
+  color: #5ac0aa;
+}
+#panel .offcanvas-body a:hover{
+  color: #5a6f80;
+}
+
 /*---------------------------------------
   REFERANS TOOLTİP            
 -----------------------------------------*/

@@ -1,7 +1,15 @@
-// NAW BAYRAK GİZLE GÖSTER
+// NAW PANEL BAYRAK GİZLE GÖSTER
 $(function () {
   const lang = $("html")[0].lang
-  $("div .flag-naw ." + lang).removeClass("d-none")
+  const flag = $("div .flag-naw")
+  const flag1 = $("#panel img."+ lang)
+  console.log($("#panel img."+ lang))
+  if(flag.length > 0) {
+    $("div .flag-naw ." + lang).removeClass("d-none")
+  }else if(flag1.length > 0) {
+    $("#panel img."+ lang).removeClass("d-none")
+  }
+
 })
 //SWİPER
 $(function () {
