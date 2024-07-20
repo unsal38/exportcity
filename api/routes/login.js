@@ -1,15 +1,11 @@
 var express = require('express');
-const urlCheck = require('../middleware/urlCheck');
 var router = express.Router();
-
-/* GET home page. */
-
-
+const urlCheck = require('../middleware/urlCheck');
 
 
 router.get('/:lang',urlCheck.urlCheck(), function(req, res) {
-  res.render('index', { 
-    title: 'index', 
+  res.render('login', { 
+    title: 'login', 
     lang: req.params.lang 
   });
 });
@@ -18,8 +14,8 @@ router.get('/:lang',urlCheck.urlCheck(), function(req, res) {
 
 
 router.get('/',urlCheck.urlCheck(), function(req, res) {
-  res.render('index', { 
-    title: 'index', 
+  res.render('login', { 
+    title: 'login', 
     lang: "tr"
   });
 });
