@@ -12,6 +12,8 @@ const panelRouter = require('./routes/panel');
 const registerRouter = require('./routes/register');
 const firmaRouter = require('./routes/firma');
 const urunlisteRouter = require('./routes/urunliste');
+const sayfaBulunamadı = require("./routes/403");
+const tokenGenerateRouter = require("./routes/tokenGenerate");
 
 var app = express();
 
@@ -35,6 +37,8 @@ app.use('/panel', panelRouter);
 app.use('/register', registerRouter);
 app.use('/firma', firmaRouter);
 app.use('/urunliste', urunlisteRouter);
+app.use('/403', sayfaBulunamadı);
+app.use("/token-generate", tokenGenerateRouter);
 app.use('/', indexRouter);
 
 
@@ -53,5 +57,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
 
 module.exports = app;
