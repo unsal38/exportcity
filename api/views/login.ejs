@@ -4,7 +4,8 @@
 
   </head>
 
-  <body>
+  <body id="login">
+    <div class="alert alert-danger d-none" role="alert"></div>
     <%-include ('path/nav') %>
     <h1>
       <%= title %>
@@ -15,17 +16,20 @@
     </p>
 
     <div class="form-floating mb-3">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" class="form-control" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" placeholder="Password">
       <label for="floatingPassword">Password</label>
+    </div>
+    <div class="col-12 m-2">
+      <button class="btn btn-primary" type="submit">Submit form</button>
     </div>
 
 
     <%- include ('path/footer') %>
-      <script src="javascripts/login.js"></script>
+      <script src="/javascripts/login.js"></script>
   </body>
 
 </html>

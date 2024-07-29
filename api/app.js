@@ -1,7 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('dotenv').config()
 
@@ -14,6 +13,8 @@ const firmaRouter = require('./routes/firma');
 const urunlisteRouter = require('./routes/urunliste');
 const sayfaBulunamadı = require("./routes/403");
 const tokenGenerateRouter = require("./routes/tokenGenerate");
+//MİDDİLWARE
+const aut_tokencheck = require("./middleware/aut_tokenCheck");
 
 var app = express();
 
@@ -24,19 +25,20 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // //
 //  ROUTER ----------------------
 //
+// PERMİSSİON CHECK YAPILAN SAYFALAR --------------------
+app.use('/urunliste',aut_tokencheck.aut_tokencheck(), urunlisteRouter);
+app.use('/payment',aut_tokencheck.aut_tokencheck(), paymentRouter);
+app.use('/panel',aut_tokencheck.aut_tokencheck(), panelRouter);
+app.use('/firma',aut_tokencheck.aut_tokencheck(), firmaRouter);
+// PERMİSSİON CHECK YAPILAN SAYFALARY --------------------
 
 app.use('/login', loginRouter);
-app.use('/payment', paymentRouter);
-app.use('/panel', panelRouter);
 app.use('/register', registerRouter);
-app.use('/firma', firmaRouter);
-app.use('/urunliste', urunlisteRouter);
 app.use('/403', sayfaBulunamadı);
 app.use("/token-generate", tokenGenerateRouter);
 app.use('/', indexRouter);

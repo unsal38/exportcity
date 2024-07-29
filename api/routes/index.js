@@ -13,10 +13,6 @@ router.get('/:lang',urlCheck.urlCheck(), function(req, res) {
     lang: req.params.lang 
   });
 });
-
-
-
-
 router.get('/',urlCheck.urlCheck(), function(req, res) {
   res.render('index', { 
     title: 'index', 

@@ -4,8 +4,11 @@
 
 </head>
   <body>
+    <div class="alert alert-danger d-none" role="alert"></div>
+    <%-include ('path/nav') %>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <p>Language to <%= lang %></p>
     <%- include ('path/footer') %>
   </body>
 

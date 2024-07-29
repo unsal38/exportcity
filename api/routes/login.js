@@ -11,13 +11,4 @@ router.get('/:lang',urlCheck.urlCheck(), function(req, res) {
 });
 
 
-
-
-router.get('/',urlCheck.urlCheck(), function(req, res) {
-  res.render('login', { 
-    title: 'login', 
-    lang: "tr"
-  });
-});
-
 module.exports = router;
