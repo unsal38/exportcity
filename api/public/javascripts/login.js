@@ -27,12 +27,12 @@ $(() => {
                 $.removeCookie('accessToken');
                 alert_message(res.data.message)
             }
-    
         }).catch(function (error) {
             console.log(error);
         });
     })
-
-
-
-})
+}) // BUTTON İŞLEVİ
+$(()=> {
+    localStorage.clear();
+    $.removeCookie('accessToken');
+}) // localstore ve COOKİE TEMİZLENMESİ

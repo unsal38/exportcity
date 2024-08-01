@@ -4,6 +4,8 @@ var path = require('path');
 var logger = require('morgan');
 require('dotenv').config()
 
+const urlCheck = require("./middleware/urlCheck");
+
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const paymentRouter = require('./routes/payment');
@@ -37,11 +39,11 @@ app.use('/panel',aut_tokencheck.aut_tokencheck(), panelRouter);
 app.use('/firma',aut_tokencheck.aut_tokencheck(), firmaRouter);
 // PERMİSSİON CHECK YAPILAN SAYFALARY --------------------
 
-app.use('/login', loginRouter);
+app.use('/login',urlCheck.urlCheck(), loginRouter);
 app.use('/register', registerRouter);
 app.use('/403', sayfaBulunamadı);
 app.use("/token-generate", tokenGenerateRouter);
-app.use('/', indexRouter);
+app.use('/',urlCheck.urlCheck(), indexRouter);
 
 
 // catch 404 and forward to error handler

@@ -1,14 +1,14 @@
 <div class="d-flex justify-content-end">
     <a id="ana_sayfa" style="border: 2px solid rgb(132, 132, 132); border-radius: 20px; color: white"
-        class="p-2 btn btn-secondary btn-sm" href="/" role="button">Ana Sayfa</a>
+        class="p-2 btn btn-secondary btn-sm text-capitalize" href="/" role="button"><%= lang_json_data.ana_sayfa _%></a>
     <select id="lang_select" style="max-width: 8rem;" class="mx-2 form-select" aria-label="Default select example">
-        <option selected>Dil Seç</option>
-        <option value="tr">Türkçe</option>
-        <option value="en">İngilizce</option>
+        <option selected><%= lang_json_data.dil_sec _%></option>
+        <option value="tr"><%= lang_json_data.turkce _%></option>
+        <option value="en"><%= lang_json_data.ingilizce _%></option>
     </select>
 
     <a id="login" style="border: 2px solid rgb(132, 132, 132); border-radius: 20px; color: white"
-        class="p-2 btn btn-secondary btn-sm" href="/login/tr" role="button">login</a>
+        class=" p-2 btn btn-secondary btn-sm" href="/login/tr" role="button">login</a>
     <a id="logout" style="border: 2px solid rgb(132, 132, 132); border-radius: 20px; color: white"
-        class="p-2 btn btn-primary btn-sm " href="/" role="button">logout</a>
+        class=" p-2 btn btn-primary btn-sm " href="/" role="button">logout</a>
 </div>

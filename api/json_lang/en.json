@@ -1,4 +1,8 @@
 {
     "ana_sayfa": "home",
-    "hos_geldin": "welcome"
+    "hos_geldin": "welcome",
+    "urun_listele": "list product",
+    "dil_sec": "select language",
+    "turkce": "Turkish",
+    "ingilizce": "English"
 }
