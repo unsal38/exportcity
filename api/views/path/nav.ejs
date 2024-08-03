@@ -1,14 +1,48 @@
-<div class="d-flex justify-content-end">
+ <!--TEKARLI BÖLÜM-->
+ <li class="nav-item  d-flex align-items-center">
+    <a class="nav-link click-scroll" href="#section_6">Blog</a>
+</li>
+<li class="nav-item flag-naw">
+    <img class="w-100 d-none tr" src="images/flag/turkey.png" alt="flag">
+    <img class="w-100 d-none en" src="images/flag/united-kingdom.png" alt="flag">
+</li>
+<li class="text-capitalize nav-item dropdown d-flex align-items-center">
+    <a class="capitalize nav-link click-scroll dropdown-toggle" href="#top" id="navbarLightDropdownMenuLink"
+        role="button" data-bs-toggle="dropdown" aria-expanded="false"><%= lang_json_data.dil_sec _%></a>
+
+    <ul id="lang_select" class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+        <li><a id="tr" class="dropdown-item" href="javascript:void(0)"><%= lang_json_data.turkce _%></a></li>
+
+        <li><a id="en" class="dropdown-item" href="javascript:void(0)"><%= lang_json_data.ingilizce _%></a></li>
+    </ul>
+</li>
+
+<li class="nav-item ms-3 d-flex align-items-center">
+    <a id="login" class="text-capitalize nav-link custom-btn custom-border-btn btn" href="login.html"><%= lang_json_data.giris _%></a>
+    <a id="logout" class="d-none text-capitalize nav-link custom-btn custom-border-btn btn" href="/login"><%= lang_json_data.cikis _%></a>
+    <a id="panel" class="d-none text-capitalize nav-link custom-btn custom-border-btn btn" href="admin.html">Panel</a>
+</li>
+<!--TEKARLI BÖLÜM-->
+
+
+
+
+
+
+<!-- <div class="d-flex justify-content-end">
     <a id="ana_sayfa" style="border: 2px solid rgb(132, 132, 132); border-radius: 20px; color: white"
-        class="p-2 btn btn-secondary btn-sm text-capitalize" href="/" role="button"><%= lang_json_data.ana_sayfa _%></a>
+        class="p-2 btn btn-secondary btn-sm text-capitalize" href="/" role="button">anasayfa</a>
     <select id="lang_select" style="max-width: 8rem;" class="mx-2 form-select" aria-label="Default select example">
-        <option selected><%= lang_json_data.dil_sec _%></option>
-        <option value="tr"><%= lang_json_data.turkce _%></option>
-        <option value="en"><%= lang_json_data.ingilizce _%></option>
+        <option selected>dil seç</option>
+        <option value="tr">türkçe</option>
+        <option value="en">ingilizce</option>
     </select>
 
     <a id="login" style="border: 2px solid rgb(132, 132, 132); border-radius: 20px; color: white"
         class=" p-2 btn btn-secondary btn-sm" href="/login/tr" role="button">login</a>
     <a id="logout" style="border: 2px solid rgb(132, 132, 132); border-radius: 20px; color: white"
         class=" p-2 btn btn-primary btn-sm " href="/" role="button">logout</a>
-</div>
+</div> -->
+
+
+

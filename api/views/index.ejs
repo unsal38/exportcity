@@ -1,21 +1,1284 @@
-<!DOCTYPE html>
-<html lang="<%= lang _%>">
-
-
 <%- include ('path/head') %>
-
 </head>
 <body>
-  <%-include ('path/nav') %>
-  <h1>
-    <%= title %>
-  </h1>
-  <p>Welcome to <%= title %>
-  </p>
-  <p>Language to <%= lang %>
-  </p>
-  
-  <a class="text-capitalize" href="/urunliste/tr"><%= lang_json_data.urun_listele _%></a>
+  <body id="section_1">
+
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 col-12 d-flex flex-wrap">
+                    <p class="d-flex me-4 mb-0">
+                        <i class="bi-geo-alt me-2"></i>
+                        Tuzla, İstanbul, Türkiye
+                    </p>
+
+                    <p class="d-flex mb-0">
+                        <i class="bi-envelope me-2"></i>
+
+                        <a href="mailto:danisma@e-exportcity.com">
+                            danisma@e-exportcity.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+                    <ul class="social-icon">
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-twitter"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-facebook"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-instagram"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-youtube"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-whatsapp"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" class="logo img-fluid" alt="E-EXPORTCİTY">
+                <span>
+                    E-EXPORTCİTY
+                    <small>New Word Trade System</small>
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#top"><%= lang_json_data.ana_sayfa _%></a>
+                    </li>
+
+                    <li class="nav-item d-naw-none d-flex align-items-center">
+                        <a class="nav-link click-scroll" href="#section_2"><%= lang_json_data.hakkimizda _%></a>
+                    </li>
+
+                    <li class="nav-item d-naw-none d-flex align-items-center">
+                        <a class="nav-link click-scroll" href="#section_3"><%= lang_json_data.uyelikler _%></a>
+                    </li>
+
+                    <li class="nav-item d-naw-none">
+                        <a class="nav-link click-scroll" href="#section_4"><%= lang_json_data.bize_ulasin _%></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#section_5"><%= lang_json_data.talep_satislar _%></a>
+                    </li>
+                   <%- include("path/nav") %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container my-2">
+            <marquee behavior="scroll" direction="left" scrollamount="10">
+                <div class="row g-4 flex-nowrap">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
+                                <p class="card-text">Sektör: <span>Araba</span></p>
+                                <p class="card-text">Kategori: <span>Yedek Parça</span></p>
+                                <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
+                                        Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
+                                <p class="card-text">Sektör: <span>Araba</span></p>
+                                <p class="card-text">Kategori: <span>Yedek Parça</span></p>
+                                <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
+                                        Lojistik Hizmeti Lojistik Hizmeti</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
+                                <p class="card-text">Sektör: <span>Araba</span></p>
+                                <p class="card-text">Kategori: <span>Yedek Parça</span></p>
+                                <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
+                                        Lojistik Hizmeti Lojistik Hizmeti</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
+                                <p class="card-text">Sektör: <span>Araba</span></p>
+                                <p class="card-text">Kategori: <span>Yedek Parça</span></p>
+                                <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
+                                        Lojistik Hizmeti Lojistik Hizmeti</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </marquee>
+        </div>
+        <section class="hero-section hero-section-full-height">
+            <div class="container-fluid">
+                <div class="row">
+
+
+                    <!-- 
+
+                    SLAYDER
+                    
+                    -->
+
+                    <div class="col-lg-12 col-12 p-0">
+                        <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="images/slide/volunteer-helping-with-donation-box.jpg"
+                                        class="carousel-image img-fluid" alt="...">
+
+                                    <div class="carousel-caption d-flex flex-column justify-content-end">
+                                        <h1>be a Kind Heart</h1>
+
+                                        <p>Professional charity theme based on Bootstrap 5.2.2</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="images/slide/volunteer-selecting-organizing-clothes-donations-charity.jpg"
+                                        class="carousel-image img-fluid" alt="...">
+
+                                    <div class="carousel-caption d-flex flex-column justify-content-end">
+                                        <h1>Non-profit</h1>
+
+                                        <p>You can support us to grow more</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="images/slide/medium-shot-people-collecting-donations.jpg"
+                                        class="carousel-image img-fluid" alt="...">
+
+                                    <div class="carousel-caption d-flex flex-column justify-content-end">
+                                        <h1>Humanity</h1>
+
+                                        <p>Please tell your friends about our website</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+
+                            <button class="carousel-control-next" type="button" data-bs-target="#hero-slide"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 
+                     SLAYDER
+                    
+                    -->
+                </div>
+            </div>
+        </section>
+
+        <!-- MİNİ MAKALELER -->
+
+        <section class="section-padding" id="section_6">
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-12 col-12 text-center mx-auto">
+                        <h2 class="mb-5">Exportcity <%= lang_json_data.hosgeldiniz _%></h2>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="featured-block d-flex justify-content-center align-items-center">
+                            <a href="donate.html" class="d-block">
+                                <img src="images/icons/nasilcalisir.png" class="featured-block-image img-fluid"
+                                    alt="nasıl çalışır">
+
+                                <p class="featured-block-text"><%= lang_json_data.nasil_calisir _%></p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
+                        <div class="featured-block d-flex justify-content-center align-items-center">
+                            <a href="donate.html" class="d-block">
+                                <img src="images/icons/security.png" class="featured-block-image img-fluid"
+                                    alt="Güvenlik">
+
+                                <p class="featured-block-text"><%= lang_json_data.guvenli_ticaret _%></p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
+                        <div class="featured-block d-flex justify-content-center align-items-center">
+                            <a href="donate.html" class="d-block">
+                                <img src="images/icons/temsilci.png" class="featured-block-image img-fluid"
+                                    alt="temsilcilik">
+
+                                <p class="featured-block-text"><%= lang_json_data.temsilcilik _%></p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="featured-block d-flex justify-content-center align-items-center">
+                            <a href="donate.html" class="d-block">
+                                <img src="images/icons/reklam.png" class="featured-block-image img-fluid"
+                                    alt="Reklam vermek">
+
+                                <p class="featured-block-text"><%= lang_json_data.reklam_vermek _%></p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="featured-block d-flex justify-content-center align-items-center">
+                            <a href="donate.html" class="d-block">
+                                <img src="images/icons/dunya.png" class="featured-block-image img-fluid"
+                                    alt="Broker Sistemi">
+
+                                <p class="featured-block-text"><%= lang_json_data.broker_sistemi _%></p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- MİNİ MAKALELER -->
+
+        <!-- ÜRÜN  -->
+
+        <section class="section-padding section-bg" id="section_5">
+            <div class="col-lg-12 col-12 text-center mx-auto">
+                <h2 class="mb-5">Öne Çıkan Ürünler</h2>
+
+                <div class="swiper mySwiper-urun">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="card mb-3 text-start">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="images/urun-img/1.jpg" class="img-fluid rounded mx-auto d-block"
+                                            alt="ürün resmi">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">Ülke : Almanya</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                                    ago</small></p>
+                                            <a class="card-link p-2" href="#">
+                                                <span><i class="fa-regular fa-star"></i> </span>
+                                                favori
+                                            </a>
+                                            <a class="card-link p-2" href="#">incele</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card mb-3 text-start">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="images/urun-img/2.jpg" class="img-fluid rounded mx-auto d-block"
+                                            alt="ürün resmi">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">Ülke : Almanya</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                                    ago</small></p>
+                                            <a class="card-link p-2" href="#">
+                                                <span><i class="fa-regular fa-star"></i> </span>
+                                                favori
+                                            </a>
+                                            <a class="card-link p-2" href="#">incele</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card mb-3 text-start">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="images/urun-img/2.jpg" class="img-fluid rounded mx-auto d-block"
+                                            alt="ürün resmi">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">Ülke : Almanya</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                                    ago</small></p>
+                                            <a class="card-link p-2" href="#">
+                                                <span><i class="fa-regular fa-star"></i> </span>
+                                                favori
+                                            </a>
+                                            <a class="card-link p-2" href="#">incele</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HİZMET -->
+
+        <section class="section-padding">
+            <div class="col-lg-12 col-12 text-center mx-auto">
+                <h2 class="mb-5">Öne Çıkan Hizmetler</h2>
+
+                <div class="swiper mySwiper-urun">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="card mb-3 text-start">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="images/urun-img/1.jpg" class="img-fluid rounded mx-auto d-block"
+                                            alt="ürün resmi">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">Ülke : Almanya</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                                    ago</small></p>
+                                            <a class="card-link p-2" href="#">
+                                                <span><i class="fa-regular fa-star"></i> </span>
+                                                favori
+                                            </a>
+                                            <a class="card-link p-2" href="#">incele</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card mb-3 text-start">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="images/urun-img/2.jpg" class="img-fluid rounded mx-auto d-block"
+                                            alt="ürün resmi">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">Ülke : Almanya</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                                    ago</small></p>
+                                            <a class="card-link p-2" href="#">
+                                                <span><i class="fa-regular fa-star"></i> </span>
+                                                favori
+                                            </a>
+                                            <a class="card-link p-2" href="#">incele</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card mb-3 text-start">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="images/urun-img/2.jpg" class="img-fluid rounded mx-auto d-block"
+                                            alt="ürün resmi">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">Ülke : Almanya</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                                    ago</small></p>
+                                            <a class="card-link p-2" href="#">
+                                                <span><i class="fa-regular fa-star"></i> </span>
+                                                favori
+                                            </a>
+                                            <a class="card-link p-2" href="#">incele</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- REFERANSLARIMIZ -->
+
+        <section class="testimonial-section section-padding section-bg">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <h2 class="mb-lg-3">Referanslarımız</h2>
+
+
+                        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                            class="swiper mySwiper2-ref">
+                            <div class="swiper-wrapper mt-25vh">
+                                <div class="swiper-slide">
+                                    <h4 class="tooltip1">&#8220; 1HERŞEY SÜPER BİZ SÜPERİZ1 &#8221;
+                                        <span class="tooltiptext1">Ali Hüseyin</span>
+                                    </h4>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h4 class="tooltip1">&#8220; 2HERŞEY SÜPER BİZ SÜPERİZ sonrasıda çok güzel olur
+                                        inşallah2 &#8221;
+                                        <span class="tooltiptext1">Ahmet Mehmet</span>
+                                    </h4>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h4 class="tooltip1">&#8220; 3HERŞEY SÜPER BİZ SÜPERİZ &#8221;
+                                        <span class="tooltiptext1">Ali Hüseyin</span>
+                                    </h4>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h4 class="tooltip1">&#8220; 4HERŞEY SÜPER BİZ SÜPERİZ sonrasıda çok güzel olur
+                                        inşallah &#8221;
+                                        <span class="tooltiptext1">Ahmet Mehmet</span>
+                                    </h4>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h4 class="tooltip1">&#8220; 5HERŞEY SÜPER BİZ SÜPERİZ &#8221;
+                                        <span class="tooltiptext1">Ali Hüseyin</span>
+                                    </h4>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h4 class="tooltip1">&#8220; 6HERŞEY SÜPER BİZ SÜPERİZ sonrasıda çok güzel olur
+                                        inşallah &#8221;
+                                        <span class="tooltiptext1">Ahmet Mehmet</span>
+                                    </h4>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div thumbsSlider="" class="swiper mySwiper-ref">
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide">
+                                    <img src="images/avatar/1.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/avatar/2.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/avatar/1.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/avatar/2.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/avatar/1.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/avatar/2.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- MİSYON - VİZYON -->
+
+        <section class="section-padding section-bg" id="section_2">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12">
+                        <div class="custom-text-box">
+                            <h2 class="mb-2">Biz Kimiz...</h2>
+
+                            <h5 class="mb-3">E Exportcity, İmport-Export Organizasyon</h5>
+
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">&#8811;
+                                    E-exportcity, dünyanın dört bir yanındaki ithalat ve ihracatçı firmaları ortak bir
+                                    platformda buluşturmak amacıyla kuruldu.
+                                </li>
+                                <li class="list-group-item">&#8811;
+                                    Asya’dan Afrika’ya Avrupa’dan Amerika’ya kıtalar arası birçok ülkeye hizmet veren
+                                    şirketimiz tek tıkla ticareti kolaylaştırarak tekstilden kozmetiğe, gayrimenkulden
+                                    otomotive kadar tüm sektörlerin buluşma noktası oluyor.
+                                </li>
+                                <li class="list-group-item">&#8811;
+                                    7/24 online hizmet veren E-exportcity.com, her biri alanında uzman danışmanları ve
+                                    deneyimli kadrosuyla tüm soruları en hızlı şekilde yanıt veriyor.
+                                </li>
+                                <li class="list-group-item">&#8811;
+                                    Müşteri geri bildirimlerini dikkate alarak güvene dayalı bir hizmet sunan
+                                    şirketimiz, iş ortakları ve İstanbul Ticaret Sicil Müdürlüğü’nden (İTO) aldığı güç
+                                    ve onayla kaliteli bir hizmet veriyor.
+                                </li>
+                                <li class="list-group-item">&#8811;
+                                    Kıtalar ve Ülkeler arası ticaret olanağı sunan E-exportcity ‘de sektörel taleplerden
+                                    Pazar araştırmalarına kadar ithalat ve ihracata dair her şeyi bulmak mümkün
+                                </li>
+                                <li class="list-group-item">&#8811;
+                                    Adını global çapta duyurmak ve yurt dışında sektörünün lideri olmak isteyenler için
+                                    ilk adım üye olmakla başlıyor. E-exportcity ailesinin üyesi olduktan sonra doğrudan
+                                    alım talepleri içeren tüm ticari fırsatlardan anında haberdar olup, markanızı
+                                    profesyonel bir kaynaktan tüm dünyayla buluşturabilirsiniz.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-12">
+                                <div class="custom-text-box mb-lg-0">
+                                    <h5 class="mb-3">Misyonumuz...</h5>
+
+                                    <p>Sed leo nisl, posuere at molestie ac, suscipit auctor quis metus</p>
+
+                                    <ul class="custom-list mt-2">
+                                        <li class="custom-list-item d-flex">
+                                            <i class="bi-check custom-text-box-icon me-2"></i>
+                                            Broker sistemiyle geliştirilerek ticarete yepyeni bir boyut kazandıran
+                                            E-exportcity, şirketlerin yeni buluşma noktası oluyor. Uluslararası iş
+                                            dünyasında firmaların birbirine en hızlı şekilde ulaşmasını sağlayan ve
+                                            güvenli bir ticaret pazarı oluşturmayı hedefleyen şirket, deneyimli ve uzman
+                                            kadrosu ile sektörünün lideri olmaya aday şirketlerini bir araya getiriyor.
+                                        </li>
+                                        <li class="custom-list-item d-flex">
+                                            <i class="bi-check custom-text-box-icon me-2"></i>
+                                            İstanbul’u dünya ticaretinin başkenti yapma hedefiyle yola çıkan
+                                            E-exportcity’nin temeli, dijital çağın iş yapış modeline uygun olarak
+                                            atıldı. Geleneksel ticarette yaşanan aksaklıkları, yenidünya materyalleri
+                                            ile çözüme kavuşturan E-exportcity, güven ve sürdürülebilirlik hedefiyle
+                                            büyürken, müşterilerinin ihtiyaçlarını doğru analiz ederek, küresel ölçekte
+                                            çözüm getiriyor.
+                                        </li>
+                                        <li class="custom-list-item d-flex">
+                                            <i class="bi-check custom-text-box-icon me-2"></i>
+                                            Sahip olduğu teknolojik altyapısı sayesinde yüksek müşteri memnuniyeti sunan
+                                            E-xportcity.com, ithalat ve ihracat çerçevesinde hizmet veren şirketlerin,
+                                            pazarlama ve reklam maliyetlerini azaltacakları ve daha çok pazara ulaşarak
+                                            ticaret faaliyetlerini artıracakları bir model olarak tasarlandı.
+                                            Şirketlerin ihtiyaç duyduğu ürün ve hizmete en kolay yoldan ulaşmalarını
+                                            sağlayan broker sistemiyle hayata geçirilen E-exportcity, iş ortaklarına
+                                            zamandan tasarruf yaptıran, kazançlı ve prestijli bir deneyim sunuyor.
+                                        </li>
+                                        <li class="custom-list-item d-flex">
+                                            <i class="bi-check custom-text-box-icon me-2"></i>
+                                            Şirketlerin beklentilerinden ilham alarak yola çıktığımız ve yeni dünya
+                                            düzenine göre inşa ettiğimiz E-exportcity ile adını global arenada duyurmak
+                                            isteyen tüm şirketlerin hayallerini gerçeğe dönüştürüyoruz.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <div class="custom-text-box d-flex flex-wrap d-lg-block mb-lg-0">
+                                    <div class="counter-thumb">
+                                        <div class="d-flex">
+                                            <span class="counter-number" data-from="1" data-to="3000"
+                                                data-speed="1000"></span>
+                                            <span class="counter-number-text"></span>
+                                        </div>
+
+                                        <span class="counter-text">Üye Sayısı</span>
+                                    </div>
+
+                                    <div class="counter-thumb mt-4">
+                                        <div class="d-flex">
+                                            <span class="counter-number" data-from="1" data-to="10"
+                                                data-speed="1000"></span>
+                                            <span class="counter-number-text"></span>
+                                        </div>
+
+                                        <span class="counter-text">Ülke Sayısı</span>
+                                    </div>
+
+                                    <div class="counter-thumb mt-4 mb-2">
+                                        <div class="d-flex">
+                                            <span class="counter-number" data-from="1" data-to="1000"
+                                                data-speed="1000"></span>
+                                            <span class="counter-number-text">B</span>
+                                        </div>
+
+                                        <span class="counter-text">Ürün Sayısı</span>
+                                    </div>
+
+                                    <h5 class="mb-3">Hedeflerimiz...</h5>
+
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">&#8811;
+                                            Broker Sistemi
+                                        </li>
+                                        <li class="list-group-item">&#8811;
+                                            Güven ve Sürdürülebilirlik......
+                                        </li>
+                                        <li class="list-group-item">&#8811;
+                                            Çözüm Odaklı Bakış Açısı
+                                        </li>
+                                        <li class="list-group-item">&#8811;
+                                            Müşteri Memnuniyetine Önem Verme
+                                        </li>
+                                        <li class="list-group-item">&#8811;
+                                            Zaman Tasarrufu
+                                        </li>
+                                        <li class="list-group-item">&#8811;
+                                            Şirketlerin İhtiyaçlarına Önem Vererek Güncel Kalmayı Prensip Edinme......
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TEMSİLCİLER -->
+
+        <section class="about-section section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="swiper mySwiper-temsilci">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img src="images/temsilci-img/kismet-sat.jpg" class="card-img" alt="temsilci image">
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title">Kismetse Satar </h5>
+                                        <p class="card-text">Fransa Temsilcisi
+                                        </p>
+                                        <ul class="social-icon mt-4">
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-twitter"></a>
+                                            </li>
+
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-facebook"></a>
+                                            </li>
+
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-instagram"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img src="images/temsilci-img/kismet-sat.jpg" class="card-img" alt="temsilci image">
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title">Kismetse Satar </h5>
+                                        <p class="card-text">Fransa Temsilcisi
+                                        </p>
+                                        <ul class="social-icon mt-4">
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-twitter"></a>
+                                            </li>
+
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-facebook"></a>
+                                            </li>
+
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-instagram"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img src="images/temsilci-img/kismet-sat.jpg" class="card-img" alt="temsilci image">
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title">Kismetse Satar </h5>
+                                        <p class="card-text">Fransa Temsilcisi
+                                        </p>
+                                        <ul class="social-icon mt-4">
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-twitter"></a>
+                                            </li>
+
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-facebook"></a>
+                                            </li>
+
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-instagram"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <!-- 
+                    <div class="col-lg-6 col-md-5 col-12">
+                        <img src="images/portrait-volunteer-who-organized-donations-charity.jpg"
+                            class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-5 col-md-7 col-12">
+                        <div class="custom-text-block">
+                            <h2 class="mb-0">Sandy Chan</h2>
+
+                            <p class="text-muted mb-lg-4 mb-md-4">Founding Partner</p>
+
+                            <p>Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito Professional
+                                charity theme based</p>
+
+                            <p>Sed leo nisl, posuere at molestie ac, suscipit auctor mauris. Etiam quis metus</p>
+
+                            <ul class="social-icon mt-4">
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-twitter"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-facebook"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-instagram"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FİYATLANDIRMA ÜYELİK -->
+
+        <section class="section-padding section-bg" id="section_3">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12 text-center mb-4">
+                        <h2>Üyelikler</h2>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="custom-block-wrap">
+
+                            <div class="custom-block">
+                                <div class="custom-block-body">
+                                    <h5 class="mb-3">Gümüş</h5>
+
+                                    <p>&#8811;
+                                        İster Yıllık peşin alın...
+                                    </p>
+                                    <p>&#8811;
+                                        İsterseniz 12 ay taksitle ödeyin...
+                                    </p>
+
+                                    <div class="d-flex align-items-center my-2">
+                                        <p class="mb-0">
+                                            <strong>Taksitli 12 Ay:</strong>
+                                            $18,500
+                                        </p>
+
+                                        <p class="ms-auto mb-0">
+                                            <strong>Peşin 12 Ay:</strong>
+                                            $32,000
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="custom-btn btn">Satın Al</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="custom-block-wrap">
+
+                            <div class="custom-block">
+                                <div class="custom-block-body">
+                                    <h5 class="mb-3">Altın</h5>
+
+                                    <p>&#8811;
+                                        İster Yıllık peşin alın...
+                                    </p>
+                                    <p>&#8811;
+                                        İsterseniz 12 ay taksitle ödeyin...
+                                    </p>
+
+                                    <div class="d-flex align-items-center my-2">
+                                        <p class="mb-0">
+                                            <strong>Taksitli 12 Ay:</strong>
+                                            $18,500
+                                        </p>
+
+                                        <p class="ms-auto mb-0">
+                                            <strong>Peşin 12 Ay:</strong>
+                                            $32,000
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="custom-btn btn">Satın Al</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="custom-block-wrap">
+
+                            <div class="custom-block">
+                                <div class="custom-block-body">
+                                    <h5 class="mb-3">Platinum</h5>
+
+                                    <p>&#8811;
+                                        İster Yıllık peşin alın...
+                                    </p>
+                                    <p>&#8811;
+                                        İsterseniz 12 ay taksitle ödeyin...
+                                    </p>
+
+                                    <div class="d-flex align-items-center my-2">
+                                        <p class="mb-0">
+                                            <strong>Taksitli 12 Ay:</strong>
+                                            $18,500
+                                        </p>
+
+                                        <p class="ms-auto mb-0">
+                                            <strong>Peşin 12 Ay:</strong>
+                                            $32,000
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="custom-btn btn">Satın Al</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FİYATLANDIRMA REKLAM -->
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-12 text-center mb-4">
+                        <h2>Reklam</h2>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="custom-block-wrap">
+
+                            <div class="custom-block">
+                                <div class="custom-block-body">
+                                    <h5 class="mb-3">1 Ay Reklam</h5>
+
+                                    <p>&#8811;
+                                        İster Yıllık peşin alın...
+                                    </p>
+                                    <p>&#8811;
+                                        İsterseniz 12 ay taksitle ödeyin...
+                                    </p>
+
+                                    <div class="d-flex align-items-center my-2">
+                                        <p class="mb-0">
+                                            <strong>Taksitli 12 Ay:</strong>
+                                            $18,500
+                                        </p>
+
+                                        <p class="ms-auto mb-0">
+                                            <strong>Peşin 12 Ay:</strong>
+                                            $32,000
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="custom-btn btn">Satın Al</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="custom-block-wrap">
+
+                            <div class="custom-block">
+                                <div class="custom-block-body">
+                                    <h5 class="mb-3">3 Ay Reklam</h5>
+
+                                    <p>&#8811;
+                                        İster Yıllık peşin alın...
+                                    </p>
+                                    <p>&#8811;
+                                        İsterseniz 12 ay taksitle ödeyin...
+                                    </p>
+
+                                    <div class="d-flex align-items-center my-2">
+                                        <p class="mb-0">
+                                            <strong>Taksitli 12 Ay:</strong>
+                                            $18,500
+                                        </p>
+
+                                        <p class="ms-auto mb-0">
+                                            <strong>Peşin 12 Ay:</strong>
+                                            $32,000
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="custom-btn btn">Satın Al</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="custom-block-wrap">
+
+                            <div class="custom-block">
+                                <div class="custom-block-body">
+                                    <h5 class="mb-3">12 Ay Reklam</h5>
+
+                                    <p>&#8811;
+                                        İster Yıllık peşin alın...
+                                    </p>
+                                    <p>&#8811;
+                                        İsterseniz 12 ay taksitle ödeyin...
+                                    </p>
+
+                                    <div class="d-flex align-items-center my-2">
+                                        <p class="mb-0">
+                                            <strong>Taksitli 12 Ay:</strong>
+                                            $18,500
+                                        </p>
+
+                                        <p class="ms-auto mb-0">
+                                            <strong>Peşin 12 Ay:</strong>
+                                            $32,000
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="custom-btn btn">Satın Al</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FİYATLANDIRMA EK ÜYELİKLER -->
+
+        <section class="section-padding section-bg">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12 text-center mb-4">
+                        <h2>Ek Alınabilenler</h2>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="custom-block-wrap">
+
+                            <div class="custom-block">
+                                <div class="custom-block-body">
+                                    <h5 class="mb-3">50 Adet Ürün Görme</h5>
+
+                                    <p>&#8811;
+                                        İster Yıllık peşin alın...
+                                    </p>
+                                    <p>&#8811;
+                                        İsterseniz 12 ay taksitle ödeyin...
+                                    </p>
+
+                                    <div class="d-flex align-items-center my-2">
+                                        <p class="mb-0">
+                                            <strong>Taksitli 12 Ay:</strong>
+                                            $18,500
+                                        </p>
+
+                                        <p class="ms-auto mb-0">
+                                            <strong>Peşin 12 Ay:</strong>
+                                            $32,000
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="custom-btn btn">Satın Al</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="custom-block-wrap">
+
+                            <div class="custom-block">
+                                <div class="custom-block-body">
+                                    <h5 class="mb-3">100 Adet Ürün Görme</h5>
+
+                                    <p>&#8811;
+                                        İster Yıllık peşin alın...
+                                    </p>
+                                    <p>&#8811;
+                                        İsterseniz 12 ay taksitle ödeyin...
+                                    </p>
+
+                                    <div class="d-flex align-items-center my-2">
+                                        <p class="mb-0">
+                                            <strong>Taksitli 12 Ay:</strong>
+                                            $18,500
+                                        </p>
+
+                                        <p class="ms-auto mb-0">
+                                            <strong>Peşin 12 Ay:</strong>
+                                            $32,000
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="custom-btn btn">Satın Al</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="custom-block-wrap">
+
+                            <div class="custom-block">
+                                <div class="custom-block-body">
+                                    <h5 class="mb-3">1000 Adet Ürün Görme</h5>
+
+                                    <p>&#8811;
+                                        İster Yıllık peşin alın...
+                                    </p>
+                                    <p>&#8811;
+                                        İsterseniz 12 ay taksitle ödeyin...
+                                    </p>
+
+                                    <div class="d-flex align-items-center my-2">
+                                        <p class="mb-0">
+                                            <strong>Taksitli 12 Ay:</strong>
+                                            $18,500
+                                        </p>
+
+                                        <p class="ms-auto mb-0">
+                                            <strong>Peşin 12 Ay:</strong>
+                                            $32,000
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="custom-btn btn">Satın Al</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- MAİL BİZE ULAŞIN -->
+
+        <section class="contact-section section-padding" id="section_4">
+            <div class="container">
+                <div class="row">
+                    <h2>Size Nasıl Yardımcı Olalım...</h2>
+
+                    <div class="col-lg-4 col-12 ms-auto mb-5 mb-lg-0">
+                        <div class="contact-info-wrap">
+
+                            <div class="contact-image-wrap d-flex flex-wrap">
+                                <img src="images/avatar/mail-img.jpg" class="img-fluid avatar-image" alt="resim">
+
+                                <div class="d-flex flex-column justify-content-center ms-3">
+                                    <p class="mb-0">Ümit KABALA</p>
+                                    <p class="mb-0"><strong>Satış Temsilcisi</strong></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info">
+                                <h5 class="mb-3">Adres</h5>
+
+                                <p class="d-flex mb-2">
+                                    <i class="bi-geo-alt me-2"></i>
+                                    Tuzla, İstanbul
+                                </p>
+
+                                <p class="d-flex mb-2">
+                                    <i class="bi-telephone me-2"></i>
+
+                                    <a href="tel: 305-240-9671">
+                                        305-240-9671
+                                    </a>
+                                </p>
+
+                                <p class="d-flex">
+                                    <i class="bi-envelope me-2"></i>
+
+                                    <a href="mailto:info@yourgmail.com">
+                                        danisma@e-exportcity.com
+                                    </a>
+                                </p>
+
+                                <a href="mailto:danisma@e-exportcity.com">Mail Gönder</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-12 ms-auto mb-5 mb-lg-0">
+                        <div class="contact-info-wrap">
+
+                            <div class="contact-image-wrap d-flex flex-wrap">
+                                <img src="images/avatar/mail-img.jpg" class="img-fluid avatar-image" alt="resim">
+
+                                <div class="d-flex flex-column justify-content-center ms-3">
+                                    <p class="mb-0">Ümit KABALA</p>
+                                    <p class="mb-0"><strong>Hukuk Danışma</strong></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info">
+                                <h5 class="mb-3">Adres</h5>
+
+                                <p class="d-flex mb-2">
+                                    <i class="bi-geo-alt me-2"></i>
+                                    Tuzla, İstanbul
+                                </p>
+
+                                <p class="d-flex mb-2">
+                                    <i class="bi-telephone me-2"></i>
+
+                                    <a href="tel: 305-240-9671">
+                                        305-240-9671
+                                    </a>
+                                </p>
+
+                                <p class="d-flex">
+                                    <i class="bi-envelope me-2"></i>
+
+                                    <a href="mailto:info@yourgmail.com">
+                                        danisma@e-exportcity.com
+                                    </a>
+                                </p>
+
+                                <a href="mailto:danisma@e-exportcity.com">Mail Gönder</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-12 ms-auto mb-5 mb-lg-0">
+                        <div class="contact-info-wrap">
+
+                            <div class="contact-image-wrap d-flex flex-wrap">
+                                <img src="images/avatar/mail-img.jpg" class="img-fluid avatar-image" alt="resim">
+
+                                <div class="d-flex flex-column justify-content-center ms-3">
+                                    <p class="mb-0">Ümit KABALA</p>
+                                    <p class="mb-0"><strong>Yurk Dışı İhracaat</strong></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info">
+                                <h5 class="mb-3">Adres</h5>
+
+                                <p class="d-flex mb-2">
+                                    <i class="bi-geo-alt me-2"></i>
+                                    Tuzla, İstanbul
+                                </p>
+
+                                <p class="d-flex mb-2">
+                                    <i class="bi-telephone me-2"></i>
+
+                                    <a href="tel: 305-240-9671">
+                                        305-240-9671
+                                    </a>
+                                </p>
+
+                                <p class="d-flex">
+                                    <i class="bi-envelope me-2"></i>
+
+                                    <a href="mailto:info@yourgmail.com">
+                                        danisma@e-exportcity.com
+                                    </a>
+                                </p>
+
+                                <a href="mailto:danisma@e-exportcity.com">Mail Gönder</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
   <%- include ('path/footer') %>
 </body>
 

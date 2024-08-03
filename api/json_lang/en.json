@@ -4,5 +4,17 @@
     "urun_listele": "list product",
     "dil_sec": "select language",
     "turkce": "Turkish",
-    "ingilizce": "English"
+    "ingilizce": "English",
+    "giris": "login",
+    "cikis": "logout",
+    "hakkimizda": "about us",
+    "uyelikler": "memberships",
+    "bize_ulasin": "contact us",
+    "talep_satislar": "demand sales",
+    "hosgeldiniz": "welcome",
+    "nasil_calisir": "how works",
+    "guvenli_ticaret": "secure commerce",
+    "temsilcilik": "representativeness",
+    "reklam_vermek": "advertising",
+    "broker_sistemi": "broker system"
 }
