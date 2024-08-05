@@ -1,14 +1,14 @@
 
 $(() => {
-    $("#login button[type=submit]").on("click",()=>{
+    function alert_message(message) {
+        $("div[role='alert'] p.alert-message").remove();
+        $("div[role='alert']").removeClass("d-none");
+        $("div[role='alert']").append("<p class='alert-message m-0 text-capitalize'>" + message + "</p>");
+    }
+    $("#login a[type=submit]").on("click", () => {
         const login_email = $("#login input[type=email]").val();
         const login_password = $("#login input[type=password]").val();
-        function alert_message(message) {
-            $("div[role='alert'] p.alert-message").remove();
-            $("div[role='alert']").removeClass("d-none");
-            $("div[role='alert']").append("<p class='alert-message m-0'>" + message + "</p>");
-        }
-        // yesnonoyes38@gmail.com  q<123456
+
         axios.post('/token-generate/login', {
             login_email,
             login_password
@@ -32,7 +32,7 @@ $(() => {
         });
     })
 }) // BUTTON İŞLEVİ
-$(()=> {
+$(() => {
     localStorage.clear();
     $.removeCookie('accessToken');
 }) // localstore ve COOKİE TEMİZLENMESİ

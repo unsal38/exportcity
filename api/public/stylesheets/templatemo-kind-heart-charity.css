@@ -44,7 +44,12 @@ https://templatemo.com/tm-581-kind-heart-charity
 /*---------------------------------------
   SONRADAN EKLENEN          
 -----------------------------------------*/
-#navbarNav li a {
+#navbarNav li a,
+#section_6 p {
+  text-transform: capitalize;
+}
+.mySwiper-register-form h2,
+.mySwiper-register-form input{
   text-transform: capitalize;
 }
 /*---------------------------------------

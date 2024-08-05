@@ -15,6 +15,11 @@ const firmaRouter = require('./routes/firma');
 const urunlisteRouter = require('./routes/urunliste');
 const sayfaBulunamadı = require("./routes/403");
 const tokenGenerateRouter = require("./routes/tokenGenerate");
+const blog1Router = require("./routes/blog1");
+const blog2Router = require("./routes/blog2");
+const blog3Router = require("./routes/blog3");
+const blog4Router = require("./routes/blog4");
+const blog5Router = require("./routes/blog5");
 //MİDDİLWARE
 const aut_tokencheck = require("./middleware/aut_tokenCheck");
 
@@ -39,8 +44,13 @@ app.use('/panel',aut_tokencheck.aut_tokencheck(), panelRouter);
 app.use('/firma',aut_tokencheck.aut_tokencheck(), firmaRouter);
 // PERMİSSİON CHECK YAPILAN SAYFALARY --------------------
 
+app.use("/blog1",urlCheck.urlCheck(), blog1Router);
+app.use("/blog2",urlCheck.urlCheck(), blog2Router);
+app.use("/blog3",urlCheck.urlCheck(), blog3Router);
+app.use("/blog4",urlCheck.urlCheck(), blog4Router);
+app.use("/blog5",urlCheck.urlCheck(), blog5Router);
 app.use('/login',urlCheck.urlCheck(), loginRouter);
-app.use('/register', registerRouter);
+app.use('/register',urlCheck.urlCheck(), registerRouter);
 app.use('/403', sayfaBulunamadı);
 app.use("/token-generate", tokenGenerateRouter);
 app.use('/',urlCheck.urlCheck(), indexRouter);

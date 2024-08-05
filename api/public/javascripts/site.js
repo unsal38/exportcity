@@ -2,17 +2,19 @@ $(() => {
     const access_token = localStorage.getItem("accessToken")
     if (access_token !== null) {
         $("#login").addClass("d-none").removeClass("d-block")
+        $("#register").addClass("d-none").removeClass("d-block")
         $("#logout").removeClass("d-none").addClass("d-block")
         $("#panel").addClass("d-block").removeClass("d-none")
 
     }
     if (access_token === null) {
         $("#login").addClass("d-block").removeClass("d-none")
+        $("#register").addClass("d-block").removeClass("d-none")
         $("#logout").addClass("d-none").removeClass("d-block")
         $("#panel").addClass("d-none").removeClass("d-block")
 
     }
-})// LOGİN LOGOUT BUTTON KAYBOLMA GETİRMES
+})// REGİSTER LOGİN LOGOUT BUTTON KAYBOLMA GETİRMES
 $(() => {
     $("#logout").on("click", () => {
         localStorage.clear();

@@ -1,0 +1,177 @@
+<%- include ('path/head') %>
+  </head>
+
+  <body>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-8 col-12 d-flex flex-wrap">
+            <p class="d-flex me-4 mb-0">
+              <i class="bi-geo-alt me-2"></i>
+              Tuzla, İstanbul, Türkiye
+            </p>
+
+            <p class="d-flex mb-0">
+              <i class="bi-envelope me-2"></i>
+
+              <a href="mailto:danisma@e-exportcity.com">
+                danisma@e-exportcity.com
+              </a>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+            <ul class="social-icon">
+              <li class="social-icon-item">
+                <a href="#" class="social-icon-link bi-twitter"></a>
+              </li>
+
+              <li class="social-icon-item">
+                <a href="#" class="social-icon-link bi-facebook"></a>
+              </li>
+
+              <li class="social-icon-item">
+                <a href="#" class="social-icon-link bi-instagram"></a>
+              </li>
+
+              <li class="social-icon-item">
+                <a href="#" class="social-icon-link bi-youtube"></a>
+              </li>
+
+              <li class="social-icon-item">
+                <a href="#" class="social-icon-link bi-whatsapp"></a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="/images/logo.png" class="logo img-fluid" alt="E-EXPORTCİTY">
+          <span>
+            E-EXPORTCİTY
+            <small>New Word Trade System</small>
+          </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link click-scroll" href="/"><%= lang_json_data.ana_sayfa _%></a>
+            </li>
+            <%-include ('path/nav') %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container my-2">
+        <marquee behavior="scroll" direction="left" scrollamount="10">
+          <div class="row g-4 flex-nowrap">
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
+                  <p class="card-text">Sektör: <span>Araba</span></p>
+                  <p class="card-text">Kategori: <span>Yedek Parça</span></p>
+                  <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
+                      Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
+                  <p class="card-text">Sektör: <span>Araba</span></p>
+                  <p class="card-text">Kategori: <span>Yedek Parça</span></p>
+                  <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
+                      Lojistik Hizmeti Lojistik Hizmeti</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
+                  <p class="card-text">Sektör: <span>Araba</span></p>
+                  <p class="card-text">Kategori: <span>Yedek Parça</span></p>
+                  <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
+                      Lojistik Hizmeti Lojistik Hizmeti</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
+                  <p class="card-text">Sektör: <span>Araba</span></p>
+                  <p class="card-text">Kategori: <span>Yedek Parça</span></p>
+                  <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
+                      Lojistik Hizmeti Lojistik Hizmeti</span></p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </marquee>
+      </div>
+
+      <section class="section-padding section-bg">
+        <div class="d-none alert alert-danger text-center" role="alert"></div>
+        <div class="container d-flex justify-content-center" id="login">
+
+          <form class="row col-4 g-3" autocomplete="on">
+            <h2 class="col-md-12 text-capitalize"><%= lang_json_data.bilgileri_giriniz _%></h2>
+
+
+            <div class="col-md-12 ">
+              <input type="email" class="form-control bg-transparent" placeholder="<%= lang_json_data.mail _%>">
+            </div>
+            <div class="col-md-12">
+              <input type="password" class="form-control bg-transparent" placeholder="<%= lang_json_data.sifre _%>">
+            </div>
+
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                <label class="form-check-label text-capitalize" for="gridCheck">
+                  <%= lang_json_data.beni_hatirla _%>
+                </label>
+              </div>
+            </div>
+            <div class="col-12">
+              <a type="submit" href="javascript:void(0)" class="custom-btn btn"><%= lang_json_data.giris _%></a>
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control bg-transparent" placeholder="email" aria-label="email"
+                aria-describedby="button-addon2">
+              <a type="submit" href="javascript:void(0)" class="custom-btn btn"><%= lang_json_data.giris _%></a>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+
+
+    <%- include ('path/footer') %>
+      <script src="/javascripts/login.js"></script>
+  </body>
+
+  </html>

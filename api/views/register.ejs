@@ -1,0 +1,223 @@
+<%- include ('path/head') %>
+
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 col-12 d-flex flex-wrap">
+                    <p class="d-flex me-4 mb-0">
+                        <i class="bi-geo-alt me-2"></i>
+                        Tuzla, İstanbul, Türkiye
+                    </p>
+
+                    <p class="d-flex mb-0">
+                        <i class="bi-envelope me-2"></i>
+
+                        <a href="mailto:danisma@e-exportcity.com">
+                            danisma@e-exportcity.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+                    <ul class="social-icon">
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-twitter"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-facebook"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-instagram"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-youtube"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-whatsapp"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="../images/logo.png" class="logo img-fluid" alt="E-EXPORTCİTY">
+                <span>
+                    E-EXPORTCİTY
+                    <small>New Word Trade System</small>
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/"><%= lang_json_data.ana_sayfa _%></a>
+                    </li>
+                    <%-include ('path/nav') %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container my-2">
+            <marquee behavior="scroll" direction="left" scrollamount="10">
+                <div class="row g-4 flex-nowrap">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
+                                <p class="card-text">Sektör: <span>Araba</span></p>
+                                <p class="card-text">Kategori: <span>Yedek Parça</span></p>
+                                <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
+                                        Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
+                                <p class="card-text">Sektör: <span>Araba</span></p>
+                                <p class="card-text">Kategori: <span>Yedek Parça</span></p>
+                                <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
+                                        Lojistik Hizmeti Lojistik Hizmeti</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
+                                <p class="card-text">Sektör: <span>Araba</span></p>
+                                <p class="card-text">Kategori: <span>Yedek Parça</span></p>
+                                <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
+                                        Lojistik Hizmeti Lojistik Hizmeti</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
+                                <p class="card-text">Sektör: <span>Araba</span></p>
+                                <p class="card-text">Kategori: <span>Yedek Parça</span></p>
+                                <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
+                                        Lojistik Hizmeti Lojistik Hizmeti</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </marquee>
+        </div>
+
+        <section class="section-padding section-bg" id="section_10">
+            <div class="container d-flex justify-content-center">
+
+                <div class="swiper mySwiper-register-form">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <h2><%= lang_json_data.kisisel_bilgiler _%></h2>
+                            <form class="row g-3">
+
+                                <div class="col-md-12 ">
+                                    <input type="isim" class="form-control bg-transparent" placeholder="<%= lang_json_data.isim _%>">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="soyad" class="form-control bg-transparent" placeholder="<%= lang_json_data.soyad _%>">
+                                </div>
+                                <div class="col-md-12 ">
+                                    <input type="email" class="form-control bg-transparent" placeholder="<%= lang_json_data.mail _%>">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="password" class="form-control bg-transparent" placeholder="<%= lang_json_data.sifre _%>">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="repeatpassword" class="form-control bg-transparent"
+                                        placeholder="<%= lang_json_data.sifre_tekrari _%>">
+                                </div>
+                                <div class="col-md-12 ">
+                                    <input type="refcod" class="form-control bg-transparent"
+                                        placeholder="<%= lang_json_data.referans_kodu _%>">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="swiper-slide">
+                            <h2><%= lang_json_data.odeme_bilgileri _%></h2>
+                            <form class="row g-3">
+                                <div class="col-md-12 ">
+                                    <input type="tcnumber" class="form-control bg-transparent"
+                                        placeholder="<%= lang_json_data.tc_numarasi _%>">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="telnumber" class="form-control bg-transparent"
+                                        placeholder="<%= lang_json_data.tel_numarasi _%>">
+                                </div>
+                                <div class="col-md-12 ">
+                                    <input type="ulke" class="form-control bg-transparent" placeholder="<%= lang_json_data.ulke _%>">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="sehir" class="form-control bg-transparent" placeholder="<%= lang_json_data.sehir _%>">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="acikadres" class="form-control bg-transparent"
+                                        placeholder="<%= lang_json_data.acik_adres _%>">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="swiper-slide">
+                            <h2 class="text-capitalize"><%= lang_json_data.firma_bilgileri _%></h2>
+                            <form id="register" class="row g-3">
+                                <div class="col-md-12 ">
+                                    <input type="sector" class="form-control bg-transparent" placeholder="<%= lang_json_data.sektor _%>">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="firma-unvani" class="form-control bg-transparent" placeholder="<%= lang_json_data.firma_unvani _%>">
+                                </div>
+                                <div class="col-md-12 ">
+                                    <input type="firma-vergi-numarasi" class="form-control bg-transparent" placeholder="<%= lang_json_data.firma_vergi_numarasi _%>">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="marka-ismi" class="form-control bg-transparent" placeholder="<%= lang_json_data.marka_ismi _%>">
+                                </div>
+                                <div class="col-md-12 d-flex justify-content-end">
+                                    <button class="custom-btn btn"><%= lang_json_data.kayit _%></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiperbutton col-6">
+                <div class="swiper-button-next"><a href="#" class="custom-btn btn"><%= lang_json_data.ileri _%></a></div>
+                <div class="swiper-button-prev"><a href="#" class="custom-btn btn"><%= lang_json_data.geri _%></a></div>
+            </div>
+        </section>
+
+    </main>
+
+    <%- include ('path/footer') %>
+    <script src="/javascripts/register.js"></script>
+</body>
+
+</html>

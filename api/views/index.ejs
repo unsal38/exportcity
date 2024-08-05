@@ -227,7 +227,7 @@
 
                     <div class="col-lg-2 col-md-6 col-12 mb-4 mb-lg-0">
                         <div class="featured-block d-flex justify-content-center align-items-center">
-                            <a href="donate.html" class="d-block">
+                            <a href="/blog1/tr" class="d-block">
                                 <img src="images/icons/nasilcalisir.png" class="featured-block-image img-fluid"
                                     alt="nasıl çalışır">
 
@@ -238,7 +238,7 @@
 
                     <div class="col-lg-2 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
                         <div class="featured-block d-flex justify-content-center align-items-center">
-                            <a href="donate.html" class="d-block">
+                            <a href="/blog2/tr" class="d-block">
                                 <img src="images/icons/security.png" class="featured-block-image img-fluid"
                                     alt="Güvenlik">
 
@@ -249,7 +249,7 @@
 
                     <div class="col-lg-2 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
                         <div class="featured-block d-flex justify-content-center align-items-center">
-                            <a href="donate.html" class="d-block">
+                            <a href="/blog3/tr" class="d-block">
                                 <img src="images/icons/temsilci.png" class="featured-block-image img-fluid"
                                     alt="temsilcilik">
 
@@ -260,7 +260,7 @@
 
                     <div class="col-lg-2 col-md-6 col-12 mb-4 mb-lg-0">
                         <div class="featured-block d-flex justify-content-center align-items-center">
-                            <a href="donate.html" class="d-block">
+                            <a href="/blog4/tr" class="d-block">
                                 <img src="images/icons/reklam.png" class="featured-block-image img-fluid"
                                     alt="Reklam vermek">
 
@@ -271,7 +271,7 @@
 
                     <div class="col-lg-2 col-md-6 col-12 mb-4 mb-lg-0">
                         <div class="featured-block d-flex justify-content-center align-items-center">
-                            <a href="donate.html" class="d-block">
+                            <a href="/blog5/tr" class="d-block">
                                 <img src="images/icons/dunya.png" class="featured-block-image img-fluid"
                                     alt="Broker Sistemi">
 
@@ -290,7 +290,7 @@
 
         <section class="section-padding section-bg" id="section_5">
             <div class="col-lg-12 col-12 text-center mx-auto">
-                <h2 class="mb-5">Öne Çıkan Ürünler</h2>
+                <h2 class="mb-5 text-capitalize"><%= lang_json_data.one_cikan_urunler _%></h2>
 
                 <div class="swiper mySwiper-urun">
                     <div class="swiper-wrapper">
@@ -376,7 +376,7 @@
 
         <section class="section-padding">
             <div class="col-lg-12 col-12 text-center mx-auto">
-                <h2 class="mb-5">Öne Çıkan Hizmetler</h2>
+                <h2 class="mb-5 text-capitalize"><%= lang_json_data.one_cikan_hizmetler _%></h2>
 
                 <div class="swiper mySwiper-urun">
                     <div class="swiper-wrapper">
@@ -466,7 +466,7 @@
                 <div class="row">
 
                     <div class="col-lg-8 col-12 mx-auto">
-                        <h2 class="mb-lg-3">Referanslarımız</h2>
+                        <h2 class="mb-lg-3 text-capitalize"><%= lang_json_data.referanslarimiz _%></h2>
 
 
                         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
@@ -546,38 +546,28 @@
 
                     <div class="col-lg-12 col-12">
                         <div class="custom-text-box">
-                            <h2 class="mb-2">Biz Kimiz...</h2>
+                            <h2 class="mb-2"><%= lang_json_data.biz_kimiz _%>...</h2>
 
-                            <h5 class="mb-3">E Exportcity, İmport-Export Organizasyon</h5>
+                            <h5 class="mb-3">E Exportcity, <%= lang_json_data.import_export_organizasyon _%></h5>
 
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">&#8811;
-                                    E-exportcity, dünyanın dört bir yanındaki ithalat ve ihracatçı firmaları ortak bir
-                                    platformda buluşturmak amacıyla kuruldu.
+                                    <%= lang_json_data.biz_kimiz_title1 _%>
                                 </li>
                                 <li class="list-group-item">&#8811;
-                                    Asya’dan Afrika’ya Avrupa’dan Amerika’ya kıtalar arası birçok ülkeye hizmet veren
-                                    şirketimiz tek tıkla ticareti kolaylaştırarak tekstilden kozmetiğe, gayrimenkulden
-                                    otomotive kadar tüm sektörlerin buluşma noktası oluyor.
+                                    <%= lang_json_data.biz_kimiz_title2 _%>
                                 </li>
                                 <li class="list-group-item">&#8811;
-                                    7/24 online hizmet veren E-exportcity.com, her biri alanında uzman danışmanları ve
-                                    deneyimli kadrosuyla tüm soruları en hızlı şekilde yanıt veriyor.
+                                    <%= lang_json_data.biz_kimiz_title3 _%>
                                 </li>
                                 <li class="list-group-item">&#8811;
-                                    Müşteri geri bildirimlerini dikkate alarak güvene dayalı bir hizmet sunan
-                                    şirketimiz, iş ortakları ve İstanbul Ticaret Sicil Müdürlüğü’nden (İTO) aldığı güç
-                                    ve onayla kaliteli bir hizmet veriyor.
+                                    <%= lang_json_data.biz_kimiz_title4 _%>
                                 </li>
                                 <li class="list-group-item">&#8811;
-                                    Kıtalar ve Ülkeler arası ticaret olanağı sunan E-exportcity ‘de sektörel taleplerden
-                                    Pazar araştırmalarına kadar ithalat ve ihracata dair her şeyi bulmak mümkün
+                                    <%= lang_json_data.biz_kimiz_title5 _%>
                                 </li>
                                 <li class="list-group-item">&#8811;
-                                    Adını global çapta duyurmak ve yurt dışında sektörünün lideri olmak isteyenler için
-                                    ilk adım üye olmakla başlıyor. E-exportcity ailesinin üyesi olduktan sonra doğrudan
-                                    alım talepleri içeren tüm ticari fırsatlardan anında haberdar olup, markanızı
-                                    profesyonel bir kaynaktan tüm dünyayla buluşturabilirsiniz.
+                                    <%= lang_json_data.biz_kimiz_title6 _%>
                                 </li>
                             </ul>
                         </div>
@@ -585,43 +575,24 @@
                         <div class="row">
                             <div class="col-lg-8 col-md-8 col-12">
                                 <div class="custom-text-box mb-lg-0">
-                                    <h5 class="mb-3">Misyonumuz...</h5>
-
-                                    <p>Sed leo nisl, posuere at molestie ac, suscipit auctor quis metus</p>
+                                    <h5 class="mb-3"><%= lang_json_data.misyonumuz _%></h5>
 
                                     <ul class="custom-list mt-2">
                                         <li class="custom-list-item d-flex">
                                             <i class="bi-check custom-text-box-icon me-2"></i>
-                                            Broker sistemiyle geliştirilerek ticarete yepyeni bir boyut kazandıran
-                                            E-exportcity, şirketlerin yeni buluşma noktası oluyor. Uluslararası iş
-                                            dünyasında firmaların birbirine en hızlı şekilde ulaşmasını sağlayan ve
-                                            güvenli bir ticaret pazarı oluşturmayı hedefleyen şirket, deneyimli ve uzman
-                                            kadrosu ile sektörünün lideri olmaya aday şirketlerini bir araya getiriyor.
+                                            <%= lang_json_data.misyonumuz_title1 _%>
                                         </li>
                                         <li class="custom-list-item d-flex">
                                             <i class="bi-check custom-text-box-icon me-2"></i>
-                                            İstanbul’u dünya ticaretinin başkenti yapma hedefiyle yola çıkan
-                                            E-exportcity’nin temeli, dijital çağın iş yapış modeline uygun olarak
-                                            atıldı. Geleneksel ticarette yaşanan aksaklıkları, yenidünya materyalleri
-                                            ile çözüme kavuşturan E-exportcity, güven ve sürdürülebilirlik hedefiyle
-                                            büyürken, müşterilerinin ihtiyaçlarını doğru analiz ederek, küresel ölçekte
-                                            çözüm getiriyor.
+                                            <%= lang_json_data.misyonumuz_title2 _%>
                                         </li>
                                         <li class="custom-list-item d-flex">
                                             <i class="bi-check custom-text-box-icon me-2"></i>
-                                            Sahip olduğu teknolojik altyapısı sayesinde yüksek müşteri memnuniyeti sunan
-                                            E-xportcity.com, ithalat ve ihracat çerçevesinde hizmet veren şirketlerin,
-                                            pazarlama ve reklam maliyetlerini azaltacakları ve daha çok pazara ulaşarak
-                                            ticaret faaliyetlerini artıracakları bir model olarak tasarlandı.
-                                            Şirketlerin ihtiyaç duyduğu ürün ve hizmete en kolay yoldan ulaşmalarını
-                                            sağlayan broker sistemiyle hayata geçirilen E-exportcity, iş ortaklarına
-                                            zamandan tasarruf yaptıran, kazançlı ve prestijli bir deneyim sunuyor.
+                                            <%= lang_json_data.misyonumuz_title3 _%>
                                         </li>
                                         <li class="custom-list-item d-flex">
                                             <i class="bi-check custom-text-box-icon me-2"></i>
-                                            Şirketlerin beklentilerinden ilham alarak yola çıktığımız ve yeni dünya
-                                            düzenine göre inşa ettiğimiz E-exportcity ile adını global arenada duyurmak
-                                            isteyen tüm şirketlerin hayallerini gerçeğe dönüştürüyoruz.
+                                            <%= lang_json_data.misyonumuz_title4 _%>
                                         </li>
                                     </ul>
                                 </div>
@@ -636,7 +607,7 @@
                                             <span class="counter-number-text"></span>
                                         </div>
 
-                                        <span class="counter-text">Üye Sayısı</span>
+                                        <span class="counter-text"><%= lang_json_data.uye_sayisi _%></span>
                                     </div>
 
                                     <div class="counter-thumb mt-4">
@@ -646,7 +617,7 @@
                                             <span class="counter-number-text"></span>
                                         </div>
 
-                                        <span class="counter-text">Ülke Sayısı</span>
+                                        <span class="counter-text"><%= lang_json_data.ulke_sayisi _%></span>
                                     </div>
 
                                     <div class="counter-thumb mt-4 mb-2">
@@ -656,29 +627,29 @@
                                             <span class="counter-number-text">B</span>
                                         </div>
 
-                                        <span class="counter-text">Ürün Sayısı</span>
+                                        <span class="counter-text"><%= lang_json_data.urun_sayisi _%></span>
                                     </div>
 
-                                    <h5 class="mb-3">Hedeflerimiz...</h5>
+                                    <h5 class="mb-3"><%= lang_json_data.hedeflerimiz_title1 _%>...</h5>
 
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">&#8811;
-                                            Broker Sistemi
+                                            <%= lang_json_data.hedeflerimiz_title1 _%>
                                         </li>
                                         <li class="list-group-item">&#8811;
-                                            Güven ve Sürdürülebilirlik......
+                                            <%= lang_json_data.hedeflerimiz_title2 _%>......
                                         </li>
                                         <li class="list-group-item">&#8811;
-                                            Çözüm Odaklı Bakış Açısı
+                                            <%= lang_json_data.hedeflerimiz_title3 _%>
                                         </li>
                                         <li class="list-group-item">&#8811;
-                                            Müşteri Memnuniyetine Önem Verme
+                                            <%= lang_json_data.hedeflerimiz_title4 _%>
                                         </li>
                                         <li class="list-group-item">&#8811;
-                                            Zaman Tasarrufu
+                                            <%= lang_json_data.hedeflerimiz_title5 _%>
                                         </li>
                                         <li class="list-group-item">&#8811;
-                                            Şirketlerin İhtiyaçlarına Önem Vererek Güncel Kalmayı Prensip Edinme......
+                                            <%= lang_json_data.hedeflerimiz_title6 _%>......
                                         </li>
 
                                     </ul>
@@ -772,45 +743,6 @@
 
                         </div>
                     </div>
-
-
-
-
-
-
-                    <!-- 
-                    <div class="col-lg-6 col-md-5 col-12">
-                        <img src="images/portrait-volunteer-who-organized-donations-charity.jpg"
-                            class="about-image ms-lg-auto bg-light shadow-lg img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-5 col-md-7 col-12">
-                        <div class="custom-text-block">
-                            <h2 class="mb-0">Sandy Chan</h2>
-
-                            <p class="text-muted mb-lg-4 mb-md-4">Founding Partner</p>
-
-                            <p>Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito Professional
-                                charity theme based</p>
-
-                            <p>Sed leo nisl, posuere at molestie ac, suscipit auctor mauris. Etiam quis metus</p>
-
-                            <ul class="social-icon mt-4">
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-twitter"></a>
-                                </li>
-
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-facebook"></a>
-                                </li>
-
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-instagram"></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div> -->
-
                 </div>
             </div>
         </section>
@@ -822,7 +754,7 @@
                 <div class="row">
 
                     <div class="col-lg-12 col-12 text-center mb-4">
-                        <h2>Üyelikler</h2>
+                        <h2 class="text-capitalize"><%= lang_json_data.uyelikler _%></h2>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
@@ -931,7 +863,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-12 text-center mb-4">
-                        <h2>Reklam</h2>
+                        <h2 class="text-capitalize"><%= lang_json_data.reklam_uyeligi _%></h2>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
@@ -1041,7 +973,7 @@
                 <div class="row">
 
                     <div class="col-lg-12 col-12 text-center mb-4">
-                        <h2>Ek Alınabilenler</h2>
+                        <h2 class="text-capitalize"><%= lang_json_data.ek_alinabilenler _%></h2>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
@@ -1149,7 +1081,7 @@
         <section class="contact-section section-padding" id="section_4">
             <div class="container">
                 <div class="row">
-                    <h2>Size Nasıl Yardımcı Olalım...</h2>
+                    <h2><%= lang_json_data.size_nasil_yardimci_olalim _%>...</h2>
 
                     <div class="col-lg-4 col-12 ms-auto mb-5 mb-lg-0">
                         <div class="contact-info-wrap">
@@ -1164,7 +1096,7 @@
                             </div>
 
                             <div class="contact-info">
-                                <h5 class="mb-3">Adres</h5>
+                                <h5 class="mb-3"><%= lang_json_data.adres _%></h5>
 
                                 <p class="d-flex mb-2">
                                     <i class="bi-geo-alt me-2"></i>
@@ -1187,7 +1119,7 @@
                                     </a>
                                 </p>
 
-                                <a href="mailto:danisma@e-exportcity.com">Mail Gönder</a>
+                                <a href="mailto:danisma@e-exportcity.com"><%= lang_json_data.mail_gonder _%></a>
                             </div>
                         </div>
                     </div>
@@ -1205,7 +1137,7 @@
                             </div>
 
                             <div class="contact-info">
-                                <h5 class="mb-3">Adres</h5>
+                                <h5 class="mb-3"><%= lang_json_data.adres _%></h5>
 
                                 <p class="d-flex mb-2">
                                     <i class="bi-geo-alt me-2"></i>
@@ -1246,7 +1178,7 @@
                             </div>
 
                             <div class="contact-info">
-                                <h5 class="mb-3">Adres</h5>
+                                <h5 class="mb-3"><%= lang_json_data.adres _%></h5>
 
                                 <p class="d-flex mb-2">
                                     <i class="bi-geo-alt me-2"></i>
