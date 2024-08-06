@@ -132,8 +132,9 @@
         </div>
 
         <section class="section-padding section-bg" id="section_10">
+            <div class="alert alert-danger text-center text-capitalize d-none" role="alert">
+              </div>
             <div class="container d-flex justify-content-center">
-
                 <div class="swiper mySwiper-register-form">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -141,24 +142,24 @@
                             <form class="row g-3">
 
                                 <div class="col-md-12 ">
-                                    <input type="isim" class="form-control bg-transparent" placeholder="<%= lang_json_data.isim _%>">
+                                    <input type="fname" class="form-control bg-transparent" placeholder="<%= lang_json_data.isim _%>">
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="soyad" class="form-control bg-transparent" placeholder="<%= lang_json_data.soyad _%>">
+                                    <input type="lname" class="form-control bg-transparent" placeholder="<%= lang_json_data.soyad _%>">
                                 </div>
                                 <div class="col-md-12 ">
                                     <input type="email" class="form-control bg-transparent" placeholder="<%= lang_json_data.mail _%>">
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="password" class="form-control bg-transparent" placeholder="<%= lang_json_data.sifre _%>">
+                                    <input type="pass" class="form-control bg-transparent" placeholder="<%= lang_json_data.sifre _%>">
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="repeatpassword" class="form-control bg-transparent"
+                                    <input type="repeatpass" class="form-control bg-transparent"
                                         placeholder="<%= lang_json_data.sifre_tekrari _%>">
                                 </div>
                                 <div class="col-md-12 ">
-                                    <input type="refcod" class="form-control bg-transparent"
-                                        placeholder="<%= lang_json_data.referans_kodu _%>">
+                                    <input type="regRefcod" class="form-control bg-transparent"
+                                        placeholder="<%= lang_json_data.referans_kodu _%>" value="yoktur">
                                 </div>
                             </form>
                         </div>
@@ -166,21 +167,21 @@
                             <h2><%= lang_json_data.odeme_bilgileri _%></h2>
                             <form class="row g-3">
                                 <div class="col-md-12 ">
-                                    <input type="tcnumber" class="form-control bg-transparent"
+                                    <input type="identityNumber" class="form-control bg-transparent"
                                         placeholder="<%= lang_json_data.tc_numarasi _%>">
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="telnumber" class="form-control bg-transparent"
+                                    <input type="gsmNumber" class="form-control bg-transparent"
                                         placeholder="<%= lang_json_data.tel_numarasi _%>">
                                 </div>
                                 <div class="col-md-12 ">
-                                    <input type="ulke" class="form-control bg-transparent" placeholder="<%= lang_json_data.ulke _%>">
+                                    <input type="billingAddressCountry" class="form-control bg-transparent" placeholder="<%= lang_json_data.ulke _%>">
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="sehir" class="form-control bg-transparent" placeholder="<%= lang_json_data.sehir _%>">
+                                    <input type="billingAddressCity" class="form-control bg-transparent" placeholder="<%= lang_json_data.sehir _%>">
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="acikadres" class="form-control bg-transparent"
+                                    <input type="billingAddressAddress" class="form-control bg-transparent"
                                         placeholder="<%= lang_json_data.acik_adres _%>">
                                 </div>
                             </form>
@@ -189,16 +190,16 @@
                             <h2 class="text-capitalize"><%= lang_json_data.firma_bilgileri _%></h2>
                             <form id="register" class="row g-3">
                                 <div class="col-md-12 ">
-                                    <input type="sector" class="form-control bg-transparent" placeholder="<%= lang_json_data.sektor _%>">
+                                    <input type="sektor" class="form-control bg-transparent" placeholder="<%= lang_json_data.sektor _%>">
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="firma-unvani" class="form-control bg-transparent" placeholder="<%= lang_json_data.firma_unvani _%>">
+                                    <input type="firmaUnvani" class="form-control bg-transparent" placeholder="<%= lang_json_data.firma_unvani _%>">
                                 </div>
                                 <div class="col-md-12 ">
-                                    <input type="firma-vergi-numarasi" class="form-control bg-transparent" placeholder="<%= lang_json_data.firma_vergi_numarasi _%>">
+                                    <input type="firmaVergiNumarasi" class="form-control bg-transparent" placeholder="<%= lang_json_data.firma_vergi_numarasi _%>">
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="marka-ismi" class="form-control bg-transparent" placeholder="<%= lang_json_data.marka_ismi _%>">
+                                    <input type="markaismi" class="form-control bg-transparent" placeholder="<%= lang_json_data.marka_ismi _%>">
                                 </div>
                                 <div class="col-md-12 d-flex justify-content-end">
                                     <button class="custom-btn btn"><%= lang_json_data.kayit _%></button>

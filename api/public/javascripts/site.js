@@ -49,8 +49,8 @@ $(()=>{
         const access_token= localStorage.getItem("accessToken")
         const access_token_check = $.cookie('accessToken')
         if(access_token_check === undefined) $.cookie('accessToken', access_token, { expires: 2 });
-    }else {
-        $.removeCookie('accessToken');
+    }else if(access_token_check === null) {
+        $.removeCookie('accessToken',{ path: '/' });
     }
 }) // ACCESS TOKEN localstroge varsa aynısını COOKİE KAYIT YAPMA
 

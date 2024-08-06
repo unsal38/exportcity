@@ -34,16 +34,12 @@ async function reflesh_Token_login(req, res) {
       const passwordCheck = bcrypt.compareSync(login_password, db_user_password)
       if (passwordCheck === true) {
          const userid = dbUser[0]._id
-         const uyeRole = dbUser[0].uyeRole
-         const uyeRolePreminyum = dbUser[0].uyeRolePreminyum
          const reflesh_token = refleshToken(userid)
          const access_token = accessToken(userid)
          res.send({
             access: true,
-            uyeRole,
-            uyeRolePreminyum,
-            refleshToken: reflesh_token,
-            accessToken: access_token
+            accessToken: access_token,
+            refleshToken: reflesh_token
          })
          await userSchema.findByIdAndUpdate(userid, {refleshToken: reflesh_token})
       } else {

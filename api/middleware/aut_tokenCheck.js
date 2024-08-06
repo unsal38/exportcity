@@ -14,7 +14,7 @@ const aut_tokencheck = () => {
             next();
         } catch (error) {
             console.log(error)
-            if(error) res.redirect("/")
+            if(error) res.redirect("/login/tr")
         }
     }
 }

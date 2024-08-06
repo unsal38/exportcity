@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const fs = require('fs');
 var path = require('path');
+const { reflesh_token } = require('../controllers/reflesh_token');
+const tokenGenerate = require('../controllers/token_gerenate');
 router.use(express.static(path.join(__dirname, 'public')));
 
 router.get('/:lang', function(req, res) {
@@ -15,6 +17,6 @@ router.get('/:lang', function(req, res) {
     lang_json_data :lang_json_parse
   });
 });
-
-
+router.post("/refleshToken", reflesh_token)
+router.post('/login', tokenGenerate.reflesh_Token_login);
 module.exports = router;
