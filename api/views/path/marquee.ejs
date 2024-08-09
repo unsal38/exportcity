@@ -1,0 +1,51 @@
+<marquee behavior="scroll" direction="left" scrollamount="10">
+    <div class="row g-4 flex-nowrap">
+        <% urun.forEach(v=> { %>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-capitalize">
+                            <%if(v.urunhizmet === true){%>
+                                <%= lang_json_data.urun _%> 
+                            <%}else if(v.urunhizmet === false){%>
+                                <%= lang_json_data.hizmet _%> 
+                            <%}%>
+
+                            <%if(v.satisalis === true){%>
+                                <%= lang_json_data.talep _%> 
+                            <%}else if(v.satisalis === false){%>
+                                <%= lang_json_data.satis _%> 
+                            <%}%>
+
+                            <% lang_telealankodu_json_parse.forEach(e=> {%>
+                                <%if(e.code===v.ulke){ %>
+                                    <span><%= e.name _%></span>
+                                <%} %>
+                            <% }); %>
+
+                        </h5>
+                        <p class="card-text"><%= lang_json_data.sektor _%> : 
+                            <% sektor.forEach(a=> {%>
+                                <%if((a._id).toString() === (v.sektor).toString()){ %>
+                                    <span><%= a.sektor[lang]_%></span>
+                                <%} %>
+                            <%})%>
+                        </p>
+                        <p class="card-text"><%= lang_json_data.kategori _%> : 
+
+                            <% alt_sektor.forEach(a=> {%>
+                                <%if((a._id).toString() === (v.kategori).toString()){ %>
+                                    <span><%= a.altsektor[lang]_%></span>
+                                <%} %>
+                            <%})%>
+
+                        </p>
+                        <p class="card-text"><%= lang_json_data.urun_adi _%> : 
+                            <span><%= v.urunadi[lang]%></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</marquee>

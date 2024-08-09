@@ -51,6 +51,13 @@ https://templatemo.com/tm-581-kind-heart-charity
 .mySwiper-register-form h2{
   text-transform: capitalize;
 }
+footer h5,
+footer a,
+.filtre select,
+.filtre input,
+button#devami{
+  text-transform: capitalize;
+}
 /*---------------------------------------
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/

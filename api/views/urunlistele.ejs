@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<%- include ('path/head') %>
+
+  </head>
+
+  <body>
+    <div class="alert alert-danger d-none" role="alert"></div>
+    </head>
+
+    <body>
+      <header class="site-header">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-lg-8 col-12 d-flex flex-wrap">
+              <p class="d-flex me-4 mb-0">
+                <i class="bi-geo-alt me-2"></i>
+                Tuzla, İstanbul, Türkiye
+              </p>
+
+              <p class="d-flex mb-0">
+                <i class="bi-envelope me-2"></i>
+
+                <a href="mailto:danisma@e-exportcity.com">
+                  danisma@e-exportcity.com
+                </a>
+              </p>
+            </div>
+
+            <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+              <ul class="social-icon">
+                <li class="social-icon-item">
+                  <a href="#" class="social-icon-link bi-twitter"></a>
+                </li>
+
+                <li class="social-icon-item">
+                  <a href="#" class="social-icon-link bi-facebook"></a>
+                </li>
+
+                <li class="social-icon-item">
+                  <a href="#" class="social-icon-link bi-instagram"></a>
+                </li>
+
+                <li class="social-icon-item">
+                  <a href="#" class="social-icon-link bi-youtube"></a>
+                </li>
+
+                <li class="social-icon-item">
+                  <a href="#" class="social-icon-link bi-whatsapp"></a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </header>
+
+      <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="/images/logo.png" class="logo img-fluid" alt="E-EXPORTCİTY">
+            <span>
+              E-EXPORTCİTY
+              <small>New Word Trade System</small>
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="/">
+                  <%= lang_json_data.ana_sayfa _%>
+                </a>
+              </li>
+              <%-include ('path/nav') %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <main>
+        <div class="container my-2">
+          <marquee behavior="scroll" direction="left" scrollamount="10">
+            <div class="row g-4 flex-nowrap">
+              <div class="col">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
+                    <p class="card-text">Sektör: <span>Araba</span></p>
+                    <p class="card-text">Kategori: <span>Yedek Parça</span></p>
+                    <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
+                        Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
+                    <p class="card-text">Sektör: <span>Araba</span></p>
+                    <p class="card-text">Kategori: <span>Yedek Parça</span></p>
+                    <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
+                        Lojistik Hizmeti Lojistik Hizmeti</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
+                    <p class="card-text">Sektör: <span>Araba</span></p>
+                    <p class="card-text">Kategori: <span>Yedek Parça</span></p>
+                    <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
+                        Lojistik Hizmeti Lojistik Hizmeti</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
+                    <p class="card-text">Sektör: <span>Araba</span></p>
+                    <p class="card-text">Kategori: <span>Yedek Parça</span></p>
+                    <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
+                        Lojistik Hizmeti Lojistik Hizmeti</span></p>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </marquee>
+        </div>
+
+        <!-- ÜRÜN  -->
+
+        <section class="section-padding section-bg" id="section_7">
+          <div class="container">
+            <div class="row">
+              <div class="filtre col-12 custom-block-wrap">
+                <div class="col-sm-3 col-md-2 p-2">
+                  <select class="form-select" aria-label="Default select example">
+                    <option value="1"><%= lang_json_data.tarihe_gore_sirala _%></option>
+                    <option value="2"><%= lang_json_data.popiler _%></option>
+                  </select>
+                </div>
+                <div class="col-sm-3 col-md-2 p-2">
+                  <select class="form-select" aria-label="Default select example" id="urun-hizmet">
+                    <option value="1"><%= lang_json_data.urun_hizmet _%></option>
+                    <option value="2"><%= lang_json_data.urun _%></option>
+                    <option value="3"><%= lang_json_data.hizmet _%></option>
+                  </select>
+                  <select disabled class="form-select my-2" aria-label="Default select example" id="talep-satis">
+                    <option value="0"><%= lang_json_data.seciniz _%></option>
+                    <option value="1"><%= lang_json_data.talep _%></option>
+                    <option value="2"><%= lang_json_data.satis _%></option>
+                  </select>
+                </div>
+                <div class="col-sm-3 col-md-2 p-2">
+                  <select class="form-select" aria-label="Default select example" id="urun-hizmet">
+                    <option value="0"><%= lang_json_data.ulke _%></option>
+                    <option value="tr"><%= lang_json_data.turkiye _%></option>
+                    <option value="en"><%= lang_json_data.ingiltere _%></option>
+                  </select>
+                </div>
+                <div class="col-sm-3 col-md-2 p-2">
+                  <select class="form-select my-2" aria-label="Default select example" id="kategori">
+                    <option value="0"><%= lang_json_data.kategori _%></option>
+                    <option value="araba">Araba</option>
+                    <option value="mobilya">Mobilya</option>
+                  </select>
+                  <select disabled class="form-select my-2" aria-label="Default select example" id="alt-kategori">
+                    <option value="0"><%= lang_json_data.alt_altkategori _%></option>
+                    <option value="yedekparca">Yedek Parça</option>
+                    <option value="alttakim">Alt Takım</option>
+                  </select>
+                </div>
+                <div class="col-4 d-sm-none d-md-block p-2">
+                  <input class="form-control me-2" type="search" placeholder="<%= lang_json_data.urun_seri_numarasi _%>">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+                <div class="col">
+                  <div class="card text-start custom-block-wrap border-0">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="/images/urun-img/1.jpg" class="img-fluid rounded mx-auto d-block" alt="<%= lang_json_data.urun_resmi _%>">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Ülke : Almanya</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins
+                              ago</small></p>
+                          <a class="card-link p-2" href="#">
+                            <span><i class="fa-regular fa-star"></i> </span>
+                            favori
+                          </a>
+                          <a class="card-link p-2" href="#">incele</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-start custom-block-wrap border-0">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="/images/urun-img/1.jpg" class="img-fluid rounded mx-auto d-block" alt="ürün resmi">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Ülke : Almanya</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins
+                              ago</small></p>
+                          <a class="card-link p-2" href="#">
+                            <span><i class="fa-regular fa-star"></i> </span>
+                            favori
+                          </a>
+                          <a class="card-link p-2" href="#">incele</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-start custom-block-wrap border-0">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="/images/urun-img/1.jpg" class="img-fluid rounded mx-auto d-block" alt="ürün resmi">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Ülke : Almanya</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins
+                              ago</small></p>
+                          <a class="card-link p-2" href="#">
+                            <span><i class="fa-regular fa-star"></i> </span>
+                            favori
+                          </a>
+                          <a class="card-link p-2" href="#">incele</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center m-3">
+            <button id="devami" type="button" class="btn btn-light"><i class="fa-solid fa-angles-down"></i> <%= lang_json_data.devami _%></button>
+          </div>
+
+        </section>
+
+
+      </main>
+
+      <%- include ('path/footer') %>
+    </body>
+
+</html>

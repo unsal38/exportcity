@@ -84,5 +84,21 @@
     "marka_ismi": "brand name",
     "kayit": "record",
     "ileri": "forward",
-    "geri": "backwards"
+    "geri": "backwards",
+    "tarihe_gore_sirala": "Sort by Date",
+    "popiler": "popiler",
+    "urun_hizmet": "product service",
+    "urun": "product",
+    "hizmet": "service",
+    "seciniz": "select",
+    "talep": "request",
+    "satis": "sales",
+    "turkiye": "turkey",
+    "ingiltere": "england",
+    "kategori": "category",
+    "alt_altkategori": "sub subcategory",
+    "urun_seri_numarasi": "product serial number",
+    "urun_resimi": "product image",
+    "devami": "continued",
+    "urun_adi": "product name"
 }
