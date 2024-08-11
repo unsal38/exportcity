@@ -100,5 +100,8 @@
     "urun_seri_numarasi": "ürün seri numarası",
     "urun_resimi": "urun resmi",
     "devami": "devamı",
-    "urun_adi": "ürün adı"
+    "urun_adi": "ürün adı",
+    "en_son_guncelleme_tarihi":"en son güncelleme tarihi",
+    "favori": "favori",
+    "incele": "incele"
 }

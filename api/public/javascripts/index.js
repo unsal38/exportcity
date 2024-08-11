@@ -1,12 +1,18 @@
+function alert_message(message) {
+  $("div[role='alert'] p.alert-message").remove();
+  $("div[role='alert']").removeClass("d-none");
+  $("div[role='alert']").append("<p class='alert-message m-0 text-capitalize'>" + message + "</p>");
+}
+
 // NAW PANEL BAYRAK GİZLE GÖSTER
 $(function () {
   const lang = $("html")[0].lang
   const flag = $("div .flag-naw")
-  const flag1 = $("#panel img."+ lang)
-  if(flag.length > 0) {
+  const flag1 = $("#panel img." + lang)
+  if (flag.length > 0) {
     $("div .flag-naw ." + lang).removeClass("d-none")
-  }else if(flag1.length > 0) {
-    $("#panel img."+ lang).removeClass("d-none")
+  } else if (flag1.length > 0) {
+    $("#panel img." + lang).removeClass("d-none")
   }
 
 })
@@ -93,9 +99,9 @@ $(function () {
     $("#sonuc-uyelik")[0].textContent = uyelik_ucret
     const sonuc_toplam = Number(uyelik_ucret) + Number(reklam_ucret) + Number(urun_gorme)
     $("#sonuc-toplam")[0].textContent = sonuc_toplam
-    if(Number(uyelik_ucret) != 0){
+    if (Number(uyelik_ucret) != 0) {
       $("#uyelik-taksit").removeAttr("disabled")
-    }else if(Number(uyelik_ucret) === 0){
+    } else if (Number(uyelik_ucret) === 0) {
       $("#uyelik-taksit").attr("disabled", true)
     }
   })

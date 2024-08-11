@@ -36,10 +36,12 @@ async function reflesh_Token_login(req, res) {
          const userid = dbUser[0]._id
          const reflesh_token = refleshToken(userid)
          const access_token = accessToken(userid)
+         const favori_urun = dbUser[0].favoriurun
          res.send({
             access: true,
             accessToken: access_token,
-            refleshToken: reflesh_token
+            refleshToken: reflesh_token,
+            favoriUrun: [favori_urun]
          })
          await userSchema.findByIdAndUpdate(userid, {refleshToken: reflesh_token})
       } else {

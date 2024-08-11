@@ -6,9 +6,6 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
   refkod: String, // KENDİ REFERANS KODU
   refleshToken: String,
-  favoriurun: Object,
-
-
   uyeRole: {
     type: String,
     enum: ["user","pageadmin","employee","reklamcheck","uruncheck","odemecheck","uyecheck","blogcheck","seocheck" ]
@@ -39,25 +36,12 @@ const userSchema = new Schema({
   uyelikDate: Date, // UYELİK BİTİŞ TARİHİ
   uyeUrunHizmetGirme: {
     type: Object
-  },
+  }, // KULLANICI URUN HİZMET GÖRME SAYISI 
   maxuyeUrunHizmetGirme: {
     type: Number,
     default: 0
   },
-  uyeTalepGorme: {
-    type: Object
-  },
-  uyeHizmetGorme: {
-    type: Object
-  },
-  maxuyeHizmetGorme: {
-    type: Number,
-    default: 0
-  },
-  maxuyeTalepGorme: {
-    type: Number,
-    default: 0
-  },
+  favoriurun: {type:Object},
   uyeReklamDate: Date, // UYE REKLAM VERDİĞİNDE SONLANACAĞI TARİH
   uyeReklamOlusturma: {
     type: Boolean,

@@ -41,6 +41,7 @@ https://templatemo.com/tm-581-kind-heart-charity
   font-style: normal;
   font-display: swap;
 }
+
 /*---------------------------------------
   SONRADAN EKLENEN          
 -----------------------------------------*/
@@ -48,15 +49,31 @@ https://templatemo.com/tm-581-kind-heart-charity
 #section_6 p {
   text-transform: capitalize;
 }
-.mySwiper-register-form h2{
+
+.mySwiper-register-form h2 {
   text-transform: capitalize;
 }
+
 footer h5,
 footer a,
 .filtre select,
 .filtre input,
-button#devami{
+button#devami,
+.modal-body li {
   text-transform: capitalize;
+}
+
+.index-alert {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 1000;
+  min-width: 20vw;
+  transform: translate(-50%, -50%);
+  text-transform: capitalize;
+}
+i.fa-solid{
+  color: rgb(225, 225, 77);
 }
 /*---------------------------------------
   CUSTOM PROPERTIES ( VARIABLES )             
@@ -1503,10 +1520,12 @@ marquee .card p {
   width: 4vw;
   height: auto;
 }
-#panel button[data-bs-target="#yan-menu"]{
+
+#panel button[data-bs-target="#yan-menu"] {
   color: #5ac0aa;
 }
-#panel .offcanvas-body a:hover{
+
+#panel .offcanvas-body a:hover {
   color: #5a6f80;
 }
 

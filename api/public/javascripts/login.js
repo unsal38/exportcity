@@ -14,6 +14,7 @@ $(() => {
             if (res.data.access === true) {
                 localStorage.setItem("accessToken", res.data.accessToken)
                 localStorage.setItem("refleshToken", res.data.refleshToken)
+                localStorage.setItem("favoriUrun", res.data.favoriUrun)
                 window.location.href = "/"
             } else if (res.data.access === false) {
                 localStorage.removeItem("accessToken");
@@ -37,10 +38,11 @@ $(() => {
                 localStorage.setItem("refleshToken", res.data.reflesh_token_data)
                 $.removeCookie('accessToken', { path: '/' });
                 $.cookie("accessToken", res.data.access_token_data)
-                window.location.href = "/"
+               window.location.href = "/"
                 if(res.data === "faild") {
                     localStorage.removeItem("accessToken");
                     localStorage.removeItem("refleshToken");
+                    localStorage.removeItem("favoriurun");
                     $.removeCookie('accessToken', { path: '/' });
                 }
             })
@@ -48,9 +50,9 @@ $(() => {
                 console.log(error);
                 localStorage.removeItem("accessToken");
                 localStorage.removeItem("refleshToken");
+                localStorage.removeItem("favoriurun");
                 $.removeCookie('accessToken', { path: '/' });
             });
         }
-
     }
 }) // TOKEN DOĞRULAMA

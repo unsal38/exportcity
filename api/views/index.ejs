@@ -46,7 +46,74 @@
             </div>
         </div>
     </nav>
+    <div class="d-none alert index-alert alert-danger" role="alert"></div>
+    <!--MODAL ÜRÜN AÇILIMI-->
+  <div class="modal fade" id="urunModal" tabindex="-1" aria-labelledby="urunModalLabel" aria-hidden="false">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="urunModalLabel">Ürün Bilgileri</h5>
+          <button type="button" class="btn-close pe-4" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
 
+        <div class="urun-bilgi modal-body d-flex justify-content-center">
+            <div class="row">
+                <div class="col-6">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">ürün adı :
+                            <span id="urun-adi"></span>
+                        </li>
+                        <li class="list-group-item">ulke :
+                            <span id="urun-ulke"></span>
+                        </li>
+                        <li class="list-group-item">sektör :
+                            <span id="sector"></span>
+                        </li>
+                        <li class="list-group-item">kategori :
+                            <span id="kategori"></span>
+                        </li>
+                        <li class="list-group-item">miktar :
+                            <span id="miktar"></span>
+                        </li>
+    
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">seri nu. : 
+                            <span>123</span>
+                        </li>
+                        <li class="list-group-item">ürün / hizmet :
+                            <span>hizmet</span>
+                        </li>
+                        <li class="list-group-item">alış / satış :
+                            <span>alış</span>
+                        </li>
+                        <li class="list-group-item">firma adı :
+                            <span>ahmet lmt</span>
+                        </li>
+                        <li class="list-group-item">firma iletişim nu. :
+                            <span>3453453434</span>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-12">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">açıklamalar :
+                            <span>süper bir ürün </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="urun-alert modal-body d-none justify-content-center">
+            <div class="alert alert-danger index-alert" role="alert"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!--MODAL ÜRÜN AÇILIMI-->
     <main>
         <div class="container my-2">
             <%- include ("path/marquee")%>
@@ -201,77 +268,45 @@
                 <div class="swiper mySwiper-urun">
                     <div class="swiper-wrapper">
 
+                        <% urun_listele_one_cikan_urun.forEach(v => { %>
                         <div class="swiper-slide">
                             <div class="card mb-3 text-start">
                                 <div class="row g-0">
                                     <div class="col-md-4">
-                                        <img src="images/urun-img/1.jpg" class="img-fluid rounded mx-auto d-block"
-                                            alt="ürün resmi">
+                                        <img src="images/urun-img/<%= v.imgsrc _%>" class="img-fluid rounded mx-auto d-block"
+                                            alt="<%= lang_json_data.urun_resimi_%>">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">Ülke : Almanya</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
-                                                    ago</small></p>
-                                            <a class="card-link p-2" href="#">
-                                                <span><i class="fa-regular fa-star"></i> </span>
-                                                favori
+                                            <h5 class="card-title"><%= v.urunadi[lang]_%></h5>
+                                            <p class="card-text"><%= lang_json_data.ulke_%> : 
+                                            <% lang_telealankodu_json_parse.forEach(ulke_kodu => { %>
+                                                <%if(ulke_kodu.code === v.ulke){%>
+                                                    <%= ulke_kodu.name _%>
+                                                <%}%>
+                                            <%  });%>
+                                            </p>
+                                            <p class="card-text">
+                                                <% const updateAt =  Date(v.updateAt) %>
+                                                <small data-index-urun-date="<%= updateAt _%>" class="text-muted">
+                                                   <%= lang_json_data.en_son_guncelleme_tarihi_%> : <span class="tarih"></span>
+                                                </small>
+                                            </p>
+                                            <a class="card-link p-2" href="javascript:void(0)">
+                                                <span data-urun-id-favori-check="<%= v._id_%>">
+                                                    <i class="fa-regular fa-star"></i>
+                                                </span>
+                                                <%= lang_json_data.favori _%>
                                             </a>
-                                            <a class="card-link p-2" href="#">incele</a>
+                                            <a data-bs-toggle="modal" data-bs-target="#urunModal" data-urun-id="<%= v._id _%>" class="urun-bilgileri card-link p-2" href="javascript:void(0)"><%= lang_json_data.incele _%></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <%  }); %>
 
-                        <div class="swiper-slide">
-                            <div class="card mb-3 text-start">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="images/urun-img/2.jpg" class="img-fluid rounded mx-auto d-block"
-                                            alt="ürün resmi">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">Ülke : Almanya</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
-                                                    ago</small></p>
-                                            <a class="card-link p-2" href="#">
-                                                <span><i class="fa-regular fa-star"></i> </span>
-                                                favori
-                                            </a>
-                                            <a class="card-link p-2" href="#">incele</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="swiper-slide">
-                            <div class="card mb-3 text-start">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="images/urun-img/2.jpg" class="img-fluid rounded mx-auto d-block"
-                                            alt="ürün resmi">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">Ülke : Almanya</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
-                                                    ago</small></p>
-                                            <a class="card-link p-2" href="#">
-                                                <span><i class="fa-regular fa-star"></i> </span>
-                                                favori
-                                            </a>
-                                            <a class="card-link p-2" href="#">incele</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -287,77 +322,41 @@
                 <div class="swiper mySwiper-urun">
                     <div class="swiper-wrapper">
 
-                        <div class="swiper-slide">
-                            <div class="card mb-3 text-start">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="images/urun-img/1.jpg" class="img-fluid rounded mx-auto d-block"
-                                            alt="ürün resmi">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">Ülke : Almanya</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
-                                                    ago</small></p>
-                                            <a class="card-link p-2" href="#">
-                                                <span><i class="fa-regular fa-star"></i> </span>
-                                                favori
-                                            </a>
-                                            <a class="card-link p-2" href="#">incele</a>
+                        <% urun_listele_one_cikan_hizmet.forEach(v => { %>
+                            <div class="swiper-slide">
+                                <div class="card mb-3 text-start">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="images/urun-img/<%= v.imgsrc _%>" class="img-fluid rounded mx-auto d-block"
+                                                alt="<%= lang_json_data.urun_resimi_%>">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><%= v.urunadi[lang]_%></h5>
+                                                <p class="card-text"><%= lang_json_data.ulke_%> : 
+                                                <% lang_telealankodu_json_parse.forEach(ulke_kodu => { %>
+                                                    <%if(ulke_kodu.code === v.ulke){%>
+                                                        <%= ulke_kodu.name _%>
+                                                    <%}%>
+                                                <%  });%>
+                                                </p>
+                                                <p class="card-text">
+                                                    <% const updateAt =  Date(v.updateAt) %>
+                                                    <small data-index-hizmet-date="<%= updateAt _%>" class="text-muted">
+                                                       <%= lang_json_data.en_son_guncelleme_tarihi_%> : <span class="tarih"></span>
+                                                    </small>
+                                                </p>
+                                                <a class="card-link p-2" href="#">
+                                                    <span><i class="fa-regular fa-star"></i></span>
+                                                    <%= lang_json_data.favori _%>
+                                                </a>
+                                                <a data-urun-id="<%= v._id _%>" class="card-link p-2" href="javascript:void(0)"><%= lang_json_data.incele _%></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="card mb-3 text-start">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="images/urun-img/2.jpg" class="img-fluid rounded mx-auto d-block"
-                                            alt="ürün resmi">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">Ülke : Almanya</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
-                                                    ago</small></p>
-                                            <a class="card-link p-2" href="#">
-                                                <span><i class="fa-regular fa-star"></i> </span>
-                                                favori
-                                            </a>
-                                            <a class="card-link p-2" href="#">incele</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="card mb-3 text-start">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="images/urun-img/2.jpg" class="img-fluid rounded mx-auto d-block"
-                                            alt="ürün resmi">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">Ülke : Almanya</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
-                                                    ago</small></p>
-                                            <a class="card-link p-2" href="#">
-                                                <span><i class="fa-regular fa-star"></i> </span>
-                                                favori
-                                            </a>
-                                            <a class="card-link p-2" href="#">incele</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <%  }); %>
 
                     </div>
                 </div>
@@ -378,64 +377,26 @@
                         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
                             class="swiper mySwiper2-ref">
                             <div class="swiper-wrapper mt-25vh">
-                                <div class="swiper-slide">
-                                    <h4 class="tooltip1">&#8220; 1HERŞEY SÜPER BİZ SÜPERİZ1 &#8221;
-                                        <span class="tooltiptext1">Ali Hüseyin</span>
-                                    </h4>
-                                </div>
-                                <div class="swiper-slide">
-                                    <h4 class="tooltip1">&#8220; 2HERŞEY SÜPER BİZ SÜPERİZ sonrasıda çok güzel olur
-                                        inşallah2 &#8221;
-                                        <span class="tooltiptext1">Ahmet Mehmet</span>
-                                    </h4>
-                                </div>
-                                <div class="swiper-slide">
-                                    <h4 class="tooltip1">&#8220; 3HERŞEY SÜPER BİZ SÜPERİZ &#8221;
-                                        <span class="tooltiptext1">Ali Hüseyin</span>
-                                    </h4>
-                                </div>
-                                <div class="swiper-slide">
-                                    <h4 class="tooltip1">&#8220; 4HERŞEY SÜPER BİZ SÜPERİZ sonrasıda çok güzel olur
-                                        inşallah &#8221;
-                                        <span class="tooltiptext1">Ahmet Mehmet</span>
-                                    </h4>
-                                </div>
-                                <div class="swiper-slide">
-                                    <h4 class="tooltip1">&#8220; 5HERŞEY SÜPER BİZ SÜPERİZ &#8221;
-                                        <span class="tooltiptext1">Ali Hüseyin</span>
-                                    </h4>
-                                </div>
-                                <div class="swiper-slide">
-                                    <h4 class="tooltip1">&#8220; 6HERŞEY SÜPER BİZ SÜPERİZ sonrasıda çok güzel olur
-                                        inşallah &#8221;
-                                        <span class="tooltiptext1">Ahmet Mehmet</span>
-                                    </h4>
-                                </div>
 
+                                <% referans.forEach(v => { %>
+                                <div class="swiper-slide">
+                                    <h4 class="tooltip1">&#8220; 
+                                        <%= v.message[lang] _%>
+                                        &#8221;
+                                        <span class="tooltiptext1 text-capitalize"><%= v.referans_user_name _%></span>
+                                    </h4>
+                                </div>
+                                <% }); %>
                             </div>
 
                         </div>
                         <div thumbsSlider="" class="swiper mySwiper-ref">
                             <div class="swiper-wrapper">
-
+                                <% referans.forEach(v => { %>
                                 <div class="swiper-slide">
-                                    <img src="images/avatar/1.jpg" />
+                                    <img src="images/referans-user-img/<%= v.user_img %>.jpg" />
                                 </div>
-                                <div class="swiper-slide">
-                                    <img src="images/avatar/2.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/avatar/1.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/avatar/2.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/avatar/1.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="images/avatar/2.jpg" />
-                                </div>
+                                <% }); %>
                             </div>
                         </div>
                     </div>

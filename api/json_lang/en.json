@@ -100,5 +100,8 @@
     "urun_seri_numarasi": "product serial number",
     "urun_resimi": "product image",
     "devami": "continued",
-    "urun_adi": "product name"
+    "urun_adi": "product name",
+    "en_son_guncelleme_tarihi": "last updated date",
+    "favori": "favorite",
+    "incele": "review"
 }
