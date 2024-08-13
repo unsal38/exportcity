@@ -103,5 +103,10 @@
     "urun_adi": "product name",
     "en_son_guncelleme_tarihi": "last updated date",
     "favori": "favorite",
-    "incele": "review"
+    "incele": "review",
+    "miktar": "amount",
+    "seri_nu": "serial nu.",
+    "alis_satis": "sell / buy",
+    "alis": "buy",
+    "aciklama" :"explanation"
 }

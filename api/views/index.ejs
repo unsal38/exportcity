@@ -60,19 +60,19 @@
             <div class="row">
                 <div class="col-6">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">ürün adı :
+                        <li class="list-group-item"><%= lang_json_data.urun_adi _%> :
                             <span id="urun-adi"></span>
                         </li>
-                        <li class="list-group-item">ulke :
+                        <li class="list-group-item"><%= lang_json_data.ulke _%> :
                             <span id="urun-ulke"></span>
                         </li>
-                        <li class="list-group-item">sektör :
+                        <li class="list-group-item"><%= lang_json_data.sektor _%> :
                             <span id="sector"></span>
                         </li>
-                        <li class="list-group-item">kategori :
+                        <li class="list-group-item"><%= lang_json_data.kategori _%> :
                             <span id="kategori"></span>
                         </li>
-                        <li class="list-group-item">miktar :
+                        <li class="list-group-item"><%= lang_json_data.miktar _%> :
                             <span id="miktar"></span>
                         </li>
     
@@ -80,28 +80,30 @@
                 </div>
                 <div class="col-6">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">seri nu. : 
-                            <span>123</span>
+                        <li class="list-group-item"><%= lang_json_data.seri_nu _%>  : 
+                            <span id="seri-nu"></span>
                         </li>
-                        <li class="list-group-item">ürün / hizmet :
-                            <span>hizmet</span>
+                        <li class="list-group-item"><%= lang_json_data.urun_hizmet _%>  :
+                            <span id="hizmet"><%= lang_json_data.urun _%> </span>
+                            <span id="urun"><%= lang_json_data.hizmet _%> </span>
                         </li>
-                        <li class="list-group-item">alış / satış :
-                            <span>alış</span>
+                        <li class="list-group-item"><%= lang_json_data.alis_satis _%>  :
+                            <span id="alis"><%= lang_json_data.satis _%> </span>
+                            <span id="satis"><%= lang_json_data.alis _%> </span>
                         </li>
-                        <li class="list-group-item">firma adı :
-                            <span>ahmet lmt</span>
-                        </li>
-                        <li class="list-group-item">firma iletişim nu. :
-                            <span>3453453434</span>
+                        <li class="list-group-item"> firma bilgileri için tıklayınız :
+                            <button type="button" class="btn btn-secondary text-capitalize"><%= lang_json_data.firma_unvani _%>: 
+                                <span class="text-capitalize" id="firma-unvani"></span>
+                            </button>
+                            
                         </li>
 
                     </ul>
                 </div>
                 <div class="col-12">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">açıklamalar :
-                            <span>süper bir ürün </span>
+                        <li class="list-group-item"><%= lang_json_data.aciklama _%>  :
+                            <span id="aciklama"></span>
                         </li>
                     </ul>
                 </div>
@@ -346,11 +348,13 @@
                                                        <%= lang_json_data.en_son_guncelleme_tarihi_%> : <span class="tarih"></span>
                                                     </small>
                                                 </p>
-                                                <a class="card-link p-2" href="#">
-                                                    <span><i class="fa-regular fa-star"></i></span>
+                                                <a class="card-link p-2" href="javascript:void(0)">
+                                                    <span data-urun-id-favori-check="<%= v._id_%>">
+                                                        <i class="fa-regular fa-star"></i>
+                                                    </span>
                                                     <%= lang_json_data.favori _%>
                                                 </a>
-                                                <a data-urun-id="<%= v._id _%>" class="card-link p-2" href="javascript:void(0)"><%= lang_json_data.incele _%></a>
+                                                <a data-bs-toggle="modal" data-bs-target="#urunModal" data-urun-id="<%= v._id _%>" class="urun-bilgileri card-link p-2" href="javascript:void(0)"><%= lang_json_data.incele _%></a>
                                             </div>
                                         </div>
                                     </div>

@@ -41,6 +41,13 @@ const userSchema = new Schema({
     type: Number,
     default: 0
   },
+  uyeUrunHizmetGorme: {
+    type: Object
+  }, // KULLANICI URUN HİZMET GÖRME SAYISI 
+  maxuyeUrunHizmetGorme: {
+    type: Number,
+    default: 0
+  },
   favoriurun: {type:Object},
   uyeReklamDate: Date, // UYE REKLAM VERDİĞİNDE SONLANACAĞI TARİH
   uyeReklamOlusturma: {

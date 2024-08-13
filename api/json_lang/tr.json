@@ -103,5 +103,11 @@
     "urun_adi": "ürün adı",
     "en_son_guncelleme_tarihi":"en son güncelleme tarihi",
     "favori": "favori",
-    "incele": "incele"
+    "incele": "incele",
+    "miktar": "miktar",
+    "seri_nu": "seri nu.",
+    "alis_satis": "satış / alış",
+    "alis": "alış",
+"aciklama" :"açiklama"
+
 }
