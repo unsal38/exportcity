@@ -3,7 +3,6 @@ function alert_message(message) {
   $("div[role='alert']").removeClass("d-none");
   $("div[role='alert']").append("<p class='alert-message m-0 text-capitalize'>" + message + "</p>");
 }
-
 // NAW PANEL BAYRAK GİZLE GÖSTER
 $(function () {
   const lang = $("html")[0].lang
@@ -67,28 +66,6 @@ $(function () {
       prevEl: ".swiper-button-prev",
     },
   });
-})
-//ÜST FİLTRE
-$(function () {
-  $("#urun-hizmet").on("change", function () {
-    const urun_hizmet = $("#urun-hizmet option:selected").val();
-    if (Number(urun_hizmet) > 1) {
-      $("#talep-satis").removeAttr("disabled");
-    } if (Number(urun_hizmet) === 1) {
-      $("#talep-satis").attr("disabled", "true");
-      $("#talep-satis")[0].selectedIndex = 0
-    }
-  })
-  $("#kategori").on("change", function () {
-    const kategori = $("#kategori option:selected").val();
-    if (Number(kategori) != 0) {
-      $("#alt-kategori").removeAttr("disabled");
-    } if (Number(kategori) === 0) {
-      $("#alt-kategori").attr("disabled", "true");
-      $("#alt-kategori")[0].selectedIndex = 0
-    }
-  })
-
 })
 // ÖDEME SAYFASI HESAPLAMA
 $(function () {

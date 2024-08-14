@@ -269,7 +269,11 @@
 
                 <div class="swiper mySwiper-urun">
                     <div class="swiper-wrapper">
-
+                        <div class="swiper-slide">
+                            <div class="tumunu-gor">
+                                <a href="/urunliste/tr" class=" btn">Tümünü Gör <i class="fa-solid fa-angles-right"></i></a>
+                            </div>
+                        </div>
                         <% urun_listele_one_cikan_urun.forEach(v => { %>
                         <div class="swiper-slide">
                             <div class="card mb-3 text-start">
@@ -323,7 +327,11 @@
 
                 <div class="swiper mySwiper-urun">
                     <div class="swiper-wrapper">
-
+                        <div class="swiper-slide">
+                            <div class="tumunu-gor">
+                                <a href="/urunliste/tr" class="btn">Tümünü Gör <i class="fa-solid fa-angles-right"></i></a>
+                            </div>
+                        </div>
                         <% urun_listele_one_cikan_hizmet.forEach(v => { %>
                             <div class="swiper-slide">
                                 <div class="card mb-3 text-start">
@@ -360,8 +368,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <%  }); %>
-
+                        <%  }); %>
                     </div>
                 </div>
 
@@ -541,76 +548,31 @@
 
                     <div class="swiper mySwiper-temsilci">
                         <div class="swiper-wrapper">
-
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <img src="images/temsilci-img/kismet-sat.jpg" class="card-img" alt="temsilci image">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title">Kismetse Satar </h5>
-                                        <p class="card-text">Fransa Temsilcisi
-                                        </p>
-                                        <ul class="social-icon mt-4">
-                                            <li class="social-icon-item">
-                                                <a href="#" class="social-icon-link bi-twitter"></a>
-                                            </li>
-
-                                            <li class="social-icon-item">
-                                                <a href="#" class="social-icon-link bi-facebook"></a>
-                                            </li>
-
-                                            <li class="social-icon-item">
-                                                <a href="#" class="social-icon-link bi-instagram"></a>
-                                            </li>
-                                        </ul>
+                            <% temsilci.forEach(v => { %>
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <img src="images/temsilci-img/<%= v.temsilciimg_%>" class="card-img" alt="temsilci image">
+                                        <div class="card-img-overlay">
+                                            <h5 class="card-title text-capitalize"><%= v.fnamelname%></h5>
+                                            <p class="card-text text-capitalize"><%= v.temsilciulke[lang]%></p>
+                                            <ul class="social-icon mt-4">
+                                                <li class="social-icon-item">
+                                                    <a href="<%= v.temsilcilinkedin%>" class="social-icon-link bi-linkedin"></a>
+                                                </li>
+    
+                                                <li class="social-icon-item">
+                                                    <a href="<%= v.temsilcitel%>" class="social-icon-link bi-telephone"></a>
+                                                </li>
+    
+                                                <li class="social-icon-item">
+                                                    <a href="<%= v.temsilcimail%>" class="social-icon-link bi-mailbox"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <img src="images/temsilci-img/kismet-sat.jpg" class="card-img" alt="temsilci image">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title">Kismetse Satar </h5>
-                                        <p class="card-text">Fransa Temsilcisi
-                                        </p>
-                                        <ul class="social-icon mt-4">
-                                            <li class="social-icon-item">
-                                                <a href="#" class="social-icon-link bi-twitter"></a>
-                                            </li>
+                             <% }); %>
 
-                                            <li class="social-icon-item">
-                                                <a href="#" class="social-icon-link bi-facebook"></a>
-                                            </li>
-
-                                            <li class="social-icon-item">
-                                                <a href="#" class="social-icon-link bi-instagram"></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <img src="images/temsilci-img/kismet-sat.jpg" class="card-img" alt="temsilci image">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title">Kismetse Satar </h5>
-                                        <p class="card-text">Fransa Temsilcisi
-                                        </p>
-                                        <ul class="social-icon mt-4">
-                                            <li class="social-icon-item">
-                                                <a href="#" class="social-icon-link bi-twitter"></a>
-                                            </li>
-
-                                            <li class="social-icon-item">
-                                                <a href="#" class="social-icon-link bi-facebook"></a>
-                                            </li>
-
-                                            <li class="social-icon-item">
-                                                <a href="#" class="social-icon-link bi-instagram"></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
 
                         </div>
                     </div>
@@ -958,7 +920,7 @@
                         <div class="contact-info-wrap">
 
                             <div class="contact-image-wrap d-flex flex-wrap">
-                                <img src="images/avatar/mail-img.jpg" class="img-fluid avatar-image" alt="resim">
+                                <img src="images/calisan-img/mail-img.jpg" class="img-fluid avatar-image" alt="resim">
 
                                 <div class="d-flex flex-column justify-content-center ms-3">
                                     <p class="mb-0">Ümit KABALA</p>
@@ -999,7 +961,7 @@
                         <div class="contact-info-wrap">
 
                             <div class="contact-image-wrap d-flex flex-wrap">
-                                <img src="images/avatar/mail-img.jpg" class="img-fluid avatar-image" alt="resim">
+                                <img src="images/calisan-img/mail-img.jpg" class="img-fluid avatar-image" alt="resim">
 
                                 <div class="d-flex flex-column justify-content-center ms-3">
                                     <p class="mb-0">Ümit KABALA</p>
@@ -1040,7 +1002,7 @@
                         <div class="contact-info-wrap">
 
                             <div class="contact-image-wrap d-flex flex-wrap">
-                                <img src="images/avatar/mail-img.jpg" class="img-fluid avatar-image" alt="resim">
+                                <img src="images/calisan-img/mail-img.jpg" class="img-fluid avatar-image" alt="resim">
 
                                 <div class="d-flex flex-column justify-content-center ms-3">
                                     <p class="mb-0">Ümit KABALA</p>

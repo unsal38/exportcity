@@ -5,6 +5,7 @@ const urunSchema = require("../db/model/urunSchema")
 const sektorSchema = require("../db/model/kategoriSchema")
 const altsektorSchema = require("../db/model/kategoriAltSchema")
 const referansSchema = require("../db/model/referansSchema")
+const temsilciSchema = require("../db/model/temsilciSchema")
 
 
 router.get('/:lang', async function (req, res) {
@@ -66,6 +67,7 @@ router.get('/', async function (req, res) {
   const sektor = await sektorSchema.find();
   const alt_sektor = await altsektorSchema.find();
   const referans = await referansSchema.find();
+  const temsilci = await temsilciSchema.find();
   /// DATABASE SORGULAMA MARQUEE  //////////////////////////////////////////////////////////////////
   const urun_listele_marquee = await urunSchema
     .find()
@@ -95,6 +97,7 @@ router.get('/', async function (req, res) {
     urun_listele_marquee,
     urun_listele_one_cikan_urun,
     urun_listele_one_cikan_hizmet,
+    temsilci,
     referans,
     sektor,
     alt_sektor

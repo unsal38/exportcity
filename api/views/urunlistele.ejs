@@ -58,7 +58,7 @@
 
       <nav class="navbar navbar-expand-lg bg-light shadow-lg">
         <div class="container">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="/">
             <img src="/images/logo.png" class="logo img-fluid" alt="E-EXPORTCİTY">
             <span>
               E-EXPORTCİTY
@@ -83,59 +83,97 @@
           </div>
         </div>
       </nav>
+      <div class="d-none alert index-alert alert-danger" role="alert"></div>
+      <!--MODAL ÜRÜN AÇILIMI-->
+      <div class="modal fade" id="urunModal" tabindex="-1" aria-labelledby="urunModalLabel" aria-hidden="false">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="urunModalLabel">Ürün Bilgileri</h5>
+              <button type="button" class="btn-close pe-4" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
 
+            <div class="urun-bilgi modal-body d-flex justify-content-center">
+              <div class="row">
+                <div class="col-6">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <%= lang_json_data.urun_adi _%> :
+                        <span id="urun-adi"></span>
+                    </li>
+                    <li class="list-group-item">
+                      <%= lang_json_data.ulke _%> :
+                        <span id="urun-ulke"></span>
+                    </li>
+                    <li class="list-group-item">
+                      <%= lang_json_data.sektor _%> :
+                        <span id="sector"></span>
+                    </li>
+                    <li class="list-group-item">
+                      <%= lang_json_data.kategori _%> :
+                        <span id="kategori"></span>
+                    </li>
+                    <li class="list-group-item">
+                      <%= lang_json_data.miktar _%> :
+                        <span id="miktar"></span>
+                    </li>
+
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <%= lang_json_data.seri_nu _%> :
+                        <span id="seri-nu"></span>
+                    </li>
+                    <li class="list-group-item">
+                      <%= lang_json_data.urun_hizmet _%> :
+                        <span id="hizmet">
+                          <%= lang_json_data.urun _%>
+                        </span>
+                        <span id="urun">
+                          <%= lang_json_data.hizmet _%>
+                        </span>
+                    </li>
+                    <li class="list-group-item">
+                      <%= lang_json_data.alis_satis _%> :
+                        <span id="alis">
+                          <%= lang_json_data.satis _%>
+                        </span>
+                        <span id="satis">
+                          <%= lang_json_data.alis _%>
+                        </span>
+                    </li>
+                    <li class="list-group-item"> firma bilgileri için tıklayınız :
+                      <button type="button" class="btn btn-secondary text-capitalize">
+                        <%= lang_json_data.firma_unvani _%>:
+                          <span class="text-capitalize" id="firma-unvani"></span>
+                      </button>
+
+                    </li>
+
+                  </ul>
+                </div>
+                <div class="col-12">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <%= lang_json_data.aciklama _%> :
+                        <span id="aciklama"></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="urun-alert modal-body d-none justify-content-center">
+              <div class="alert alert-danger index-alert" role="alert"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--MODAL ÜRÜN AÇILIMI-->
       <main>
         <div class="container my-2">
-          <marquee behavior="scroll" direction="left" scrollamount="10">
-            <div class="row g-4 flex-nowrap">
-              <div class="col">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
-                    <p class="card-text">Sektör: <span>Araba</span></p>
-                    <p class="card-text">Kategori: <span>Yedek Parça</span></p>
-                    <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
-                        Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti</span></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
-                    <p class="card-text">Sektör: <span>Araba</span></p>
-                    <p class="card-text">Kategori: <span>Yedek Parça</span></p>
-                    <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
-                        Lojistik Hizmeti Lojistik Hizmeti</span></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
-                    <p class="card-text">Sektör: <span>Araba</span></p>
-                    <p class="card-text">Kategori: <span>Yedek Parça</span></p>
-                    <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
-                        Lojistik Hizmeti Lojistik Hizmeti</span></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title">Ürün Talep: <span>Almanya</span></h5>
-                    <p class="card-text">Sektör: <span>Araba</span></p>
-                    <p class="card-text">Kategori: <span>Yedek Parça</span></p>
-                    <p class="card-text">Ürün Adı: <span>Lojistik Hizmeti Lojistik Hizmeti Lojistik Hizmeti
-                        Lojistik Hizmeti Lojistik Hizmeti</span></p>
-                  </div>
-                </div>
-              </div>
-
-
-            </div>
-          </marquee>
+          <%- include ("path/marquee")%>
         </div>
 
         <!-- ÜRÜN  -->
@@ -143,124 +181,145 @@
         <section class="section-padding section-bg" id="section_7">
           <div class="container">
             <div class="row">
-              <div class="filtre col-12 custom-block-wrap">
-                <div class="col-sm-3 col-md-2 p-2">
-                  <select class="form-select" aria-label="Default select example">
-                    <option value="1"><%= lang_json_data.tarihe_gore_sirala _%></option>
-                    <option value="2"><%= lang_json_data.popiler _%></option>
-                  </select>
-                </div>
-                <div class="col-sm-3 col-md-2 p-2">
-                  <select class="form-select" aria-label="Default select example" id="urun-hizmet">
-                    <option value="1"><%= lang_json_data.urun_hizmet _%></option>
-                    <option value="2"><%= lang_json_data.urun _%></option>
-                    <option value="3"><%= lang_json_data.hizmet _%></option>
-                  </select>
-                  <select disabled class="form-select my-2" aria-label="Default select example" id="talep-satis">
-                    <option value="0"><%= lang_json_data.seciniz _%></option>
-                    <option value="1"><%= lang_json_data.talep _%></option>
-                    <option value="2"><%= lang_json_data.satis _%></option>
-                  </select>
-                </div>
-                <div class="col-sm-3 col-md-2 p-2">
-                  <select class="form-select" aria-label="Default select example" id="urun-hizmet">
-                    <option value="0"><%= lang_json_data.ulke _%></option>
-                    <option value="tr"><%= lang_json_data.turkiye _%></option>
-                    <option value="en"><%= lang_json_data.ingiltere _%></option>
-                  </select>
-                </div>
-                <div class="col-sm-3 col-md-2 p-2">
-                  <select class="form-select my-2" aria-label="Default select example" id="kategori">
-                    <option value="0"><%= lang_json_data.kategori _%></option>
-                    <option value="araba">Araba</option>
-                    <option value="mobilya">Mobilya</option>
-                  </select>
-                  <select disabled class="form-select my-2" aria-label="Default select example" id="alt-kategori">
-                    <option value="0"><%= lang_json_data.alt_altkategori _%></option>
-                    <option value="yedekparca">Yedek Parça</option>
-                    <option value="alttakim">Alt Takım</option>
-                  </select>
-                </div>
-                <div class="col-4 d-sm-none d-md-block p-2">
-                  <input class="form-control me-2" type="search" placeholder="<%= lang_json_data.urun_seri_numarasi _%>">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+              <form class="filter-form" method="get">
+                <div class="filtre col-12 custom-block-wrap">
 
-                <div class="col">
-                  <div class="card text-start custom-block-wrap border-0">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="/images/urun-img/1.jpg" class="img-fluid rounded mx-auto d-block" alt="<%= lang_json_data.urun_resmi _%>">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Ülke : Almanya</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins
-                              ago</small></p>
-                          <a class="card-link p-2" href="#">
-                            <span><i class="fa-regular fa-star"></i> </span>
-                            favori
-                          </a>
-                          <a class="card-link p-2" href="#">incele</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card text-start custom-block-wrap border-0">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="/images/urun-img/1.jpg" class="img-fluid rounded mx-auto d-block" alt="ürün resmi">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Ülke : Almanya</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins
-                              ago</small></p>
-                          <a class="card-link p-2" href="#">
-                            <span><i class="fa-regular fa-star"></i> </span>
-                            favori
-                          </a>
-                          <a class="card-link p-2" href="#">incele</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card text-start custom-block-wrap border-0">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="/images/urun-img/1.jpg" class="img-fluid rounded mx-auto d-block" alt="ürün resmi">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Ülke : Almanya</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins
-                              ago</small></p>
-                          <a class="card-link p-2" href="#">
-                            <span><i class="fa-regular fa-star"></i> </span>
-                            favori
-                          </a>
-                          <a class="card-link p-2" href="#">incele</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-              </div>
+                  <div class="col-sm-3 col-md-2 p-2">
+                    <select name="sirala" class="form-select" aria-label="Default select example">
+                      <option value="1">
+                        <%= lang_json_data.tarihe_gore_sirala _%>
+                      </option>
+                      <option value="2">
+                        <%= lang_json_data.popiler _%>
+                      </option>
+                    </select>
+                  </div>
+                  <div class="col-sm-3 col-md-2 p-2">
+                    <select name="urun_hizmet" class="form-select" aria-label="Default select example" id="urun-hizmet">
+                      <option value="0">
+                        <%= lang_json_data.urun_hizmet _%>
+                      </option>
+                      <option value="1">
+                        <%= lang_json_data.urun _%>
+                      </option>
+                      <option value="2">
+                        <%= lang_json_data.hizmet _%>
+                      </option>
+                    </select>
+                    <select name="satis-talep" disabled class="form-select my-2" aria-label="Default select example" id="talep-satis">
+                      <option value="0">
+                        <%= lang_json_data.seciniz _%>
+                      </option>
+                      <option value="1">
+                        <%= lang_json_data.talep _%>
+                      </option>
+                      <option value="2">
+                        <%= lang_json_data.satis _%>
+                      </option>
+                    </select>
+                  </div>
+                  <div class="col-sm-3 col-md-2 p-2">
+                    <select name="ulke" class="form-select" aria-label="Default select example" id="urun-hizmet">
+                      <option value="0">
+                        <%= lang_json_data.ulke _%>
+                      </option>
+                      <% lang_telealankodu_json_parse.forEach(v => {%>
+                        <option value="<%= v.code %>">
+                          <%= v.name _%>
+                        </option>
+                      <%}); %>
+
+                    </select>
+                  </div>
+                  <div class="col-sm-3 col-md-2 p-2">
+                    <select  name="kategori" class="form-select my-2 text-capitalize" aria-label="Default select example" id="kategori-filter">
+                      <option value="0">
+                        <%= lang_json_data.kategori _%>
+                      </option>
+                      <% sektor.forEach(v => { %>
+                        <option value="<%= v._id_%>"><%= v.sektor[lang]_%></option>
+                      <% }); %>
+
+                    </select>
+                    <select name="alt_kategori" disabled class="form-select my-2" aria-label="Default select example" id="alt-kategori">
+                      <option value="0">
+                        <%= lang_json_data.alt_altkategori _%>
+                      </option>
+                      <% alt_sektor.forEach(v => { %>
+                        <option  data-sektor-id="<%= v.sektorid _%>" value="<%= v._id _%>"><%= v.altsektor[lang] _%></option>
+                      <% }); %>
+                      
+
+                    </select>
+                  </div>
+
+                  <div class="col-4 d-sm-none d-md-block p-2">
+                    <input name="serial" class="form-control me-2" type="search"
+                      placeholder="<%= lang_json_data.urun_seri_numarasi _%>">
+                  </div>
+    
+                </div>
+                <div class="col-12 p-2">
+                  <button class="w-100 text-capitalize" type="submit"><%=lang_json_data.filtrele _%></button>
+                </div>
+              </form>
+
+
             </div>
           </div>
+          <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+              <% urun_listele.forEach(v=> { %>
+                <div class="col">
+                  <div class="card mb-3 text-start">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="../images/urun-img/<%= v.imgsrc _%>" class="img-fluid rounded mx-auto d-block"
+                          alt="<%= lang_json_data.urun_resimi_%>">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">
+                            <%= v.urunadi[lang]_%>
+                          </h5>
+                          <p class="card-text">
+                            <%= lang_json_data.ulke_%> :
+                              <% lang_telealankodu_json_parse.forEach(ulke_kodu=> { %>
+                                <%if(ulke_kodu.code===v.ulke){%>
+                                  <%= ulke_kodu.name _%>
+                                    <%}%>
+                                      <% });%>
+                          </p>
+                          <p class="card-text">
+                            <% const updateAt=Date(v.updateAt) %>
+                              <small data-index-urun-date="<%= updateAt _%>" class="text-muted">
+                                <%= lang_json_data.en_son_guncelleme_tarihi_%> : <span class="tarih"></span>
+                              </small>
+                          </p>
+                          <a class="card-link p-2" href="javascript:void(0)">
+                            <span data-urun-id-favori-check="<%= v._id_%>">
+                              <i class="fa-regular fa-star"></i>
+                            </span>
+                            <%= lang_json_data.favori _%>
+                          </a>
+                          <a data-bs-toggle="modal" data-bs-target="#urunModal" data-urun-id="<%= v._id _%>"
+                            class="urun-bilgileri card-link p-2" href="javascript:void(0)">
+                            <%= lang_json_data.incele _%>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% }); %>
+            </div>
+          </div>
+          </div>
           <div class="d-flex justify-content-center m-3">
-            <button id="devami" type="button" class="btn btn-light"><i class="fa-solid fa-angles-down"></i> <%= lang_json_data.devami _%></button>
+            <button id="devami" type="button" class="btn btn-light"><i class="fa-solid fa-angles-down"></i>
+              <%= lang_json_data.devami _%>
+            </button>
           </div>
 
         </section>
@@ -269,6 +328,7 @@
       </main>
 
       <%- include ('path/footer') %>
+      <script src="/javascripts/urun-listele.js"></script>
     </body>
 
 </html>

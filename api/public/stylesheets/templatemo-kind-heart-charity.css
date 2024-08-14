@@ -72,8 +72,41 @@ button#devami,
   transform: translate(-50%, -50%);
   text-transform: capitalize;
 }
-i.fa-solid{
+
+i.fa-solid {
   color: rgb(225, 225, 77);
+}
+
+div.tumunu-gor {
+  height: 22vh;
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+div.tumunu-gor a {
+  align-items: center;
+  display: flex;
+  height: 22vh;
+  background-color: #00000036;
+}
+
+div.tumunu-gor a:hover {
+  background-color: #00000073;
+}
+
+div.tumunu-gor a i{
+  margin-left: 2px;
+  font-size: 4vh;
+}
+#section_7 button[type='submit']{
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  text-transform: capitalize;
+  color: #737477;
+
 }
 /*---------------------------------------
   CUSTOM PROPERTIES ( VARIABLES )             
