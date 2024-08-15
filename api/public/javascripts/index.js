@@ -26,10 +26,10 @@ $(function () {
       el: ".swiper-pagination",
       clickable: true,
     },
-    // autoplay: {
-    //     delay: 2500,
-    //     disableOnInteraction: false,
-    //   },
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
   });
 
   var swiper = new Swiper(".mySwiper-ref", {

@@ -11,7 +11,7 @@ function urun_incele(urun_id) {
                 axios.post("/urunliste/incele", axios_data)
                     .then(response => {
                         if (response.data.message === false) resolve(false);
-                        if (response.data.message === true) resolve([true, response.data.urun_data, response.data.firma_unvani, response.data.urun_alt_kategori.altsektor, response.data.urun_kategori.sektor]);
+                        if (response.data.message === true) resolve([true, response.data.urun_data, response.data.firma_unvani, response.data.urun_alt_kategori.altsektor, response.data.urun_kategori.sektor, response.data.user_id]);
                     })
             }
         } catch (error) {
@@ -49,7 +49,7 @@ $(() => {
                 if (cevap[1].urunhizmet === true) $("span#hizmet").addClass("d-none")
                 if (cevap[1].urunhizmet === false) $("span#urun").addClass("d-none")
                 const firma_unvani = cevap[2]
-            const firma_link = cevap[5]
+                const firma_user_id = cevap[5]
 
                 $("span#urun-adi")[0].textContent = urun_adi
                 $("span#urun-ulke")[0].textContent = urun_ulke
@@ -59,6 +59,7 @@ $(() => {
                 $("span#aciklama")[0].textContent = aciklama
                 $("span#seri-nu")[0].textContent = seri_nu
                 $("span#firma-unvani")[0].textContent = firma_unvani
+                $("a#firma-id-click").attr("href", `/firma/tr?firma=${firma_user_id}`)
 
             }
         }).catch((message) => {
@@ -103,11 +104,18 @@ $(() => {
             const url_lang = lang_select
             const lang_data = ["tr", "en", "ar", "es", "fr", "ru"]
             const find_lang = lang_data.filter(lang_data => lang_data === url_1)
-            if (url_1.length !== 0 && find_lang.length === 0) {
-                window.location.href = `${url_original}/${url_1}/${url_lang}`
-            } else {
-                window.location.href = `${url_original}/${url_lang}`
+            if (url_split[1] !== "firma") {
+                if (url_1.length !== 0 && find_lang.length === 0) {
+                    window.location.href = `${url_original}/${url_1}/${url_lang}`
+                } else {
+                    window.location.href = `${url_original}/${url_lang}`
+                }
+            }else if(url_split[1] === "firma"){
+                const query_firma_id =  window.location.search
+                const new_url = `${url_original}/${url_1}/${url_lang}${query_firma_id}`
+                window.location.href = new_url
             }
+
         } catch (error) {
             console.log(error, "site js")
         }

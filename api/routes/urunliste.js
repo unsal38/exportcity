@@ -34,12 +34,12 @@ router.post("/incele", async (req, res) => {
     const urun_kategori = await sektorSchema.findById(urun_server_data.sektor)
     const urun_alt_kategori = await altsektorSchema.findById(urun_server_data.kategori)
     const firma_unvani = user_server_data.firmaUnvani
+    const firma_user_id = urun_server_data.userid
     const new_uyeUrunHizmetGorme_array = new Array()
-
     if (uyeUrunHizmetGorme_server === undefined) {
       new_uyeUrunHizmetGorme_array.push(click_urun_id)
       await userSchema.findByIdAndUpdate(user_id, { uyeUrunHizmetGorme: new_uyeUrunHizmetGorme_array })
-      res.send({ message: true, urun_data: urun_server_data, urun_kategori, urun_alt_kategori, firma_unvani, user_id })
+      res.send({ message: true, urun_data: urun_server_data, urun_kategori, urun_alt_kategori, firma_unvani,  firma_id:firma_user_id})
     } else {
       if (uyeUrunHizmetGorme_server.length <= maxuyeUrunHizmetGorme_server) {
         if (uyeUrunHizmetGorme_server.length === maxuyeUrunHizmetGorme_server) {
@@ -137,7 +137,6 @@ router.get('/:lang', permissioncheck(["pageadmin", "user"]), async function (req
   const limit = req.headers.cookie
   const limit_split = limit.split(";")[0]
   var limit_sonuc = limit_split.split("limit=")[1]
-  console.log(limit_sonuc)
   if (query_string.sirala !== undefined) {
     /// DATABASE SIRALAMA  //////////////////////////////////////////////////////////////////
     const sirala_query = query_string.sirala

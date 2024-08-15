@@ -94,7 +94,7 @@ const userSchema = new Schema({
     es: { type: String, lowercase: true, trim: true },
     ru: { type: String, lowercase: true, trim: true },
   },
-  bilgi_sektor: {
+  bilgi_bolum: {
     tr: { type: String, lowercase: true, trim: true },
     en: { type: String, lowercase: true, trim: true },
     fr: { type: String, lowercase: true, trim: true },
@@ -102,22 +102,8 @@ const userSchema = new Schema({
     es: { type: String, lowercase: true, trim: true },
     ru: { type: String, lowercase: true, trim: true },
   },
-  bilgi_altkategori: {
-    tr: { type: String, lowercase: true, trim: true },
-    en: { type: String, lowercase: true, trim: true },
-    fr: { type: String, lowercase: true, trim: true },
-    ar: { type: String, lowercase: true, trim: true },
-    es: { type: String, lowercase: true, trim: true },
-    ru: { type: String, lowercase: true, trim: true },
-  },
-  ekatalog_aciklama: {
-    tr: { type: String, lowercase: true, trim: true },
-    en: { type: String, lowercase: true, trim: true },
-    fr: { type: String, lowercase: true, trim: true },
-    ar: { type: String, lowercase: true, trim: true },
-    es: { type: String, lowercase: true, trim: true },
-    ru: { type: String, lowercase: true, trim: true },
-  },
+  ekatalog_iframe: {type: String,},
+  diger_bilgiler: {type: String,lowercase: true},
   // FİRMA BİLGİLERİ
 
   /// ÖDEME SONRASINDA EKLENECEK PARAMETRE //////////////////////////////////

@@ -32,3 +32,19 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+$(()=>{
+    const data_h1 = $("div[data-h1]").attr("data-h1");
+    const data_h1_split = data_h1.split(" ");
+    var ilk_kelime = new Array();
+    var span_kelime = new Array();
+    $.each(data_h1_split,function (i, v) { 
+        if(i > 4) span_kelime.push(v);
+        if(i <= 4) ilk_kelime.push(v);
+    });
+    const new_ilk_kelime = ilk_kelime.toString().replace(/,/g, " ")
+    const new_span_kelime = span_kelime.toString().replace(/,/g, " ")
+
+    $("div[data-h1] h1")[0].textContent = new_ilk_kelime
+    $("div[data-h1] h1").append(`<span class='text-primary ps-1'>${new_span_kelime}</span>`)
+}) // HAKKIMIZDA H1 AYARLANMASI

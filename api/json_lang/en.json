@@ -108,6 +108,15 @@
     "seri_nu": "serial nu.",
     "alis_satis": "sell / buy",
     "alis": "buy",
-    "aciklama" :"explanation",
-    "filtrele": "filter"
+    "aciklama": "explanation",
+    "filtrele": "filter",
+    "bilgiler": "information",
+    "talepler": "requests",
+    "satislar": "sales",
+    "katalog": "catalog",
+    "firmamiz": "ourcompany",
+    "genel_bilgiler": "general information",
+    "firma_katalogur":"company catalog",
+    "diger_bilgiler": "other information"
+
 }
