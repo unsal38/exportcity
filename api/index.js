@@ -17,6 +17,7 @@ const blog2Router = require("./routes/blog2");
 const blog3Router = require("./routes/blog3");
 const blog4Router = require("./routes/blog4");
 const blog5Router = require("./routes/blog5");
+const iyzcoRouter = require("./routes/iyzco");
 //MİDDİLWARE
 const aut_tokencheck = require("./middleware/aut_tokenCheck");
 
@@ -39,6 +40,7 @@ app.use('/urunliste',aut_tokencheck.aut_tokencheck(), urunlisteRouter);
 app.use('/payment',aut_tokencheck.aut_tokencheck(), paymentRouter);
 app.use('/panel',aut_tokencheck.aut_tokencheck(), panelRouter);
 app.use('/firma',aut_tokencheck.aut_tokencheck(), firmaRouter);
+app.use('/iyzco', iyzcoRouter);
 // PERMİSSİON CHECK YAPILAN SAYFALARY --------------------
 
 app.use("/blog1", blog1Router);

@@ -1,0 +1,168 @@
+<%- include ('panel-headers-footer/headers') %>
+      <section class="section-padding section-bg">
+            <div class="col-12 px-4">
+                  <h2 class="mb-5 text-capitalize">abonelik sorgu ve data base ekleme</h2>
+                  <div class="alert alert-danger d-none" role="alert"></div>
+                  <!--AÇIKLAMA EKLE KISMI MODAL--------------------------
+                  ---------------------------------------------------------->
+            <div class="modal fade" id="aciklama-ekle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                  <div class="modal-content">
+                  <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                        ...
+                  </div>
+                  <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                  </div>
+                  </div>
+            </div>
+                  <div class="container">
+                        <div class="row">
+                              <button class="abonelik_sorgula text-capitalize mb-2" type="button"><%= lang_json_data.sorgula _%></button>
+
+                              <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                    <div class="custom-block-wrap">
+
+                                          <div class="custom-block">
+                                                <div class="custom-block-body">
+                                                      <h5 class="mb-3">
+                                                            <%= lang_json_data.gumus _%>
+                                                      </h5>
+
+                                                      <p>&#8811;
+                                                            uyelik özelliği eklenerek yabanci dil olarak da kayıt
+                                                            yapılacak
+                                                      </p>
+                                                      <p>&#8811;
+                                                            uyelik özelliği eklenerek yabanci dil olarak da kayıt
+                                                            yapılacak
+                                                      </p>
+
+                                                      <div class="d-flex align-items-center my-2">
+                                                            <p class="mb-0">
+                                                                  <strong>
+                                                                        <%= lang_json_data.taksitli _%> 12 <%= lang_json_data.ay _%>:
+                                                                  </strong>
+                                                                  $ <span>
+                                                                        <%= abonelik_urun_planlari_uyelikler[0].planlar.gumus.price _%>
+                                                                  </span>
+                                                            </p>
+                                                            <% const yillik_price_gumus=(abonelik_urun_planlari_uyelikler[0].planlar.gumus.price) * 12 %>
+                                                                  <p class="ms-auto mb-0">
+                                                                        <strong>
+                                                                              <%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:
+                                                                        </strong>
+                                                                        $ <span>
+                                                                              <%= yillik_price_gumus %>
+                                                                        </span>
+                                                                  </p>
+                                                      </div>
+                                                </div>
+
+                                                <a data-bs-toggle="modal" data-bs-target="#aciklama-ekle" data-aciklama-ekle="gumus" href="javascritp:void(0)" class="custom-btn btn text-capitalize">
+                                                      <%= lang_json_data.aciklama_ekle _%>
+                                                </a>
+                                          </div>
+                                    </div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                    <div class="custom-block-wrap">
+
+                                          <div class="custom-block">
+                                                <div class="custom-block-body">
+                                                      <h5 class="mb-3">
+                                                            <%= lang_json_data.altin _%>
+                                                      </h5>
+
+                                                      <p>&#8811;
+                                                            uyelik özelliği eklenerek yabanci dil olarak da kayıt
+                                                            yapılacak
+                                                      </p>
+                                                      <p>&#8811;
+                                                            uyelik özelliği eklenerek yabanci dil olarak da kayıt
+                                                            yapılacak
+                                                      </p>
+
+                                                      <div class="d-flex align-items-center my-2">
+                                                            <p class="mb-0">
+                                                                  <strong>Taksitli 12 Ay:</strong>
+                                                                  $<span>
+                                                                        <%= abonelik_urun_planlari_uyelikler[0].planlar.altin.price _%>
+                                                                  </span>
+                                                            </p>
+
+
+                                                            <% const yillik_price_altin=(abonelik_urun_planlari_uyelikler[0].planlar.altin.price) * 12 %>
+                                                                  <p class="ms-auto mb-0">
+                                                                        <strong>
+                                                                              <%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:
+                                                                        </strong>
+                                                                        $ <span>
+                                                                              <%= yillik_price_altin %>
+                                                                        </span>
+                                                                  </p>
+                                                      </div>
+                                                </div>
+
+                                                <a data-aciklama-ekle="altın" href="javascritp:void(0)" class="custom-btn btn text-capitalize"><%= lang_json_data.aciklama_ekle _%></a>
+                                          </div>
+                                    </div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="custom-block-wrap">
+
+                                          <div class="custom-block">
+                                                <div class="custom-block-body">
+                                                      <h5 class="mb-3">
+                                                            <%= lang_json_data.Platinum _%>
+                                                      </h5>
+
+                                                      <p>&#8811;
+                                                            İster Yıllık peşin alın...
+                                                      </p>
+                                                      <p>&#8811;
+                                                            İsterseniz 12 ay taksitle ödeyin...
+                                                      </p>
+
+                                                      <div class="d-flex align-items-center my-2">
+                                                            <p class="mb-0">
+                                                                  <strong>Taksitli 12 Ay:</strong>
+                                                                  $<span>
+                                                                        <%= abonelik_urun_planlari_uyelikler[0].planlar.altin.price _%>
+                                                                  </span>
+                                                            </p>
+
+
+                                                            <% const yillik_price_plantinyum=(abonelik_urun_planlari_uyelikler[0].planlar.plantinyum.price) * 12 %>
+                                                                  <p class="ms-auto mb-0">
+                                                                        <strong>
+                                                                              <%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:
+                                                                        </strong>
+                                                                        $ <span>
+                                                                              <%= yillik_price_plantinyum %>
+                                                                        </span>
+                                                                  </p>
+                                                      </div>
+                                                </div>
+
+                                                <a data-aciklama-ekle="plantinyum" href="javascritp:void(0)" class="custom-btn btn text-capitalize"><%= lang_json_data.aciklama_ekle _%></a>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+
+
+                  </div>
+
+            </div>
+      </section>
+      <%- include ('panel-headers-footer/footer') %>

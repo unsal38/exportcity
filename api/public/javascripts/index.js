@@ -27,9 +27,9 @@ $(function () {
       clickable: true,
     },
     autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
+      delay: 2500,
+      disableOnInteraction: false,
+    },
   });
 
   var swiper = new Swiper(".mySwiper-ref", {
@@ -67,7 +67,18 @@ $(function () {
     },
   });
 })
-// ÖDEME SAYFASI HESAPLAMA
+$(()=>{
+$("button.abonelik_sorgula").on("click",()=>{
+  const axios_data = {
+    name:"uyelik"
+  }
+  axios.post("/iyzco/abonelik-sorgu-kayit", axios_data)
+  .then((response)=>{
+    console.log(response.data, "index js")
+    
+  });
+ });
+}) // PANEL ABONELİK SORGU
 $(function () {
   $("#uyelik").on("change", function () {
     const uyelik_ucret = $("#uyelik option:selected").val()
@@ -99,4 +110,25 @@ $(function () {
     $("#sonuc-toplam")[0].textContent = sonuc_toplam
   })
 
-})
+}) // ÖDEME SAYFASI HESAPLAMA
+$(() => {
+  $("#lang_dil_sec_panel").on("change", () => {
+    const lang_selected = $("#lang_dil_sec_panel option:selected").val()
+    const url = window.location.pathname
+    const url_split = url.split("/")
+    try {
+      const url_original = window.location.origin
+      const url_2 = url_split[2]
+      const lang_data = ["tr", "en", "ar", "es", "fr", "ru"]
+      const find_lang = lang_data.filter(lang_data => lang_data === url_2)
+      if(find_lang.length > 0) {
+       window.location.href = `${url_original}/panel/${lang_selected}`
+      }else if(find_lang.length === 0){
+        window.location.href = `${url_original}/panel/${url_2}/${lang_selected}`
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  })
+}) // PANEL DE DİL SEÇİMİ URL YÖNLENDİRME
+

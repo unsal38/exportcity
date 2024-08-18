@@ -1,0 +1,128 @@
+<%- include ('path/head') %>
+  </head>
+
+  <body>
+    <%- include ("path/header")%>
+      <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+          <a class="navbar-brand" href="/">
+            <img src="/images/logo.png" class="logo img-fluid" alt="E-EXPORTCİTY">
+            <span>
+              E-EXPORTCİTY
+              <small>New Word Trade System</small>
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="/">
+                  <%= lang_json_data.ana_sayfa _%>
+                </a>
+              </li>
+              <%- include("path/nav") %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="d-none alert index-alert alert-danger" role="alert"></div>
+      <main>
+        <div class="container my-2">
+          <%- include ("path/marquee")%>
+        </div>
+
+        <section class="section-padding section-bg" id="section_10">
+          <div class="container d-flex justify-content-center custom-block-wrap p-3">
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th colspan="2" scope="col">Ürün</th>
+                  <th scope="col">Fiyat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td colspan="1">
+                    <select id="uyelik" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                      <option value="0">Seçiniz</option>
+                      <option value="12000">Gümüş</option>
+                      <option value="24000">Altın</option>
+                      <option value="36000">Platin</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select disabled id="uyelik-taksit" class="form-select form-select-sm"
+                      aria-label=".form-select-sm example">
+                      <option value="1">Peşin</option>
+                      <option value="2">12 Taksit</option>
+                    </select>
+                  </td>
+                  <td><span id="sonuc-uyelik"></span> Dolar</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td colspan="2">
+                    <select id="reklam" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                      <option value="0">Seçiniz</option>
+                      <option value="1000">1 Aylık</option>
+                      <option value="3000">3 Aylık</option>
+                      <option value="6000">6 Aylık</option>
+                    </select>
+                  </td>
+                  <td><span id="sonuc-reklam"></span> Dolar</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td colspan="2">
+                    <select id="urun-gorme" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                      <option value="0">Seçiniz</option>
+                      <option value="1000">50 Adet</option>
+                      <option value="3000">100 Adet</option>
+                      <option value="6000">1000 Adet</option>
+                    </select>
+                  </td>
+                  <td><span id="sonuc-urun-gorme"></span> Dolar</td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    Toplam
+                  </td>
+                  <td><span id="sonuc-toplam"></span> Dolar</td>
+                </tr>
+              </tbody>
+            </table>
+            <form class="row col-6 g-3 m-4 p-3">
+
+              <div class="col-md-12 ">
+                <input type="isim-soyad" class="form-control bg-transparent" placeholder="İsim Soyad">
+              </div>
+              <div class="col-md-12">
+                <input type="card-number" class="form-control bg-transparent" placeholder="Kard Numarası">
+              </div>
+              <div class="col-md-6">
+                <input type="tarih" class="form-control bg-transparent" placeholder="Son Kullanma Tarihi">
+              </div>
+              <div class="col-md-6">
+                <input type="cvc" class="form-control bg-transparent" placeholder="CVC">
+              </div>
+              <div class="col-12 d-flex justify-content-end">
+                <a href="#" class="custom-btn btn">Ödemeyi Tamamla</a>
+              </div>
+
+            </form>
+          </div>
+        </section>
+
+      </main>
+      <%- include ('path/footer') %>
+  </body>
+
+  </html>

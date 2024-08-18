@@ -7,7 +7,7 @@
 
     <nav class="navbar navbar-expand-lg bg-light shadow-lg">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
                 <img src="images/logo.png" class="logo img-fluid" alt="E-EXPORTCİTY">
                 <span>
                     E-EXPORTCİTY
@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="#top"><%= lang_json_data.ana_sayfa _%></a>
+                        <a class="nav-link click-scroll" href="/"><%= lang_json_data.ana_sayfa _%></a>
                     </li>
 
                     <li class="nav-item d-naw-none d-flex align-items-center">
@@ -95,7 +95,6 @@
                             <a id="firma-id-click"  class="btn btn-secondary text-capitalize"><%= lang_json_data.firma_unvani _%>: 
                                 <span class="text-capitalize" id="firma-unvani"></span>
                             </a>
-                            
                         </li>
 
                     </ul>
@@ -589,35 +588,36 @@
                     <div class="col-lg-12 col-12 text-center mb-4">
                         <h2 class="text-capitalize"><%= lang_json_data.uyelikler _%></h2>
                     </div>
+                    
 
                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                         <div class="custom-block-wrap">
 
                             <div class="custom-block">
                                 <div class="custom-block-body">
-                                    <h5 class="mb-3">Gümüş</h5>
-
+                                    <h5 class="mb-3"><%= lang_json_data.gumus _%></h5>
+                                    
                                     <p>&#8811;
-                                        İster Yıllık peşin alın...
+                                        uyelik özelliği eklenerek yabanci dil olarak da kayıt yapılacak
                                     </p>
                                     <p>&#8811;
-                                        İsterseniz 12 ay taksitle ödeyin...
+                                        uyelik özelliği eklenerek yabanci dil olarak da kayıt yapılacak
                                     </p>
 
                                     <div class="d-flex align-items-center my-2">
                                         <p class="mb-0">
-                                            <strong>Taksitli 12 Ay:</strong>
-                                            $18,500
+                                            <strong><%= lang_json_data.taksitli _%> 12 <%= lang_json_data.ay _%>:</strong>
+                                            $ <span><%= abonelik_urun_planlari_uyelikler[0].planlar.gumus.price  _%></span>
                                         </p>
-
+                                        <% const yillik_price_gumus = (abonelik_urun_planlari_uyelikler[0].planlar.gumus.price) * 12 %>
                                         <p class="ms-auto mb-0">
-                                            <strong>Peşin 12 Ay:</strong>
-                                            $32,000
+                                            <strong><%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:</strong>
+                                            $ <span><%= yillik_price_gumus  %></span>
                                         </p>
                                     </div>
                                 </div>
 
-                                <a href="#" class="custom-btn btn">Satın Al</a>
+                                <a href="javascritp:void(0)" class="custom-btn btn"><%= lang_json_data.satin_al _%></a>
                             </div>
                         </div>
                     </div>
@@ -627,29 +627,31 @@
 
                             <div class="custom-block">
                                 <div class="custom-block-body">
-                                    <h5 class="mb-3">Altın</h5>
-
+                                    <h5 class="mb-3"><%= lang_json_data.altin  _%></h5>
+                                    
                                     <p>&#8811;
-                                        İster Yıllık peşin alın...
+                                        uyelik özelliği eklenerek yabanci dil olarak da kayıt yapılacak
                                     </p>
                                     <p>&#8811;
-                                        İsterseniz 12 ay taksitle ödeyin...
+                                        uyelik özelliği eklenerek yabanci dil olarak da kayıt yapılacak
                                     </p>
 
                                     <div class="d-flex align-items-center my-2">
                                         <p class="mb-0">
                                             <strong>Taksitli 12 Ay:</strong>
-                                            $18,500
+                                            $<span><%= abonelik_urun_planlari_uyelikler[0].planlar.altin.price  _%></span>
                                         </p>
 
+                                        
+                                        <% const yillik_price_altin = (abonelik_urun_planlari_uyelikler[0].planlar.altin.price) * 12 %>
                                         <p class="ms-auto mb-0">
-                                            <strong>Peşin 12 Ay:</strong>
-                                            $32,000
+                                            <strong><%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:</strong>
+                                            $ <span><%= yillik_price_altin  %></span>
                                         </p>
                                     </div>
                                 </div>
 
-                                <a href="#" class="custom-btn btn">Satın Al</a>
+                                <a href="javascritp:void(0)" class="custom-btn btn">Satın Al</a>
                             </div>
                         </div>
                     </div>
@@ -659,7 +661,7 @@
 
                             <div class="custom-block">
                                 <div class="custom-block-body">
-                                    <h5 class="mb-3">Platinum</h5>
+                                    <h5 class="mb-3"><%= lang_json_data.Platinum  _%></h5>
 
                                     <p>&#8811;
                                         İster Yıllık peşin alın...
@@ -671,17 +673,19 @@
                                     <div class="d-flex align-items-center my-2">
                                         <p class="mb-0">
                                             <strong>Taksitli 12 Ay:</strong>
-                                            $18,500
+                                            $<span><%= abonelik_urun_planlari_uyelikler[0].planlar.altin.price  _%></span>
                                         </p>
 
+                                       
+                                        <% const yillik_price_plantinyum = (abonelik_urun_planlari_uyelikler[0].planlar.plantinyum.price) * 12 %>
                                         <p class="ms-auto mb-0">
-                                            <strong>Peşin 12 Ay:</strong>
-                                            $32,000
+                                            <strong><%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:</strong>
+                                            $ <span><%= yillik_price_plantinyum  %></span>
                                         </p>
                                     </div>
                                 </div>
 
-                                <a href="#" class="custom-btn btn">Satın Al</a>
+                                <a href="javascritp:void(0)" class="custom-btn btn">Satın Al</a>
                             </div>
                         </div>
                     </div>

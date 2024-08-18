@@ -1,0 +1,69 @@
+<%- include ('../path/head') %>
+  </head>
+
+  <body id="panel">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid d-flex">
+        <a class="navbar-brand" href="/panel/tr">Panel</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form class="d-flex mx-auto">
+            <input class="form-control me-2" type="search" placeholder="<%= lang_json_data.arama _%>" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit"><%= lang_json_data.arama _%></button>
+          </form>
+          <ul class="d-flex align-items-center navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <button class="btn m-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#yan-menu">
+                <%= lang_json_data.menu _%>
+              </button>
+            </li>
+            <li class="nav-item flag-naw">
+              <img class="w-100 d-none tr" src="/images/flag/turkey.png" alt="flag">
+              <img class="w-100 d-none en" src="/images/flag/united-kingdom.png" alt="flag">
+          </li>
+            <li class="nav-item">
+              <select id="lang_dil_sec_panel" class="form-select form-select-sm border-0 bg-transparent" aria-label=".form-select-sm">
+                <option selected><%= lang_json_data.dil_sec _%></option>
+                <option value="tr"><%= lang_json_data.turkce _%></option>
+                <option value="en"><%= lang_json_data.ingilizce _%></option>
+              </select>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa-regular fa-bell"></i>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+    <div class="container-fruid">
+      <div class="row">
+        <div class="offcanvas offcanvas-start" id="yan-menu">
+          <div class="offcanvas-header">
+            <h2 class="offcanvas-title">Export City</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="nav flex-column text-capitalize">
+              <li class="nav-item">
+                <a class="nav-link featured-block-text" href="/"><span>anasayfa</span> &#8811;</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link featured-block-text" href="/panel/panel-urun-giris/tr"><span>urun giriş </span> &#8811;</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link featured-block-text" href="/panel/panel-odeme-plani-girisi/tr"><span>ödeme planı girişi </span> &#8811;</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+   

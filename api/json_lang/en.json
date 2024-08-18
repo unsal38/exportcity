@@ -117,6 +117,16 @@
     "firmamiz": "ourcompany",
     "genel_bilgiler": "general information",
     "firma_katalogur":"company catalog",
-    "diger_bilgiler": "other information"
-
+    "diger_bilgiler": "other information",
+    "menu": "menu",
+    "arama": "search",
+    "taksitli": "instalments",
+    "ay": "month",
+    "pesin": "in advance",
+    "satin_al": "buy",
+    "gumus": "silver",
+    "altin": "gold",
+    "Platinum": "Platinum",
+    "aciklama_ekle": "add description",
+    "sorgula": "search"
 }
