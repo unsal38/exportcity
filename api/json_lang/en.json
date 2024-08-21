@@ -128,5 +128,9 @@
     "altin": "gold",
     "Platinum": "Platinum",
     "aciklama_ekle": "add description",
-    "sorgula": "search"
+    "sorgula": "search",
+    "kaydet": "save",
+    "1ay_reklam": "1 mount advert",
+    "3ay_reklam": "3 mount advert",
+    "12ay_reklam": "12 mount advert"
 }

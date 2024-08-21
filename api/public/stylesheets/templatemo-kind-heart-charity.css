@@ -108,7 +108,8 @@ div.tumunu-gor a i{
   color: #737477;
 
 }
-button.abonelik_sorgula{
+button.abonelik_sorgula,
+button.reklam_sorgula{
   border-radius: 20px;
   background-color: #5a6f81;
   color: white;
