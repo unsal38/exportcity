@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const abonelikSchema = require("../db/model/abonelik_urun_planlariSchema");
 const reklamSchema = require("../db/model/reklam_urun_planlariSchema");
-
+const ekSchema = require("../db/model/ek_urun_planlariSchema");
 /// IYZİPAY //////////////////////////////////////////////////////////////////
 
 const Iyzipay = require('iyzipay');
@@ -20,6 +20,7 @@ router.post("/abonelik-sorgu-kayit", async (req, res) => {
   /// DATABASE SORGU //////////////////////////////////////////////////////////////////
   var abonelikler = await abonelikSchema.find()
   var reklam_abonelik = await reklamSchema.find()
+  var ek_abonelik = await ekSchema.find()
   /// DATABASE SORGU //////////////////////////////////////////////////////////////////
   /// İYZCO SORGU //////////////////////////////////////////////////////////////////
 
@@ -37,8 +38,8 @@ router.post("/abonelik-sorgu-kayit", async (req, res) => {
         const abonelik_items = result.data.items
         const axios_post_data_name = req.body.name
         abonelik_items.forEach(v => {
+          
           if (v.name === axios_post_data_name) {
-
             const uyelikler_referansocodes = { uyelikler_referansocodes: v.referenceCode }
             const uyelikler_pricingPlans = { uyelikler_pricingPlans: v.pricingPlans }
             resolve([uyelikler_referansocodes, uyelikler_pricingPlans.uyelikler_pricingPlans]);
@@ -150,6 +151,56 @@ router.post("/abonelik-sorgu-kayit", async (req, res) => {
       res.send({ kayit: false, message: error });
     }
   }
+  async function create_ek(abonelik_referans, ek_50_ay, ek_100_ay, ek_1000_ay) {
+    try {
+      await ekSchema.create({
+        abonelik_urun_referans_kodu: abonelik_referans,
+        planlar: {
+          ay50: {
+            referenceCode: ek_50_ay[0].referenceCode,
+            createdDate: ek_50_ay[0].createdDate,
+            name: ek_50_ay[0].gümüş,
+            price: ek_50_ay[0].price,
+            paymentInterval: ek_50_ay[0].paymentInterval,
+            paymentIntervalCount: ek_50_ay[0].paymentIntervalCount,
+            trialPeriodDays: ek_50_ay[0].trialPeriodDays,
+            currencyCode: ek_50_ay[0].currencyCode,
+            productReferenceCode: ek_50_ay[0].productReferenceCode,
+            planPaymentType: ek_50_ay[0].planPaymentType,
+            status: ek_50_ay[0].status
+          },
+          ay100: {
+            createdDate: ek_100_ay[0].createdDate,
+            name: ek_100_ay[0].gümüş,
+            price: ek_100_ay[0].price,
+            paymentInterval: ek_100_ay[0].paymentInterval,
+            paymentIntervalCount: ek_100_ay[0].paymentIntervalCount,
+            trialPeriodDays: ek_100_ay[0].trialPeriodDays,
+            currencyCode: ek_100_ay[0].currencyCode,
+            productReferenceCode: ek_100_ay[0].productReferenceCode,
+            planPaymentType: ek_100_ay[0].planPaymentType,
+            status: ek_100_ay[0].status
+          },
+          ay1000: {
+            createdDate: ek_1000_ay[0].createdDate,
+            name: ek_1000_ay[0].gümüş,
+            price: ek_1000_ay[0].price,
+            paymentInterval: ek_1000_ay[0].paymentInterval,
+            paymentIntervalCount: ek_1000_ay[0].paymentIntervalCount,
+            trialPeriodDays: ek_1000_ay[0].trialPeriodDays,
+            currencyCode: ek_1000_ay[0].currencyCode,
+            productReferenceCode: ek_1000_ay[0].productReferenceCode,
+            planPaymentType: ek_1000_ay[0].planPaymentType,
+            status: ek_1000_ay[0].status
+          }
+        }
+      })
+      res.send({ kayit: true });
+    } catch (error) {
+      console.log(error, "iyzco js");
+      res.send({ kayit: false, message: error });
+    }
+  }
 
   iyzcoabonelikcheckpromise.then(async (data) => {
     var abonelik_urun_referans_kodu = data[0].uyelikler_referansocodes
@@ -224,6 +275,9 @@ router.post("/abonelik-sorgu-kayit", async (req, res) => {
             console.log(" kayıt hatalı iyzco.js")
             res.send({ kayit: false, message: " kayıt hatalı " })
           }
+        }else {
+          console.log("plan sayısı 3'den az iyzco js")
+          res.send({ kayit: false, message: "plan sayısı 3'den az" })
         }
       } else if (reklam_abonelik.length > 0) {
         const old_data_id = reklam_abonelik[0]._id
@@ -245,12 +299,53 @@ router.post("/abonelik-sorgu-kayit", async (req, res) => {
             console.log(" kayıt hatalı iyzco.js")
             res.send({ kayit: false, message: " kayıt hatalı " })
           }
+        }else {
+          console.log("plan sayısı 3'den az iyzco js")
+          res.send({ kayit: false, message: "plan sayısı 3'den az" })
         }
       }
     }
-
-
-
+    if(req.body.name === "ek-urunler"){
+      if (ek_abonelik.length <= 0) {
+        if (abonelik_pilanlari.length === 3) {
+          var ek_50_ay_filter = abonelik_pilanlari.filter(data => data.name === "ek50")
+          var rek_100_ay_filter = abonelik_pilanlari.filter(data => data.name === "ek100")
+          var ek_1000_ay_filter = abonelik_pilanlari.filter(data => data.name === "ek1000")
+          if (ek_50_ay_filter.length && rek_100_ay_filter.length && ek_1000_ay_filter.length > 0){
+            var ek_50_ay = ek_50_ay_filter
+            var ek_100_ay = rek_100_ay_filter
+            var ek_1000_ay = ek_1000_ay_filter
+            await create_ek(abonelik_urun_referans_kodu, ek_50_ay, ek_100_ay, ek_1000_ay)
+          }else{
+            console.log(" kayıt hatalı iyzco.js")
+            res.send({ kayit: false, message: " kayıt hatalı " })
+          }
+        }else {
+          console.log("plan sayısı 3'den az iyzco js")
+          res.send({ kayit: false, message: "plan sayısı 3'den az" })
+        }
+      }else if(ek_abonelik.length > 0){
+        const old_data_id = ek_abonelik[0]._id
+        await ekSchema.findByIdAndDelete(old_data_id)
+        if (abonelik_pilanlari.length === 3) {
+          var ek_50_ay_filter = abonelik_pilanlari.filter(data => data.name === "ek50")
+          var rek_100_ay_filter = abonelik_pilanlari.filter(data => data.name === "ek100")
+          var ek_1000_ay_filter = abonelik_pilanlari.filter(data => data.name === "ek1000")
+          if (ek_50_ay_filter.length && rek_100_ay_filter.length && ek_1000_ay_filter.length > 0){
+            var ek_50_ay = ek_50_ay_filter
+            var ek_100_ay = rek_100_ay_filter
+            var ek_1000_ay = ek_1000_ay_filter
+            await create_ek(abonelik_urun_referans_kodu, ek_50_ay, ek_100_ay, ek_1000_ay)
+          }else{
+            console.log(" kayıt hatalı iyzco.js")
+            res.send({ kayit: false, message: " kayıt hatalı " })
+          }
+        }else {
+          console.log("plan sayısı 3'den az iyzco js")
+          res.send({ kayit: false, message: "plan sayısı 3'den az" })
+        }
+      }
+    }
   }).catch((err) => console.log(err));
 });
 router.post("/abonelik-aciklama-ekle", async (req, res) => {
@@ -281,6 +376,22 @@ router.post("/reklam-aciklama-ekle", async (req, res) => {
   if (abonelik_plan === "ay12") var mondgodb_name = mondgodb_name_ay12
   try {
     if (mondgodb_name) await reklamSchema.find().updateMany(mondgodb_name)
+    res.send({ message: "kayıt yapılmıştır." })
+  } catch (error) {
+    console.log(error)
+  }
+});
+router.post("/ek-aciklama-ekle", async (req, res) => {
+  const abonelik_plan_ayrinti = req.body.input_data_array
+  const abonelik_plan = req.body.button_data_aciklama_ekle
+  const mondgodb_name_ay50 = { "planlar.ay50.ozellikler": abonelik_plan_ayrinti }
+  const mondgodb_name_ay100 = { "planlar.ay100.ozellikler": abonelik_plan_ayrinti }
+  const mondgodb_name_ay1000 = { "planlar.ay1000.ozellikler": abonelik_plan_ayrinti }
+  if (abonelik_plan === "ay50") var mondgodb_name = mondgodb_name_ay50
+  if (abonelik_plan === "ay100") var mondgodb_name = mondgodb_name_ay100
+  if (abonelik_plan === "ay1000") var mondgodb_name = mondgodb_name_ay1000
+  try {
+    if (mondgodb_name) await ekSchema.find().updateMany(mondgodb_name)
     res.send({ message: "kayıt yapılmıştır." })
   } catch (error) {
     console.log(error)

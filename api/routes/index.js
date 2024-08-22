@@ -7,8 +7,12 @@ const altsektorSchema = require("../db/model/kategoriAltSchema")
 const referansSchema = require("../db/model/referansSchema")
 const temsilciSchema = require("../db/model/temsilciSchema")
 const abonelik_urun_planlariSchema = require("../db/model/abonelik_urun_planlariSchema")
+const reklam_urun_planlariSchema = require("../db/model/reklam_urun_planlariSchema");
+const ek_urun_planlariSchema = require("../db/model/ek_urun_planlariSchema");
 
-const iyzco_abonelik_uyelikler = "e3a1cef7-9612-4391-b709-44ba2cf3b61d"
+var iyzco_abonelik_uyelikler = "e3a1cef7-9612-4391-b709-44ba2cf3b61d"
+var iyzco_reklam_abonelik_uyelikler = "329d8689-b42e-4ff5-99ef-d325fc8050dd"
+var iyzco_ek_abonelik_uyelikler = "d292fbef-d010-4c2c-b5f7-dbbb4631c088"
 
 router.get('/:lang', async function (req, res) {
   // DİL JSON DOSYASI //////////////////////////////////
@@ -31,6 +35,12 @@ router.get('/:lang', async function (req, res) {
   const abonelik_urun_planlari_uyelikler = await abonelik_urun_planlariSchema.find({
     abonelik_urun_referans_kodu: iyzco_abonelik_uyelikler
   });
+  const reklam_urun_planlari_uyelikler = await reklam_urun_planlariSchema.find({
+    abonelik_urun_referans_kodu: iyzco_reklam_abonelik_uyelikler
+  })
+  const ek_urun_planlari_uyelikler = await ek_urun_planlariSchema.find({
+    abonelik_urun_referans_kodu: iyzco_ek_abonelik_uyelikler
+  })
   /// DATABASE SORGULAMA MARQUEE  //////////////////////////////////////////////////////////////////
   const urun_listele_marquee = await urunSchema
     .find()
@@ -64,7 +74,9 @@ router.get('/:lang', async function (req, res) {
     temsilci,
     sektor,
     alt_sektor,
-    abonelik_urun_planlari_uyelikler
+    abonelik_urun_planlari_uyelikler,
+    reklam_urun_planlari_uyelikler,
+    ek_urun_planlari_uyelikler
   });
 });
 router.get('/', async function (req, res) {
@@ -84,7 +96,13 @@ router.get('/', async function (req, res) {
   const abonelik_urun_planlari_uyelikler = await abonelik_urun_planlariSchema.find({
     abonelik_urun_referans_kodu: iyzco_abonelik_uyelikler
   });
-  
+  const reklam_urun_planlari_uyelikler = await reklam_urun_planlariSchema.find({
+    abonelik_urun_referans_kodu: iyzco_reklam_abonelik_uyelikler
+  })
+  const ek_urun_planlari_uyelikler = await ek_urun_planlariSchema.find({
+    abonelik_urun_referans_kodu: iyzco_ek_abonelik_uyelikler
+  })
+
   /// DATABASE SORGULAMA MARQUEE  //////////////////////////////////////////////////////////////////
   const urun_listele_marquee = await urunSchema
     .find()
@@ -118,7 +136,9 @@ router.get('/', async function (req, res) {
     referans,
     sektor,
     alt_sektor,
-    abonelik_urun_planlari_uyelikler
+    abonelik_urun_planlari_uyelikler,
+    reklam_urun_planlari_uyelikler,
+    ek_urun_planlari_uyelikler
   });
 });
 

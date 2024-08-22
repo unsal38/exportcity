@@ -339,4 +339,174 @@
                   </div>
             </div>
       </section>
+      <section class="section-padding section-bg">
+            <div class="col-12 px-4">
+                  <h2 class="mb-5 text-capitalize">ek üyeliği data base eklemek</h2>
+                  <!--AÇIKLAMA EKLE KISMI MODAL--------------------------
+                  ---------------------------------------------------------->
+                  <div class="modal fade" id="ek-aciklama-ekle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                              <div class="modal-content">
+                                    <div class="modal-header">
+                                          <h5 class="modal-title text-capitalize"><%= lang_json_data.aciklama_ekle _%></h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                              <div class="modal-body">
+                                    <div class="input-group">
+                                          <input type="text" class="form-control" placeholder="açıklama giriniz" aria-label="açıklama ekle input">
+                                          <button class="sil btn btn-outline-danger" type="button">sil</button>
+                                    </div>
+                              </div>
+                              <div class="modal-footer">
+                                    <button data-aciklama-ekle="" type="button" class="kaydet btn btn-primary"><%= lang_json_data.kaydet _%></button>
+                              </div>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="container">
+                        <div class="row">
+                              <button class="ek_sorgula text-capitalize mb-2" type="button"><%= lang_json_data.sorgula _%></button>
+
+                              <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                    <div class="custom-block-wrap">
+
+                                          <div class="custom-block">
+                                                <div class="custom-block-body">
+                                                      <% if(ek_urun_planlari_uyelikler.length > 0) {%>
+                                                      <h5 class="mb-3">
+                                                            <%= lang_json_data.adet_50_urun_gorme _%>
+                                                      </h5>
+                                                      <% const ay50_ozellikler =  ek_urun_planlari_uyelikler[0].planlar.ay50.ozellikler %>
+                                                      <% ay50_ozellikler.forEach(v => {%>
+                                                            <p>&#8811;
+                                                                  <%= v %>
+                                                            </p> 
+                                                       <%   }); %>
+                                                            
+                                                      <div class="d-flex align-items-center my-2">
+                                                            
+                                                            <p class="mb-0">
+                                                                  <strong>
+                                                                        <%= lang_json_data.taksitli _%> 12 <%= lang_json_data.ay _%>:
+                                                                  </strong>
+                                                                  $ <span>
+                                                                        <%= ek_urun_planlari_uyelikler[0].planlar.ay50.price _%>
+                                                                  </span>
+                                                            </p>
+                                                            <% const yillik_price_ay50=(ek_urun_planlari_uyelikler[0].planlar.ay50.price) * 12 %>
+                                                            <p class="ms-auto mb-0">
+                                                                  <strong>
+                                                                        <%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:
+                                                                  </strong>
+                                                                  $ <span>
+                                                                        <%= yillik_price_ay50 %>
+                                                                  </span>
+                                                            </p>
+                                                      </div>
+                                                      <% } %>
+                                                </div>
+
+                                                <a data-bs-toggle="modal" data-bs-target="#ek-aciklama-ekle" data-aciklama-ekle="ay50" href="javascritp:void(0)" class="custom-btn btn text-capitalize">
+                                                      <%= lang_json_data.aciklama_ekle _%>
+                                                </a>
+                                          </div>
+                                    </div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                    <div class="custom-block-wrap">
+
+                                          <div class="custom-block">
+                                                <div class="custom-block-body">
+                                                      <% if(ek_urun_planlari_uyelikler.length > 0) {%>
+                                                      <h5 class="mb-3">
+                                                            <%= lang_json_data.adet_100_urun_gorme _%>
+                                                      </h5>
+                                                      <% const ay100_ozellikler =  ek_urun_planlari_uyelikler[0].planlar.ay100.ozellikler %>
+                                                      <% ay100_ozellikler.forEach(v => {%>
+                                                            <p>&#8811;
+                                                                  <%= v %>
+                                                            </p> 
+                                                       <%   }); %>
+                                                            
+                                                      <div class="d-flex align-items-center my-2">
+                                                            
+                                                            <p class="mb-0">
+                                                                  <strong>
+                                                                        <%= lang_json_data.taksitli _%> 12 <%= lang_json_data.ay _%>:
+                                                                  </strong>
+                                                                  $ <span>
+                                                                        <%= ek_urun_planlari_uyelikler[0].planlar.ay100.price _%>
+                                                                  </span>
+                                                            </p>
+                                                            <% const yillik_price_ay100=(ek_urun_planlari_uyelikler[0].planlar.ay100.price) * 12 %>
+                                                            <p class="ms-auto mb-0">
+                                                                  <strong>
+                                                                        <%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:
+                                                                  </strong>
+                                                                  $ <span>
+                                                                        <%= yillik_price_ay100 %>
+                                                                  </span>
+                                                            </p>
+                                                      </div>
+                                                      <% } %>
+                                                </div>
+
+                                                <a data-bs-toggle="modal" data-bs-target="#ek-aciklama-ekle" data-aciklama-ekle="ay100" href="javascritp:void(0)" class="custom-btn btn text-capitalize">
+                                                      <%= lang_json_data.aciklama_ekle _%>
+                                                </a>
+                                          </div>
+                                    </div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="custom-block-wrap">
+
+                                          <div class="custom-block">
+                                                <div class="custom-block-body">
+                                                      <% if(ek_urun_planlari_uyelikler.length > 0) {%>
+                                                      <h5 class="mb-3">
+                                                            <%= lang_json_data.adet_1000_urun_gorme _%>
+                                                      </h5>
+                                                      <% const ay1000_ozellikler =  ek_urun_planlari_uyelikler[0].planlar.ay1000.ozellikler %>
+                                                      <% ay1000_ozellikler.forEach(v => {%>
+                                                            <p>&#8811;
+                                                                  <%= v %>
+                                                            </p> 
+                                                       <%   }); %>
+                                                            
+                                                      <div class="d-flex align-items-center my-2">
+                                                            
+                                                            <p class="mb-0">
+                                                                  <strong>
+                                                                        <%= lang_json_data.taksitli _%> 12 <%= lang_json_data.ay _%>:
+                                                                  </strong>
+                                                                  $ <span>
+                                                                        <%= ek_urun_planlari_uyelikler[0].planlar.ay1000.price _%>
+                                                                  </span>
+                                                            </p>
+                                                            <% const yillik_price_ay1000=(ek_urun_planlari_uyelikler[0].planlar.ay1000.price) * 12 %>
+                                                            <p class="ms-auto mb-0">
+                                                                  <strong>
+                                                                        <%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:
+                                                                  </strong>
+                                                                  $ <span>
+                                                                        <%= yillik_price_ay1000 %>
+                                                                  </span>
+                                                            </p>
+                                                      </div>
+                                                      <% } %>
+                                                </div>
+
+                                                <a data-bs-toggle="modal" data-bs-target="#ek-aciklama-ekle" data-aciklama-ekle="ay1000" href="javascritp:void(0)" class="custom-btn btn text-capitalize">
+                                                      <%= lang_json_data.aciklama_ekle _%>
+                                                </a>
+                                          </div>
+                                    </div>
+                              </div>
+
+                        </div>
+                  </div>
+            </div>
+      </section>
       <%- include ('panel-headers-footer/footer') %>

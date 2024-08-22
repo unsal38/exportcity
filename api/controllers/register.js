@@ -19,7 +19,7 @@ async function register(req, res) {
 
     const pass_data = user_data[3].data
     const pass = bcrypt_data(pass_data)
-   // const repeatpass = user_data[4].data
+    // const repeatpass = user_data[4].data
     const regRefcod = user_data[5].data
     const identityNumber = user_data[6].data
     const gsmNumber = user_data[7].data
@@ -34,7 +34,7 @@ async function register(req, res) {
     const refcod = email
     const uyeRole = "user"
     const uyelikDate = new Date(Date.now())
-    
+
     try {
         const refkod = regRefcod.toLowerCase()
         if (refkod !== "yoktur") {
@@ -90,6 +90,31 @@ async function register(req, res) {
         console.log(error, "controller register js")
     }
 }
+async function employee_register(req, res) {
+    try {
+        const employee_user = req.body
+        const bcrypt_pass = bcrypt_data(employee_user[3][1])
+        const new_data = {
+            "fname": employee_user[0][1],
+            'lname': employee_user[1][1],
+            'email': employee_user[2][1],
+            'pass': bcrypt_pass,
+            'identityNumber': employee_user[4][1],
+            'gsmNumber': employee_user[5][1],
+            'uyeRole': employee_user[6][1]
+        }
+    
+        await userSchema.create(new_data)
+    
+        res.send({message: "kayıt başarılı"})
+    } catch (error) {
+        console.log(error)
+    }
+
+
+
+}
 module.exports = {
-    register
+    register,
+    employee_register
 }

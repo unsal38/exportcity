@@ -132,5 +132,8 @@
     "kaydet": "save",
     "1ay_reklam": "1 mount advert",
     "3ay_reklam": "3 mount advert",
-    "12ay_reklam": "12 mount advert"
+    "12ay_reklam": "12 mount advert",
+    "50_adet_urun_gorme": "50 product sights",
+    "100_adet_urun_gorme": "100 product sights",
+    "1000_adet_urun_gorme": "1000 product sights"
 }

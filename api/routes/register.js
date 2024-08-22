@@ -7,6 +7,7 @@ router.use(express.static(path.join(__dirname, 'public')));
 const register = require("../controllers/register");
 
 router.post("/", register.register)
+router.post("/employee", register.employee_register)
 router.get('/:lang', function (req, res) {
   const lang = req.params.lang
   const lang_json_name = `${lang}.json`

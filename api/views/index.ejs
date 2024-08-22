@@ -587,108 +587,147 @@
                     <div class="col-lg-12 col-12 text-center mb-4">
                         <h2 class="text-capitalize"><%= lang_json_data.uyelikler _%></h2>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                        <div class="custom-block-wrap">
-                            <div class="custom-block">
-                                <div class="custom-block-body">
-                                    <h5 class="mb-3"><%= lang_json_data.gumus _%></h5>
-                                    
-                                    <p>&#8811;
-                                        uyelik özelliği eklenerek yabanci dil olarak da kayıt yapılacak
-                                    </p>
-                                    <p>&#8811;
-                                        uyelik özelliği eklenerek yabanci dil olarak da kayıt yapılacak
-                                    </p>
-
-                                    <div class="d-flex align-items-center my-2">
-                                        <% if(abonelik_urun_planlari_uyelikler.length > 0) {%>
-                                        <p class="mb-0">
-                                            <strong><%= lang_json_data.taksitli _%> 12 <%= lang_json_data.ay _%>:</strong>
-                                            $ <span><%= abonelik_urun_planlari_uyelikler[0].planlar.gumus.price  _%></span>
-                                        </p>
-                                        <% const yillik_price_gumus = (abonelik_urun_planlari_uyelikler[0].planlar.gumus.price) * 12 %>
-                                        <p class="ms-auto mb-0">
-                                            <strong><%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:</strong>
-                                            $ <span><%= yillik_price_gumus  %></span>
-                                        </p>
-                                        <% }  %>
-                                    </div>
-                                </div>
-
-                                <a href="javascritp:void(0)" class="custom-btn btn"><%= lang_json_data.satin_al _%></a>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                         <div class="custom-block-wrap">
 
-                            <div class="custom-block">
-                                <div class="custom-block-body">
-                                    <h5 class="mb-3"><%= lang_json_data.altin  _%></h5>
-                                    
-                                    <p>&#8811;
-                                        uyelik özelliği eklenerek yabanci dil olarak da kayıt yapılacak
-                                    </p>
-                                    <p>&#8811;
-                                        uyelik özelliği eklenerek yabanci dil olarak da kayıt yapılacak
-                                    </p>
+                              <div class="custom-block">
+                                    <div class="custom-block-body">
+                                          <% if(abonelik_urun_planlari_uyelikler.length > 0) {%>
+                                          <h5 class="mb-3">
+                                                <%= lang_json_data.gumus _%>
+                                          </h5>
+                                          <% const gumus_ozellikler =  abonelik_urun_planlari_uyelikler[0].planlar.gumus.ozellikler %>
+                                          <% gumus_ozellikler.forEach(v => {%>
+                                                <p>&#8811;
+                                                      <%= v %>
+                                                </p> 
+                                           <%   }); %>
+                                                
 
-                                    <div class="d-flex align-items-center my-2">
-                                        <% if(abonelik_urun_planlari_uyelikler.length > 0) {%>
-                                        <p class="mb-0">
-                                            <strong>Taksitli 12 Ay:</strong>
-                                            
-                                            $<span><%= abonelik_urun_planlari_uyelikler[0].planlar.altin.price  _%></span>
-                                        </p>
-                                        <% const yillik_price_altin = (abonelik_urun_planlari_uyelikler[0].planlar.altin.price) * 12 %>
-                                        <p class="ms-auto mb-0">
-                                            <strong><%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:</strong>
-                                            $ <span><%= yillik_price_altin  %></span>
-                                        </p>
-                                        <% } %>
+
+
+                                          <div class="d-flex align-items-center my-2">
+                                                
+                                                <p class="mb-0">
+                                                      <strong>
+                                                            <%= lang_json_data.taksitli _%> 12 <%= lang_json_data.ay _%>:
+                                                      </strong>
+                                                      $ <span>
+                                                            <%= abonelik_urun_planlari_uyelikler[0].planlar.gumus.price _%>
+                                                      </span>
+                                                </p>
+                                                <% const yillik_price_gumus=(abonelik_urun_planlari_uyelikler[0].planlar.gumus.price) * 12 %>
+                                                <p class="ms-auto mb-0">
+                                                      <strong>
+                                                            <%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:
+                                                      </strong>
+                                                      $ <span>
+                                                            <%= yillik_price_gumus %>
+                                                      </span>
+                                                </p>
+                                          </div>
+                                          <% } %>
                                     </div>
-                                </div>
 
-                                <a href="javascritp:void(0)" class="custom-btn btn">Satın Al</a>
-                            </div>
+                                    <a  href="javascritp:void(0)" class="custom-btn btn text-capitalize">
+                                        <%= lang_json_data.satin_al _%>
+                                  </a>
+                              </div>
                         </div>
-                    </div>
+                  </div>
 
-                    <div class="col-lg-4 col-md-6 col-12">
+                  <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                         <div class="custom-block-wrap">
 
-                            <div class="custom-block">
-                                <div class="custom-block-body">
-                                    <h5 class="mb-3"><%= lang_json_data.Platinum  _%></h5>
+                              <div class="custom-block">
+                                    <div class="custom-block-body">
+                                          <% if(abonelik_urun_planlari_uyelikler.length > 0) {%>
+                                          <h5 class="mb-3">
+                                                <%= lang_json_data.altin _%>
+                                          </h5>
 
-                                    <p>&#8811;
-                                        İster Yıllık peşin alın...
-                                    </p>
-                                    <p>&#8811;
-                                        İsterseniz 12 ay taksitle ödeyin...
-                                    </p>
+                                          <% const gumus_ozellikler =  abonelik_urun_planlari_uyelikler[0].planlar.altin.ozellikler %>
+                                          <% gumus_ozellikler.forEach(v => {%>
+                                                <p>&#8811;
+                                                      <%= v %>
+                                                </p> 
+                                           <%   }); %>
 
-                                    <div class="d-flex align-items-center my-2">
-                                        <% if(abonelik_urun_planlari_uyelikler.length > 0) {%>
-                                        <p class="mb-0">
-                                            <strong>Taksitli 12 Ay:</strong>
-                                            $<span><%= abonelik_urun_planlari_uyelikler[0].planlar.altin.price  _%></span>
-                                        </p>
-                                        
-                                        <% const yillik_price_plantinyum = (abonelik_urun_planlari_uyelikler[0].planlar.plantinyum.price) * 12 %>
-                                        <p class="ms-auto mb-0">
-                                            <strong><%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:</strong>
-                                            $ <span><%= yillik_price_plantinyum  %></span>
-                                        </p>
-                                        <% } %>
+                                          <div class="d-flex align-items-center my-2">
+                                                
+                                                <p class="mb-0">
+                                                      <strong>Taksitli 12 Ay:</strong>
+                                                      $<span>
+                                                            <%= abonelik_urun_planlari_uyelikler[0].planlar.altin.price _%>
+                                                      </span>
+                                                </p>
+                                                <% const yillik_price_altin=(abonelik_urun_planlari_uyelikler[0].planlar.altin.price) * 12 %>
+                                                <p class="ms-auto mb-0">
+                                                      <strong>
+                                                            <%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:
+                                                      </strong>
+                                                      $ <span>
+                                                            <%= yillik_price_altin %>
+                                                      </span>
+                                                </p>
+                                                
+                                          </div>
+                                          <% } %>
                                     </div>
-                                </div>
-
-                                <a href="javascritp:void(0)" class="custom-btn btn">Satın Al</a>
-                            </div>
+                                    <a  href="javascritp:void(0)" class="custom-btn btn text-capitalize">
+                                        <%= lang_json_data.satin_al _%>
+                                  </a>
+                              </div>
                         </div>
-                    </div>
+                  </div>
+
+                  <div class="col-lg-4 col-md-6 col-12">
+                        <div class="custom-block-wrap">
+
+                              <div class="custom-block">
+                                    <div class="custom-block-body">
+                                          <% if(abonelik_urun_planlari_uyelikler.length > 0) {%>
+                                          <h5 class="mb-3">
+                                                <%= lang_json_data.Platinum _%>
+                                          </h5>
+
+                                          <% const gumus_ozellikler =  abonelik_urun_planlari_uyelikler[0].planlar.plantinyum.ozellikler %>
+                                          <% gumus_ozellikler.forEach(v => {%>
+                                                <p>&#8811;
+                                                      <%= v %>
+                                                </p> 
+                                           <%   }); %>
+
+                                          <div class="d-flex align-items-center my-2">
+                                                
+                                                <p class="mb-0">
+                                                      <strong>Taksitli 12 Ay:</strong>
+                                                      $<span>
+                                                            <%= abonelik_urun_planlari_uyelikler[0].planlar.altin.price _%>
+                                                      </span>
+                                                </p>
+
+
+                                                <% const yillik_price_plantinyum=(abonelik_urun_planlari_uyelikler[0].planlar.plantinyum.price) * 12 %>
+                                                <p class="ms-auto mb-0">
+                                                      <strong>
+                                                            <%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:
+                                                      </strong>
+                                                      $ <span>
+                                                            <%= yillik_price_plantinyum %>
+                                                      </span>
+                                                </p>
+                                                
+                                          </div>
+                                          <% } %>
+                                    </div>
+                                    <a  href="javascritp:void(0)" class="custom-btn btn text-capitalize">
+                                        <%= lang_json_data.satin_al _%>
+                                  </a>
+                                    </div>
+                        </div>
+                  </div>
 
                 </div>
             </div>
@@ -706,98 +745,137 @@
                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                         <div class="custom-block-wrap">
 
-                            <div class="custom-block">
-                                <div class="custom-block-body">
-                                    <h5 class="mb-3">1 Ay Reklam</h5>
-
-                                    <p>&#8811;
-                                        İster Yıllık peşin alın...
-                                    </p>
-                                    <p>&#8811;
-                                        İsterseniz 12 ay taksitle ödeyin...
-                                    </p>
-
-                                    <div class="d-flex align-items-center my-2">
-                                        <p class="mb-0">
-                                            <strong>Taksitli 12 Ay:</strong>
-                                            $18,500
-                                        </p>
-
-                                        <p class="ms-auto mb-0">
-                                            <strong>Peşin 12 Ay:</strong>
-                                            $32,000
-                                        </p>
+                              <div class="custom-block">
+                                    <div class="custom-block-body">
+                                          <% if(reklam_urun_planlari_uyelikler.length > 0) {%>
+                                          <h5 class="mb-3">
+                                                <%= lang_json_data.ay1_reklam _%>
+                                          </h5>
+                                          <% const ay1_ozellikler =  reklam_urun_planlari_uyelikler[0].planlar.ay1.ozellikler %>
+                                          <% ay1_ozellikler.forEach(v => {%>
+                                                <p>&#8811;
+                                                      <%= v %>
+                                                </p> 
+                                           <%   }); %>
+                                                
+                                          <div class="d-flex align-items-center my-2">
+                                                
+                                                <p class="mb-0">
+                                                      <strong>
+                                                            <%= lang_json_data.taksitli _%> 12 <%= lang_json_data.ay _%>:
+                                                      </strong>
+                                                      $ <span>
+                                                            <%= reklam_urun_planlari_uyelikler[0].planlar.ay1.price _%>
+                                                      </span>
+                                                </p>
+                                                <% const yillik_price_ay1=(reklam_urun_planlari_uyelikler[0].planlar.ay1.price) * 12 %>
+                                                <p class="ms-auto mb-0">
+                                                      <strong>
+                                                            <%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:
+                                                      </strong>
+                                                      $ <span>
+                                                            <%= yillik_price_ay1 %>
+                                                      </span>
+                                                </p>
+                                          </div>
+                                          <% } %>
                                     </div>
-                                </div>
 
-                                <a href="#" class="custom-btn btn">Satın Al</a>
-                            </div>
+                                    <a  href="javascritp:void(0)" class="custom-btn btn text-capitalize">
+                                        <%= lang_json_data.satin_al _%>
+                                  </a>
+                              </div>
                         </div>
-                    </div>
+                  </div>
 
-                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                  <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                         <div class="custom-block-wrap">
 
-                            <div class="custom-block">
-                                <div class="custom-block-body">
-                                    <h5 class="mb-3">3 Ay Reklam</h5>
+                              <div class="custom-block">
+                                    <div class="custom-block-body">
+                                          <% if(reklam_urun_planlari_uyelikler.length > 0) {%>
+                                          <h5 class="mb-3">
+                                                <%= lang_json_data.ay3_reklam _%> 
+                                          </h5>
 
-                                    <p>&#8811;
-                                        İster Yıllık peşin alın...
-                                    </p>
-                                    <p>&#8811;
-                                        İsterseniz 12 ay taksitle ödeyin...
-                                    </p>
+                                          <% const ay3_ozellikler =  reklam_urun_planlari_uyelikler[0].planlar.ay3.ozellikler %>
+                                          <% ay3_ozellikler.forEach(v => {%>
+                                                <p>&#8811;
+                                                      <%= v %>
+                                                </p> 
+                                           <%   }); %>
 
-                                    <div class="d-flex align-items-center my-2">
-                                        <p class="mb-0">
-                                            <strong>Taksitli 12 Ay:</strong>
-                                            $18,500
-                                        </p>
-
-                                        <p class="ms-auto mb-0">
-                                            <strong>Peşin 12 Ay:</strong>
-                                            $32,000
-                                        </p>
+                                          <div class="d-flex align-items-center my-2">
+                                                
+                                                <p class="mb-0">
+                                                      <strong>Taksitli 12 Ay:</strong>
+                                                      $<span>
+                                                            <%= reklam_urun_planlari_uyelikler[0].planlar.ay3.price _%>
+                                                      </span>
+                                                </p>
+                                                <% const yillik_price_ay3=(reklam_urun_planlari_uyelikler[0].planlar.ay3.price) * 12 %>
+                                                <p class="ms-auto mb-0">
+                                                      <strong>
+                                                            <%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:
+                                                      </strong>
+                                                      $ <span>
+                                                            <%= yillik_price_ay3 %>
+                                                      </span>
+                                                </p>
+                                                
+                                          </div>
+                                          <% } %>
                                     </div>
-                                </div>
-
-                                <a href="#" class="custom-btn btn">Satın Al</a>
-                            </div>
+                                    <a  href="javascritp:void(0)" class="custom-btn btn text-capitalize">
+                                        <%= lang_json_data.satin_al _%>
+                                  </a>
+                              </div>
                         </div>
-                    </div>
+                  </div>
 
-                    <div class="col-lg-4 col-md-6 col-12">
+                  <div class="col-lg-4 col-md-6 col-12">
                         <div class="custom-block-wrap">
 
-                            <div class="custom-block">
-                                <div class="custom-block-body">
-                                    <h5 class="mb-3">12 Ay Reklam</h5>
+                              <div class="custom-block">
+                                    <div class="custom-block-body">
+                                          <% if(reklam_urun_planlari_uyelikler.length > 0) {%>
+                                                <h5 class="mb-3">
+                                                      <%= lang_json_data.ay12_reklam _%> 
+                                                </h5>
+                                                <% const ay12_ozellikler =  reklam_urun_planlari_uyelikler[0].planlar.ay12.ozellikler %>
+                                                <% ay12_ozellikler.forEach(v => {%>
+                                                      <p>&#8811;
+                                                            <%= v %>
+                                                      </p> 
+                                                 <%   }); %>
+                                                 <div class="d-flex align-items-center my-2">
+                                                
+                                                      <p class="mb-0">
+                                                            <strong>Taksitli 12 Ay:</strong>
+                                                            $<span>
+                                                                  <%= reklam_urun_planlari_uyelikler[0].planlar.ay12.price _%>
+                                                            </span>
+                                                      </p>
+                                                      <% const yillik_price_ay12=(reklam_urun_planlari_uyelikler[0].planlar.ay12.price) * 12 %>
+                                                      <p class="ms-auto mb-0">
+                                                            <strong>
+                                                                  <%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:
+                                                            </strong>
+                                                            $ <span>
+                                                                  <%= yillik_price_ay12 %>
+                                                            </span>
+                                                      </p>
+                                                      
+                                                </div>
+                                          <% } %>
 
-                                    <p>&#8811;
-                                        İster Yıllık peşin alın...
-                                    </p>
-                                    <p>&#8811;
-                                        İsterseniz 12 ay taksitle ödeyin...
-                                    </p>
-
-                                    <div class="d-flex align-items-center my-2">
-                                        <p class="mb-0">
-                                            <strong>Taksitli 12 Ay:</strong>
-                                            $18,500
-                                        </p>
-
-                                        <p class="ms-auto mb-0">
-                                            <strong>Peşin 12 Ay:</strong>
-                                            $32,000
-                                        </p>
                                     </div>
-                                </div>
-
-                                <a href="#" class="custom-btn btn">Satın Al</a>
-                            </div>
+                                    <a  href="javascritp:void(0)" class="custom-btn btn text-capitalize">
+                                        <%= lang_json_data.satin_al _%>
+                                  </a>
+                              </div>
                         </div>
-                    </div>
+                  </div>
 
                 </div>
             </div>
@@ -816,98 +894,140 @@
                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                         <div class="custom-block-wrap">
 
-                            <div class="custom-block">
-                                <div class="custom-block-body">
-                                    <h5 class="mb-3">50 Adet Ürün Görme</h5>
-
-                                    <p>&#8811;
-                                        İster Yıllık peşin alın...
-                                    </p>
-                                    <p>&#8811;
-                                        İsterseniz 12 ay taksitle ödeyin...
-                                    </p>
-
-                                    <div class="d-flex align-items-center my-2">
-                                        <p class="mb-0">
-                                            <strong>Taksitli 12 Ay:</strong>
-                                            $18,500
-                                        </p>
-
-                                        <p class="ms-auto mb-0">
-                                            <strong>Peşin 12 Ay:</strong>
-                                            $32,000
-                                        </p>
+                              <div class="custom-block">
+                                    <div class="custom-block-body">
+                                          <% if(ek_urun_planlari_uyelikler.length > 0) {%>
+                                          <h5 class="mb-3">
+                                                <%= lang_json_data.adet_50_urun_gorme _%>
+                                          </h5>
+                                          <% const ay50_ozellikler =  ek_urun_planlari_uyelikler[0].planlar.ay50.ozellikler %>
+                                          <% ay50_ozellikler.forEach(v => {%>
+                                                <p>&#8811;
+                                                      <%= v %>
+                                                </p> 
+                                           <%   }); %>
+                                                
+                                          <div class="d-flex align-items-center my-2">
+                                                
+                                                <p class="mb-0">
+                                                      <strong>
+                                                            <%= lang_json_data.taksitli _%> 12 <%= lang_json_data.ay _%>:
+                                                      </strong>
+                                                      $ <span>
+                                                            <%= ek_urun_planlari_uyelikler[0].planlar.ay50.price _%>
+                                                      </span>
+                                                </p>
+                                                <% const yillik_price_ay50=(ek_urun_planlari_uyelikler[0].planlar.ay50.price) * 12 %>
+                                                <p class="ms-auto mb-0">
+                                                      <strong>
+                                                            <%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:
+                                                      </strong>
+                                                      $ <span>
+                                                            <%= yillik_price_ay50 %>
+                                                      </span>
+                                                </p>
+                                          </div>
+                                          <% } %>
                                     </div>
-                                </div>
 
-                                <a href="#" class="custom-btn btn">Satın Al</a>
-                            </div>
+                                    <a  href="javascritp:void(0)" class="custom-btn btn text-capitalize">
+                                        <%= lang_json_data.satin_al _%>
+                                  </a>
+                              </div>
                         </div>
-                    </div>
+                  </div>
 
-                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                  <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                         <div class="custom-block-wrap">
 
-                            <div class="custom-block">
-                                <div class="custom-block-body">
-                                    <h5 class="mb-3">100 Adet Ürün Görme</h5>
-
-                                    <p>&#8811;
-                                        İster Yıllık peşin alın...
-                                    </p>
-                                    <p>&#8811;
-                                        İsterseniz 12 ay taksitle ödeyin...
-                                    </p>
-
-                                    <div class="d-flex align-items-center my-2">
-                                        <p class="mb-0">
-                                            <strong>Taksitli 12 Ay:</strong>
-                                            $18,500
-                                        </p>
-
-                                        <p class="ms-auto mb-0">
-                                            <strong>Peşin 12 Ay:</strong>
-                                            $32,000
-                                        </p>
+                              <div class="custom-block">
+                                    <div class="custom-block-body">
+                                          <% if(ek_urun_planlari_uyelikler.length > 0) {%>
+                                          <h5 class="mb-3">
+                                                <%= lang_json_data.adet_100_urun_gorme _%>
+                                          </h5>
+                                          <% const ay100_ozellikler =  ek_urun_planlari_uyelikler[0].planlar.ay100.ozellikler %>
+                                          <% ay100_ozellikler.forEach(v => {%>
+                                                <p>&#8811;
+                                                      <%= v %>
+                                                </p> 
+                                           <%   }); %>
+                                                
+                                          <div class="d-flex align-items-center my-2">
+                                                
+                                                <p class="mb-0">
+                                                      <strong>
+                                                            <%= lang_json_data.taksitli _%> 12 <%= lang_json_data.ay _%>:
+                                                      </strong>
+                                                      $ <span>
+                                                            <%= ek_urun_planlari_uyelikler[0].planlar.ay100.price _%>
+                                                      </span>
+                                                </p>
+                                                <% const yillik_price_ay100=(ek_urun_planlari_uyelikler[0].planlar.ay100.price) * 12 %>
+                                                <p class="ms-auto mb-0">
+                                                      <strong>
+                                                            <%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:
+                                                      </strong>
+                                                      $ <span>
+                                                            <%= yillik_price_ay100 %>
+                                                      </span>
+                                                </p>
+                                          </div>
+                                          <% } %>
                                     </div>
-                                </div>
 
-                                <a href="#" class="custom-btn btn">Satın Al</a>
-                            </div>
+                                    <a  href="javascritp:void(0)" class="custom-btn btn text-capitalize">
+                                        <%= lang_json_data.satin_al _%>
+                                  </a>
+                              </div>
                         </div>
-                    </div>
+                  </div>
 
-                    <div class="col-lg-4 col-md-6 col-12">
+                  <div class="col-lg-4 col-md-6 col-12">
                         <div class="custom-block-wrap">
 
-                            <div class="custom-block">
-                                <div class="custom-block-body">
-                                    <h5 class="mb-3">1000 Adet Ürün Görme</h5>
-
-                                    <p>&#8811;
-                                        İster Yıllık peşin alın...
-                                    </p>
-                                    <p>&#8811;
-                                        İsterseniz 12 ay taksitle ödeyin...
-                                    </p>
-
-                                    <div class="d-flex align-items-center my-2">
-                                        <p class="mb-0">
-                                            <strong>Taksitli 12 Ay:</strong>
-                                            $18,500
-                                        </p>
-
-                                        <p class="ms-auto mb-0">
-                                            <strong>Peşin 12 Ay:</strong>
-                                            $32,000
-                                        </p>
+                              <div class="custom-block">
+                                    <div class="custom-block-body">
+                                          <% if(ek_urun_planlari_uyelikler.length > 0) {%>
+                                          <h5 class="mb-3">
+                                                <%= lang_json_data.adet_1000_urun_gorme _%>
+                                          </h5>
+                                          <% const ay1000_ozellikler =  ek_urun_planlari_uyelikler[0].planlar.ay1000.ozellikler %>
+                                          <% ay1000_ozellikler.forEach(v => {%>
+                                                <p>&#8811;
+                                                      <%= v %>
+                                                </p> 
+                                           <%   }); %>
+                                                
+                                          <div class="d-flex align-items-center my-2">
+                                                
+                                                <p class="mb-0">
+                                                      <strong>
+                                                            <%= lang_json_data.taksitli _%> 12 <%= lang_json_data.ay _%>:
+                                                      </strong>
+                                                      $ <span>
+                                                            <%= ek_urun_planlari_uyelikler[0].planlar.ay1000.price _%>
+                                                      </span>
+                                                </p>
+                                                <% const yillik_price_ay1000=(ek_urun_planlari_uyelikler[0].planlar.ay1000.price) * 12 %>
+                                                <p class="ms-auto mb-0">
+                                                      <strong>
+                                                            <%= lang_json_data.pesin _%> 12 <%= lang_json_data.ay _%>:
+                                                      </strong>
+                                                      $ <span>
+                                                            <%= yillik_price_ay1000 %>
+                                                      </span>
+                                                </p>
+                                          </div>
+                                          <% } %>
                                     </div>
-                                </div>
 
-                                <a href="#" class="custom-btn btn">Satın Al</a>
-                            </div>
+                                    <a  href="javascritp:void(0)" class="custom-btn btn text-capitalize">
+                                          <%= lang_json_data.satin_al _%>
+                                    </a>
+                              </div>
                         </div>
-                    </div>
+                  </div>
 
                 </div>
             </div>

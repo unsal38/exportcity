@@ -132,5 +132,9 @@
     "kaydet": "kaydet",
     "ay1_reklam": "1 ay reklam",
     "ay3_reklam": "3 ay reklam",
-    "ay12_reklam": "12 ay reklam"
+    "ay12_reklam": "12 ay reklam",
+    "adet_50_urun_gorme": "50 adet ürün görme",
+    "adet_100_urun_gorme": "100 adet ürün görme",
+    "adet_1000_urun_gorme": "1000 adet ürün görme"
+
 }

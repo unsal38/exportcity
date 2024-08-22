@@ -96,11 +96,12 @@ div.tumunu-gor a:hover {
   background-color: #00000073;
 }
 
-div.tumunu-gor a i{
+div.tumunu-gor a i {
   margin-left: 2px;
   font-size: 4vh;
 }
-#section_7 button[type='submit']{
+
+#section_7 button[type='submit'] {
   background-color: white;
   border: none;
   border-radius: 20px;
@@ -108,12 +109,24 @@ div.tumunu-gor a i{
   color: #737477;
 
 }
+
 button.abonelik_sorgula,
-button.reklam_sorgula{
+button.reklam_sorgula,
+button.ek_sorgula {
   border-radius: 20px;
   background-color: #5a6f81;
   color: white;
 }
+
+form.kullanici-ekle-form select {
+  color: #6d757d;
+}
+
+form.kullanici-ekle-form .pass-uyari {
+  color: #ced4db;
+  font-size: 1.5vw;
+}
+
 /*---------------------------------------
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/

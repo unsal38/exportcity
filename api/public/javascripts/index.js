@@ -3,6 +3,85 @@ function alert_message(message) {
   $("div[role='alert']").removeClass("d-none");
   $("div[role='alert']").append("<p class='alert-message m-0 text-capitalize'>" + message + "</p>");
 }
+function isEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+function isPass(password) {
+  const check_password_number = password.match(/[0-9]/);
+  const check_password_uppercase = password.match(/[A-Z]/)
+  const check_password_lowercase = password.match(/[a-z]/)
+  if (password.lenght > 7) {
+    if (check_password_number &&
+      check_password_uppercase &&
+      check_password_lowercase) {
+      if (check_password_number.length &&
+        check_password_uppercase.length &&
+        check_password_lowercase.length > 0) return true
+    } else {
+      return false
+    }
+  } else {
+    return false
+  }
+
+}
+
+$(() => {
+  $("form.kullanici-ekle-form a[type='submit']").on("click", () => {
+    const form_input = $("form.kullanici-ekle-form input")
+    const form_select_name = $("form.kullanici-ekle-form select").attr("name");
+    const form_select_value = $("form.kullanici-ekle-form select option:selected").val();
+    const employee_register_array = new Array()
+    const email = $("form.kullanici-ekle-form input[name='email']").val()
+    const password = $("form.kullanici-ekle-form input[name='pass']").val()
+    const selected_data = $("form.kullanici-ekle-form select option:selected").val()
+    const check_email = isEmail(email)
+    const check_pass = isPass(password)
+    //// EMAİL İNPUT CHECK //////////////////////////////////
+    if (check_email === false) {
+      alert_message("email hatalı")
+      $("form.kullanici-ekle-form input[name='email']").removeClass("valid")
+    } else {
+      $("form.kullanici-ekle-form input[name='email']").addClass("valid")
+    }
+    //// PASSWORD İNPUT CHECK //////////////////////////////////
+    if (check_pass === false) {
+      alert_message("şifre hatalı")
+      $("form.kullanici-ekle-form input[name='pass']").removeClass("valid")
+    } else {
+      $("form.kullanici-ekle-form input[name='pass']").addClass("valid")
+    }
+    //// OTHER SELECKT CHECK //////////////////////////////////
+    if (selected_data.length > 0) {
+      $("form.kullanici-ekle-form select").addClass("valid")
+    } else {
+      $("form.kullanici-ekle-form select").removeClass("valid")
+    }
+    //// OTHER İNPUT CHECK //////////////////////////////////
+    $.each(form_input, function (i, v) {
+      const input_data = $(v).val().length
+      if (input_data > 0) {
+        $(v).addClass("valid")
+      } else if (input_data == 0) {
+        $(v).removeClass("valid")
+      }
+    });
+    //// OTHER İNPUT CHECK //////////////////////////////////
+    const check_input_data = $("form.kullanici-ekle-form .valid")
+
+    if (check_input_data.length === 7) {
+      $.each(form_input, function (i, v) {
+        employee_register_array.push([$(v).attr("name"), $(v).val()])
+      });
+      employee_register_array.push([form_select_name, form_select_value])
+      const axios_data = employee_register_array
+      alert_message("işlem başarılı")
+      axios.post("/register/employee", axios_data)
+      .then(data => {})
+    }
+  });
+}) // ÇALIŞAN KAYIT devam ediliyor
 
 $(() => {
   const input_data = '<input type="text" class="form-control" placeholder="açıklama giriniz" aria-label="açıklama ekle input"></input>'
@@ -11,30 +90,30 @@ $(() => {
   ////////ABONELİK BÖLÜMÜ ///////
   ////////////////////////////////
 
-  $("div#aciklama-ekle .modal-footer button[data-aciklama-ekle]").on("click",()=>{
+  $("div#aciklama-ekle .modal-footer button[data-aciklama-ekle]").on("click", () => {
     const input_data = $("#aciklama-ekle .modal-body .input-group")
     const input_data_array = new Array()
-    $(input_data).each(function (i, v) { 
+    $(input_data).each(function (i, v) {
       const input_data = $(v).children("input").val()
-      if(input_data.length > 0) {
+      if (input_data.length > 0) {
         input_data_array.push(input_data)
       }
     });
     const button_data_aciklama_ekle = $("div#aciklama-ekle .modal-footer button[data-aciklama-ekle]").attr("data-aciklama-ekle")
-    const axios_data = {button_data_aciklama_ekle, input_data_array}
+    const axios_data = { button_data_aciklama_ekle, input_data_array }
     axios.post("/iyzco/abonelik-aciklama-ekle", axios_data)
-    .then(data =>{
-      alert_message(data.data.message)
-    })
+      .then(data => {
+        alert_message(data.data.message)
+      })
   }); // AÇIKLAMA EKLEME REKLAM
   $("div#aciklama-ekle").on("click", (e) => {
     const sil_button = $(e.target)[0].localName
-    if(sil_button === "input"){
+    if (sil_button === "input") {
       $("#aciklama-ekle .modal-body ").append(`<div class="input-group">${input_data}${input_data2}</div>`);
-    }else if(sil_button === "button") {
+    } else if (sil_button === "button") {
       const input_sayisi = $(e.target).parent(".input-group").parent(".modal-body").children()
-      if(input_sayisi.length !== 1) $(e.target).parent(".input-group").remove();
-    } 
+      if (input_sayisi.length !== 1) $(e.target).parent(".input-group").remove();
+    }
   })// ABONELİK İNPUT EKLEME VE SİLME
   $("a[data-aciklama-ekle]").on("click", (e) => {
     e.preventDefault();
@@ -55,32 +134,32 @@ $(() => {
   ////////REKLAM BÖLÜMÜ ///////
   ////////////////////////////////
 
-  $("div#reklam-aciklama-ekle .modal-footer button[data-aciklama-ekle]").on("click",()=>{
+  $("div#reklam-aciklama-ekle .modal-footer button[data-aciklama-ekle]").on("click", () => {
     const input_data = $("#reklam-aciklama-ekle .modal-body .input-group")
     const input_data_array = new Array()
-    $(input_data).each(function (i, v) { 
+    $(input_data).each(function (i, v) {
       const input_data = $(v).children("input").val()
-      if(input_data.length > 0) {
+      if (input_data.length > 0) {
         input_data_array.push(input_data)
       }
     });
     const button_data_aciklama_ekle = $("div#reklam-aciklama-ekle .modal-footer button[data-aciklama-ekle]").attr("data-aciklama-ekle")
-    const axios_data = {button_data_aciklama_ekle, input_data_array}
+    const axios_data = { button_data_aciklama_ekle, input_data_array }
     axios.post("/iyzco/reklam-aciklama-ekle", axios_data)
-    .then(data =>{
-      alert_message(data.data.message)
-    })
+      .then(data => {
+        alert_message(data.data.message)
+      })
   }); // AÇIKLAMA EKLEME REKLAM
   $("div#reklam-aciklama-ekle").on("click", (e) => {
     const sil_button = $(e.target)[0].localName
-    if(sil_button === "input"){
+    if (sil_button === "input") {
       $("#reklam-aciklama-ekle .modal-body ").append(`<div class="input-group">${input_data}${input_data2}</div>`);
-    }else if(sil_button === "button") {
+    } else if (sil_button === "button") {
       const input_sayisi = $(e.target).parent(".input-group").parent(".modal-body").children()
-      if(input_sayisi.length !== 1) $(e.target).parent(".input-group").remove();
-    } 
+      if (input_sayisi.length !== 1) $(e.target).parent(".input-group").remove();
+    }
   })// REKLAM İNPUT EKLEME VE SİLME
-  $("button.reklam_sorgula").on("click",()=>{
+  $("button.reklam_sorgula").on("click", () => {
     const axios_data = {
       name: "reklam"
     }
@@ -95,13 +174,52 @@ $(() => {
     $("div#reklam-aciklama-ekle div.modal-footer button[data-aciklama-ekle]").attr("data-aciklama-ekle", click_cins_aciklama)
   }); // MODAL BUTTON ATTR EKLEME (1AY ,3AY, 12 AY)
 
-    /////// //////////////////////////////////
+  /////// //////////////////////////////////
   ////////EK ALINABİLECEKLER BÖLÜMÜ ///////
   ////////////////////////////////
 
+  $("div#ek-aciklama-ekle .modal-footer button[data-aciklama-ekle]").on("click", () => {
+    const input_data = $("#ek-aciklama-ekle .modal-body .input-group")
+    const input_data_array = new Array()
+    $(input_data).each(function (i, v) {
+      const input_data = $(v).children("input").val()
+      if (input_data.length > 0) {
+        input_data_array.push(input_data)
+      }
+    });
+    const button_data_aciklama_ekle = $("div#ek-aciklama-ekle .modal-footer button[data-aciklama-ekle]").attr("data-aciklama-ekle")
+    const axios_data = { button_data_aciklama_ekle, input_data_array }
 
-}) // PANEL ABONELİK SORGU AÇIKLAMA EKLEMES eksik var tamamla
+    axios.post("/iyzco/ek-aciklama-ekle", axios_data)
+      .then(data => {
+        alert_message(data.data.message)
+      })
+  }); // AÇIKLAMA EKLEME EK BÖLÜM
+  $("div#ek-aciklama-ekle").on("click", (e) => {
+    const sil_button = $(e.target)[0].localName
+    if (sil_button === "input") {
+      $("#ek-aciklama-ekle .modal-body ").append(`<div class="input-group">${input_data}${input_data2}</div>`);
+    } else if (sil_button === "button") {
+      const input_sayisi = $(e.target).parent(".input-group").parent(".modal-body").children()
+      if (input_sayisi.length !== 1) $(e.target).parent(".input-group").remove();
+    }
+  })// ek İNPUT EKLEME VE SİLME
+  $("button.ek_sorgula").on("click", () => {
+    const axios_data = {
+      name: "ek-urunler"
+    }
+    axios.post("/iyzco/abonelik-sorgu-kayit", axios_data)
+      .then((response) => {
+        if (response.data.kayit === true) alert_message("Kayıt Başarılı açıklama eklemek için 'açıklama ekleye' tıklayınız");
+      });
+  }); // EK SORGU SONRA DATA BASE YAZILMASI
+  $("a[data-aciklama-ekle]").on("click", (e) => {
+    e.preventDefault();
+    const click_cins_aciklama = $(e.target).attr("data-aciklama-ekle");
+    $("div#ek-aciklama-ekle div.modal-footer button[data-aciklama-ekle]").attr("data-aciklama-ekle", click_cins_aciklama)
+  }); // MODAL BUTTON ATTR EKLEME (ay50 ,ay100, ay1000)
 
+}) // PANEL ABONELİK SORGU AÇIKLAMA EKLEMESi
 
 $(function () {
   $("#uyelik").on("change", function () {
@@ -219,4 +337,3 @@ $(function () {
     },
   });
 })//SWİPER
-
