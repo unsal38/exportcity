@@ -51,18 +51,28 @@
           </div>
           <div class="offcanvas-body">
             <ul class="nav flex-column text-capitalize">
+              
+              <% if(login_user_role === "user" || login_user_role === "pageadmin") { %>
               <li class="nav-item">
                 <a class="nav-link featured-block-text" href="/"><span>anasayfa</span> &#8811;</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link featured-block-text" href="/panel/panel-urun-giris/tr"><span>urun giriş </span> &#8811;</a>
               </li>
+              <% } %>
+
+              <% if(login_user_role !== "user" || login_user_role === "pageadmin") { %>
               <li class="nav-item">
                 <a class="nav-link featured-block-text" href="/panel/panel-odeme-plani-girisi/tr"><span>ödeme planı girişi </span> &#8811;</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link featured-block-text" href="/panel/panel-employee/tr"><span>personel ekleme </span> &#8811;</a>
+                <a class="nav-link featured-block-text" href="/panel/panel-employee/tr"><span>personel ekleme / silme </span> &#8811;</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link featured-block-text" href="/panel/panel-uye/tr"><span>uye işlemleri </span> &#8811;</a>
+              </li>
+              <% } %>
+
             </ul>
           </div>
         </div>

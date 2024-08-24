@@ -175,7 +175,12 @@
                                         placeholder="<%= lang_json_data.tel_numarasi _%>">
                                 </div>
                                 <div class="col-md-12 ">
-                                    <input type="billingAddressCountry" class="form-control bg-transparent" placeholder="<%= lang_json_data.ulke _%>">
+                                    <select name="billingAddressCountry" class="form-select bg-transparent" aria-label="Default select example">
+                                        <option selected><%= lang_json_data.ulke _%></option>
+                                        <% lang_telealankodu_json_parse.forEach(v => { %>
+                                            <option value="<%= v.code _%>"><%= v.name _%></option>
+                                        <%   }); %>
+                                      </select>
                                 </div>
                                 <div class="col-md-12">
                                     <input type="billingAddressCity" class="form-control bg-transparent" placeholder="<%= lang_json_data.sehir _%>">

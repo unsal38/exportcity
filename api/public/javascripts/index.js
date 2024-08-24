@@ -81,7 +81,15 @@ $(() => {
       .then(data => {})
     }
   });
-}) // ÇALIŞAN KAYIT devam ediliyor
+  $("#user-employee .sil").on("click", (e) =>{
+    e.preventDefault();
+    const axios_data = {user_id : $(e.target).attr("data-user-id")}
+    axios.post("/register/user-delete", axios_data)
+    .then(data => {
+      window.location.reload()
+    })
+  });
+}) // ÇALIŞAN KAYIT
 
 $(() => {
   const input_data = '<input type="text" class="form-control" placeholder="açıklama giriniz" aria-label="açıklama ekle input"></input>'
@@ -337,3 +345,5 @@ $(function () {
     },
   });
 })//SWİPER
+
+

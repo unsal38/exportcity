@@ -1,6 +1,13 @@
-// admin-pageadmin-user
+
+// UYELİK ROLU 
+//  - PAGEADMİN (UĞUR) 
+//  - STANDART(para ödememiş üye) 
+//  - PREMİNYUM (BRONZ - GÜMÜŞ - ALTIN ) 
+//  - employee 
 //employeeReklamSchema - employeeurunControlSchema - employeeOdemeControlSchema
 // employeeKullaniciUyeControlSchema - employeeBlogSchema - employeeSeoSchema 
+
+
 const userSchema = require("../db/model/users")
 const permissioncheck = (permission) => {
     const uyari_yetikiniz_yok = "Sayfaya Giriş Yetkiniz Yoktur"

@@ -4,60 +4,42 @@ const { Schema } = mongoose;
 
 
 const userSchema = new Schema({
+  mailCheck: {
+    type: Boolean,
+    default: false,
+  },  // SONRASINDA EKLENECEK
   refkod: String, // KENDİ REFERANS KODU
   refleshToken: String,
+  favoriurun: {type:Object},
+
+  // ROLE İŞLEMLERİ //////////////////////////////////////////////////////////////////
   uyeRole: {
     type: String,
     enum: ["user","pageadmin","employee","reklamcheck","uruncheck","odemecheck","uyecheck","blogcheck","seocheck" ]
   },
-  // ROLE İŞLEMLERİ
-  // CHECK İŞLEMLERİ
-  mailCheck: {
-    type: Boolean,
-    default: false,
-  },  // SONRASI TRUE OLACAK
-  uyeCheck: {
-    type: Boolean,
-    default: false,
-  }, /// ÜYELİK BİLİGLERİNİN TAM OLUP OLMADIĞI YADA DOĞRU OLDUĞUNU GÖRÜLDÜĞÜNDE TRUE ÖDEME KONTROLÜ
-  uyelikaski: {
-    type: Boolean,
-    default: false,
-  }, // ÜYE ÖDEME YAPTIĞINDA TRUE OLACAK // ÜRÜN EKLEME VE MENÜLERİN AÇILIP AÇILMAMASI BUNA BAĞLI
   uyeRolePreminyum: {
     type: String,
     default: "standart",
     enum: ["standart", "bronz", "gumus", "altin"]
   },
+  uyelikDate: Date, // UYELİK BİTİŞ TARİHİ
   // UYELİK ROLU - STANDART(para ödememiş üye) - PREMİNYUM (BRONZ - GÜMÜŞ - ALTIN ) - employee (FİRMA ADINA ÇALIŞAN ) - PAGEADMİN (UĞUR) -ADMİN (YAZILIMCI)
   /// ÜYE ROLÜ SEÇİLDİĞİNDE AŞAĞIDAKİLERDE OTOMOTİK BELİRLENMESİ LAZIM////////////////////////////////
-  //////////////////////////////////////////
+  // ROLE İŞLEMLERİ ////////////////////////////////////////
 
-  uyelikDate: Date, // UYELİK BİTİŞ TARİHİ
-  uyeUrunHizmetGirme: {
+    // CHECK İŞLEMLERİ
+  uyeUrunHizmetGirmeGorme: {
     type: Object
   }, // KULLANICI URUN HİZMET GÖRME SAYISI 
-  maxuyeUrunHizmetGirme: {
+  maxuyeUrunHizmetGirmeGorme: {
     type: Number,
     default: 0
   },
-  uyeUrunHizmetGorme: {
-    type: Object
-  }, // KULLANICI URUN HİZMET GÖRME SAYISI 
-  maxuyeUrunHizmetGorme: {
-    type: Number,
-    default: 0
-  },
-  favoriurun: {type:Object},
   uyeReklamDate: Date, // UYE REKLAM VERDİĞİNDE SONLANACAĞI TARİH
   uyeReklamOlusturma: {
     type: Boolean,
     default: false,
   },
-  uyeSatisOlusturma: {
-    type: Number,
-    default: 0
-  }, // GİRİŞ YAPILDIKÇA ARTACAK
   // CHECK İŞLEMLERİ
 
   // PERSONEL BİLGİLERİ
@@ -80,8 +62,6 @@ const userSchema = new Schema({
 
   // FİRMA BİLGİLERİ
   sektor: String,
-  altkategori: String,
-  elektronikKatalog: String,
   logo: String,
   firmaUnvani: { type: String, lowercase: true },
   firmaVergiNumarasi: String,

@@ -10,16 +10,19 @@ function bcrypt_data(password) {
     const salt = bcrypt.genSaltSync(saltRounds);
     return bcrypt.hashSync(myPlaintextPassword, salt);
 }
+
 // FONKSİYONLAR
 async function register(req, res) {
     const user_data = req.body.form_data_array
     const fname = user_data[0].data
     const lname = user_data[1].data
+    
     const email = user_data[2].data
+    const email_check = await userSchema.find({ email: email})
 
     const pass_data = user_data[3].data
     const pass = bcrypt_data(pass_data)
-    // const repeatpass = user_data[4].data
+
     const regRefcod = user_data[5].data
     const identityNumber = user_data[6].data
     const gsmNumber = user_data[7].data
@@ -64,28 +67,34 @@ async function register(req, res) {
                 res.send({ message: "şifrenizle girebilirsiniz" })
             }
         } else if (refkod === "yoktur") {
-            const userCreate = await userSchema.create({
-                fname,
-                lname,
-                email,
-                pass,
-                regRefcod,
-                identityNumber,
-                gsmNumber,
-                billingAddressCity,
-                billingAddressCountry,
-                billingAddressAddress,
-                sektor,
-                firmaUnvani,
-                firmaVergiNumarasi,
-                markaismi,
-                refcod,
-                uyeRole,
-                uyelikDate,
-            })
-            userCreate.save()
-            res.send({ message: "şifrenizle girebilirsiniz" })
+            if(email_check.length <= 0){
+                const userCreate = await userSchema.create({
+                    fname,
+                    lname,
+                    email,
+                    pass,
+                    regRefcod,
+                    identityNumber,
+                    gsmNumber,
+                    billingAddressCity,
+                    billingAddressCountry,
+                    billingAddressAddress,
+                    sektor,
+                    firmaUnvani,
+                    firmaVergiNumarasi,
+                    markaismi,
+                    refcod,
+                    uyeRole,
+                    uyelikDate,
+                })
+                userCreate.save()
+                res.send({ message: "şifrenizle girebilirsiniz" })
+            }else if(email_check.length > 0) {
+                res.send({ message: "email kullanımdadır." })
+            }
+
         }
+
     } catch (error) {
         console.log(error, "controller register js")
     }
@@ -114,7 +123,25 @@ async function employee_register(req, res) {
 
 
 }
+async function user_delete(req, res) {
+    console.log(req.body)
+    const user_id = req.body.user_id
+    try {
+       await userSchema.findByIdAndDelete(user_id)
+       res.send("işlem başarılı")
+    } catch (error) {
+        if(error) res.send(error)
+    }
+}
+async function register_regrefcod_check(req, res){ 
+    const check_data = req.body.regRefcod
+    const regRefcod_check = await userSchema.find({refkod: check_data})
+    if(regRefcod_check.length > 0) res.send(true)
+    if(regRefcod_check.length <= 0) res.send(false)
+}
 module.exports = {
     register,
-    employee_register
+    employee_register,
+    user_delete,
+    register_regrefcod_check
 }

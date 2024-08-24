@@ -126,7 +126,15 @@ form.kullanici-ekle-form .pass-uyari {
   color: #ced4db;
   font-size: 1.5vw;
 }
-
+#user-employee h2 button{
+  text-transform: capitalize;
+}
+#user-employee h2{
+  display: flex;
+}
+#user-employee .sil{
+  min-width: 15vh;
+}
 /*---------------------------------------
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/

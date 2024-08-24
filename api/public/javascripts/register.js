@@ -10,6 +10,15 @@ $(() => {
         return regex.test(email);
     }
 
+    function register_kayit_axios(form_data_array) {
+        axios.post("/register", {
+            form_data_array
+        }).then((res) => {
+            alert_message(res.data.message);
+        }).catch(function (error) {
+            console.log(error);
+        });
+    }
 
 
 
@@ -21,23 +30,43 @@ $(() => {
         $(form_data_input).each(function (i, v) {
             const form_data_input_data = $(v).val();
             const form_data_input_name = $(v)[0].attributes[0].value
-
-           // if (form_data_input_data.length === 0) return alert_message("form bilgilerini lütfen tam doldurunuz")
             form_data_array.push({ name: form_data_input_name, data: form_data_input_data });
         });
+        const form_data_select_country = $(".mySwiper-register-form form select[name= 'billingAddressCountry'] option:selected").val();
+
         const form_data_input_password = $(".mySwiper-register-form form input[type='pass']").val();
         const form_data_input_repeatpassword = $(".mySwiper-register-form form input[type='repeatpass']").val();
         const form_data_input_email = $(".mySwiper-register-form form input[type='email']").val();
 
-
         const check_email = isEmail(form_data_input_email)
-
-
 
         const check_password_number = form_data_input_password.match(/[0-9]/);
         const check_password_uppercase = form_data_input_password.match(/[A-Z]/)
 
+        const form_data_input_regRefcod = $(".mySwiper-register-form form input[type='regRefcod']").val();
+
         const check = new Array()
+
+        if(form_data_select_country.length > 0) {
+            form_data_array.push(form_data_select_country)
+        }else if(form_data_select_country.length <= 0){
+            return alert_message("ülke seçiniz")
+        }
+
+        if (form_data_input_regRefcod !== "yoktur") {
+            const axios_data = { regRefcod: form_data_input_regRefcod }
+            axios.post("/register/register-regrefcod-check", axios_data)
+                .then(data => {
+                    const check_data = data.data
+                    if (check_data === false) {
+                        alert_message("referans kod hatalı")
+                    } else {
+                        check.push("valid")
+                    }
+                });
+        } else if (form_data_input_regRefcod !== "yoktur") {
+            check.push("valid")
+        }
 
         if (check_password_number === null || check_password_uppercase === null) {
             return alert_message("şifre bir büyük harf ve bir sayı ekleyiniz")
@@ -50,10 +79,10 @@ $(() => {
         } else {
             check.push("valid")
         }
-        
-        if(form_data_input_password.length < 8) {
+
+        if (form_data_input_password.length < 8) {
             return alert_message("şifre uzunluğu 8 olmalıdır")
-        }else {
+        } else {
             check.push("valid")
         }
 
@@ -62,21 +91,30 @@ $(() => {
         } else {
             check.push("valid")
         }
-
         if (form_data_array.length === "15") {
             return alert_message("form bilgilerini lütfen tam doldurunuz")
         } else {
             check.push("valid")
         }
+        if (check.length === 5) {
+            if (form_data_input_regRefcod !== "yoktur") {
+                const axios_data = { regRefcod: form_data_input_regRefcod }
+                axios.post("/register/register-regrefcod-check", axios_data)
+                    .then(data => {
+                        const check_data = data.data
+                        if (check_data === false) {
+                            alert_message("referans kod hatalı")
+                        } else {
+                            register_kayit_axios(form_data_array)
+                        }
+                    });
+            } else if (form_data_input_regRefcod === "yoktur") {
+                register_kayit_axios(form_data_array)
+            }
 
-        if(check.length === 5) {
-            axios.post("/register", {
-                form_data_array
-            }).then((res) => {
-                alert_message(res.data.message);
-            }).catch(function (error) {
-                console.log(error);
-            });
+
+
+
         }
     });
 
