@@ -135,6 +135,15 @@ form.kullanici-ekle-form .pass-uyari {
 #user-employee .sil{
   min-width: 15vh;
 }
+#panel h2 {
+  font-size: 4.5vh;
+}
+#panel span {
+  font-size: 3vh;
+}
+#panel a {
+  margin: 0;
+}
 /*---------------------------------------
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/

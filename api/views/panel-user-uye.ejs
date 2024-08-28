@@ -1,0 +1,176 @@
+<%- include ('panel-headers-footer/headers') %>
+      <section class="section-padding section-bg">
+            <div class="col-12 px-4">
+                  <h2 class="mb-5 text-capitalize">üye işlemleri</h2>
+                  <div class="alert alert-danger d-none" role="alert"></div>
+
+                  <div class="container">
+                        <div class="row">
+                              <div class="accordion accordion-flush" id="uye-sil-degistir">
+                              <% Array(login_user_data).forEach(v => { %>
+                                    <form method="POST" enctype="multipart/form-data" id="form-<%= v.id _%>" class="kullanici-bilgi-degistir-form row col-12 g-3" autocomplete="on">
+                                                            
+                                          <div class="col-12">
+                                                <input name="fname" type="text" class="form-control bg-transparent" 
+                                                      placeholder="<%= lang_json_data.isim _%>&nbsp; <%= v.fname _%>">
+                                          </div>
+                                          <div class="col-12 ">
+                                                <input name="lname" type="text" class="form-control bg-transparent"
+                                                      placeholder="<%= lang_json_data.soyad _%>&nbsp; <%= v.lname _%>">
+                                          </div>
+                                          <!--KONTROL EDİLECEK SÜTÜNLAR-->
+                                          <div class="col-12 ">
+                                                <input name="email"  type="email" class="form-control bg-transparent"
+                                                      placeholder="<%= lang_json_data.mail _%>&nbsp; <%= v.email _%>">
+                                          </div>
+                                          <div class="col-12">
+                                                <input name="pass"  type="password" class="form-control bg-transparent"
+                                                      placeholder="<%= lang_json_data.sifre _%>">
+                                                <div class="pass-uyari">8 karakter, 1 büyük harf, 1 küçük harf, 1 sayı olmak zorundadır.</div>
+                                          </div>
+                                          <!--KONTROL EDİLECEK SÜTÜNLAR-->
+                                          <div class="col-12 ">
+                                                <input name="identityNumber"  type="text" class="form-control bg-transparent"
+                                                      placeholder="<%= lang_json_data.tc_numarasi _%>&nbsp; <%= v.identityNumber _%>">
+                                          </div>
+                                          <div class="col-12 ">
+                                                <input name="gsmNumber"  type="text" class="form-control bg-transparent"
+                                                      placeholder="<%= lang_json_data.tel_numarasi _%>&nbsp; <%= v.gsmNumber _%>">
+                                          </div>
+
+                                          <div class="col-12 ">
+                                                <input name="billingAddressCity"  type="text" class="form-control bg-transparent"
+                                                      placeholder="şehir&nbsp; <%= v.billingAddressCity _%>">
+                                          </div>
+                                          <div class="col-12 ">
+                                                <input name="billingAddressDistrict"  type="text" class="form-control bg-transparent"
+                                                      placeholder="İlçe&nbsp; <%= v.billingAddressDistrict _%>">
+                                          </div>
+                                          <!--SELECT -->
+                                          <div class="col-12 ">
+                                                <select name="billingAddressCountry" class="form-select" aria-label="Default select example">
+                                                    <% const code_data =  lang_telealankodu_json_parse.filter(data => data.code === v.billingAddressCountry) %>
+                                                     <% if(code_data[0] !== undefined) {  %>
+                                                            <option value=<%= code_data[0].code _%>><%= code_data[0].name _%></option> 
+                                                      <% } %>
+                                                      <% lang_telealankodu_json_parse.forEach(tlcode => { %>
+                                                      <option value="<%= tlcode.code_%>"><%= tlcode.name _%></option>
+                                                      <%  }); %>
+                                                </select>
+                                          </div>
+                                          <div class="col-12 ">
+                                                <input name="billingAddressAddress"  type="text" class="form-control bg-transparent"
+                                                      placeholder="Açık Adres&nbsp; <%= v.billingAddressAddress _%>">
+                                          </div>
+
+                                          <div class="col-12 ">
+                                                <input name="ekatalog_iframe"  type="text" class="form-control bg-transparent"
+                                                      placeholder="Katalog iframe adresi&nbsp; <%= v.ekatalog_iframe _%>">
+                                          </div>
+                                          <div class="col-12 ">
+                                                <input name="diger_bilgiler"  type="text" class="form-control bg-transparent"
+                                                      placeholder="diğer bilgiler &nbsp; <%= v.diger_bilgiler _%>">
+                                          </div>
+                                          <div class="col-12 ">
+                                                <input name="sektor"  type="text" class="form-control bg-transparent"
+                                                      placeholder="Sektör &nbsp; <%= v.sektor _%>">
+                                          </div>
+                                          <div class="col-12 ">
+                                                <input name="firmaUnvani"  type="text" class="form-control bg-transparent"
+                                                      placeholder="Firma Ünvanı &nbsp; <%= v.firmaUnvani _%>">
+                                          </div>
+                                          <div class="col-12 ">
+                                                <input name="firmaVergiNumarasi"  type="text" class="form-control bg-transparent"
+                                                      placeholder="Firma Vergi Numarası &nbsp; <%= v.firmaVergiNumarasi _%>">
+                                          </div>
+                                          <div class="col-12 ">
+                                                <input name="markaismi"  type="text" class="form-control bg-transparent"
+                                                      placeholder="Marka İsmi &nbsp; <%= v.markaismi _%>">
+                                          </div>
+                                          <!-- TEXT AREA -->
+                                          <div class="col-12">
+                                                <label class="form-label">hakkimizda</label>
+                                                <div class="input-group">
+                                                      <span class="input-group-text">Tr</span>
+                                                      <textarea name="hakkimizda-tr" placeholder="<%= v.hakkimizda.tr _%>" class="form-control" aria-label="With textarea"></textarea>
+                                                </div>
+                                                <div class="input-group">
+                                                      <span class="input-group-text">En</span>
+                                                      <textarea name="hakkimizda-en" placeholder="<%= v.hakkimizda.en _%>" class="form-control" aria-label="With textarea"></textarea>
+                                                </div>
+                                                <div class="input-group">
+                                                      <span class="input-group-text">Ar</span>
+                                                      <textarea name="hakkimizda-ar" placeholder="<%= v.hakkimizda.ar _%>" class="form-control" aria-label="With textarea"></textarea>
+                                                </div>
+                                                <div class="input-group">
+                                                      <span class="input-group-text">Es</span>
+                                                      <textarea name="hakkimizda-es" placeholder="<%= v.hakkimizda.es _%>" class="form-control" aria-label="With textarea"></textarea>
+                                                </div>
+                                                <div class="input-group">
+                                                      <span class="input-group-text">Ru</span>
+                                                      <textarea name="hakkimizda-ru" placeholder="<%= v.hakkimizda.ru _%>" class="form-control" aria-label="With textarea"></textarea>
+                                                </div>
+                                                <div class="input-group">
+                                                      <span class="input-group-text">Fr</span>
+                                                      <textarea name="hakkimizda-fr" placeholder="<%= v.hakkimizda.fr _%>" class="form-control" aria-label="With textarea"></textarea>
+                                                </div>
+                                          </div>
+                                          <div class="col-12">
+                                                <label class="form-label">bilgi bolum</label>
+                                                <div class="input-group">
+                                                      <span class="input-group-text">Tr</span>
+                                                      <textarea name="bilgi_bolum-tr" placeholder="<%= v.bilgi_bolum.tr _%>" class="form-control" aria-label="With textarea"></textarea>
+                                                </div>
+                                                <div class="input-group">
+                                                      <span class="input-group-text">En</span>
+                                                      <textarea name="bilgi_bolum-en" placeholder="<%= v.bilgi_bolum.en _%>" class="form-control" aria-label="With textarea"></textarea>
+                                                </div>
+                                                <div class="input-group">
+                                                      <span class="input-group-text">Ar</span>
+                                                      <textarea name="bilgi_bolum-ar" placeholder="<%= v.bilgi_bolum.ar _%>" class="form-control" aria-label="With textarea"></textarea>
+                                                </div>
+                                                <div class="input-group">
+                                                      <span class="input-group-text">Es</span>
+                                                      <textarea name="bilgi_bolum-es" placeholder="<%= v.bilgi_bolum.es _%>" class="form-control" aria-label="With textarea"></textarea>
+                                                </div>
+                                                <div class="input-group">
+                                                      <span class="input-group-text">Ru</span>
+                                                      <textarea name="bilgi_bolum-ru" placeholder="<%= v.bilgi_bolum.ru _%>" class="form-control" aria-label="With textarea"></textarea>
+                                                </div>
+                                                <div class="input-group">
+                                                      <span class="input-group-text">Fr</span>
+                                                      <textarea name="bilgi_bolum-fr" placeholder="<%= v.bilgi_bolum.fr _%>" class="form-control" aria-label="With textarea"></textarea>
+                                                </div>
+                                          </div>
+
+                                          <div class="col-12 d-flex justify-content-end">
+                                                <a data-form-id="form-<%= v.id _%>" type="submit" href="javascript:void(0)" class="custom-btn btn">
+                                                      <%= lang_json_data.kaydet _%>
+                                                </a>
+                                          </div>
+                                          <div class="col-12">
+                                                <div class="col-2">
+                                                      <% if(v.logo) {%>
+                                                      <img class="w-100" src="/images/firma-img/<%= v.logo _%>" alt="firma logo">
+                                                      <% } %>
+                                                </div>
+                                                <input data-user-id="<%= v.id %>" name="logo" type="file" class="form-control" aria-describedby="inputGroupFileAddon03" aria-label="Upload">
+                                              </div>
+                                    </form>      
+                              <%   }); %>
+                                  
+
+
+                              </div>
+
+
+
+
+
+
+
+                        </div>
+                  </div>
+            </div>
+      </section>
+      <%- include ('panel-headers-footer/footer') %>

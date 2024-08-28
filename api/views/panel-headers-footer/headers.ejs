@@ -1,7 +1,7 @@
 <%- include ('../path/head') %>
   </head>
 
-  <body id="panel">
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid d-flex">
         <a class="navbar-brand" href="/panel/tr">Panel</a>
@@ -42,7 +42,7 @@
         </div>
       </div>
     </nav>
-    <div class="container-fruid">
+    <div id="panel" class="container-fruid">
       <div class="row">
         <div class="offcanvas offcanvas-start" id="yan-menu">
           <div class="offcanvas-header">
@@ -51,28 +51,59 @@
           </div>
           <div class="offcanvas-body">
             <ul class="nav flex-column text-capitalize">
-              
               <% if(login_user_role === "user" || login_user_role === "pageadmin") { %>
+            <!----------------------------------------------------------------
+              ADMİN İŞLEMLERİ----------------
+              --------------------------------------------------->
               <li class="nav-item">
                 <a class="nav-link featured-block-text" href="/"><span>anasayfa</span> &#8811;</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link featured-block-text" href="/panel/panel-urun-giris/tr"><span>urun giriş </span> &#8811;</a>
-              </li>
-              <% } %>
-
               <% if(login_user_role !== "user" || login_user_role === "pageadmin") { %>
+                <h2>admin işlemleri</h2>
               <li class="nav-item">
                 <a class="nav-link featured-block-text" href="/panel/panel-odeme-plani-girisi/tr"><span>ödeme planı girişi </span> &#8811;</a>
               </li>
+              <% } %>
+              <!----------------------------------------------------------------
+              KULLANICI İŞLEMLERİ----------------
+              --------------------------------------------------->
+                <h2>kullanıcı işlemleri</h2>
+
               <li class="nav-item">
+                <a class="nav-link featured-block-text" href="/panel/panel-urun-giris/tr"><span>urun giriş </span> &#8811;</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link featured-block-text" href="/panel/panel-user-uye/tr"><span>uyelik işlemleri </span> &#8811;</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link featured-block-text" href="/panel/panel-user-satin-alim/tr"><span>satın alım </span> &#8811;</a>
+              </li>
+              <% } %>
+              <!----------------------------------------------------------------
+              ÇALIŞAN İŞLEMLERİ----------------
+              --------------------------------------------------->
+              <% if(
+              login_user_role !== "user" || 
+              login_user_role === "employee" || 
+              login_user_role === "reklamcheck" || 
+              login_user_role === "uruncheck" || 
+              login_user_role === "odemecheck" || 
+              login_user_role === "uyecheck" || 
+              login_user_role === "blogcheck" || 
+              login_user_role === "seocheck" || 
+              login_user_role === "pageadmin"
+              ) { %>
+                <h2>çalışan işlemleri</h2>
+                <li class="nav-item">
                 <a class="nav-link featured-block-text" href="/panel/panel-employee/tr"><span>personel ekleme / silme </span> &#8811;</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link featured-block-text" href="/panel/panel-uye/tr"><span>uye işlemleri </span> &#8811;</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link featured-block-text" href="/panel/panel-uye-satis/tr"><span>uye satış işlemleri</span> &#8811;</a>
+              </li>
               <% } %>
-
             </ul>
           </div>
         </div>

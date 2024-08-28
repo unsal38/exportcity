@@ -27,6 +27,79 @@ function isPass(password) {
 
 }
 
+
+
+async function all_data_post(form_data_array_input, form_data_array_select, form_data_array_text_area) {
+  function input_data(axios_data) {
+    return axios.post('/register/user-update', axios_data);
+  }
+
+  function select_data(axios_data) {
+    return axios.post('/register/user-update', axios_data);
+  }
+
+  function text_area_data(axios_data) {
+    return axios.post('/register/user-update', axios_data);
+  }
+
+  const [input_data_rec, select_data_rec, text_area_data_rec] = await Promise.all([
+    input_data(form_data_array_input),
+    select_data(form_data_array_select),
+    text_area_data(form_data_array_text_area)
+  ]);
+  //console.log(input_data_rec, select_data_rec, text_area_data_rec)
+}
+
+
+$(() => {
+  $('input[name="logo"]').on('change',(e)=> {
+    const user_id = $(e.target).attr("data-user-id");
+    const user_logo_data = $(e.target)
+
+    const form_logo_input_file = $(`form#form-${user_id} input[name='logo']`)[0].files[0] // 66c85235208fb879aaa7e814
+
+    const file_log = new FormData()
+    file_log.append("user_id", user_id)
+    file_log.append( "logo", form_logo_input_file)
+    
+    axios.post("/register/user-logo", file_log)
+    .then(data => {
+      if(data.data.message ) alert_message(data.data.message)
+    });
+  })
+  $("form.kullanici-bilgi-degistir-form a[type='submit']").on("click", async (e) => {
+    e.preventDefault();
+
+    var form_id = $(e.target).attr("data-form-id")
+
+    const form_input_data = $(`form#${form_id} input`)
+    const form_text_area_data = $(`form#${form_id} textarea`)
+
+    const form_select_name = $(`form#${form_id} select`).attr("name")
+    const form_select_data = $(`form#${form_id} select option:selected`).val()
+    /////////İNPUT////////////////////////////////
+    const form_data_array_input = new Array()
+
+    form_input_data.each(function (i, v) {
+      const input_value_check = $(v).val()
+      const input_name = $(v).attr("name")
+      if (input_value_check.length > 0) form_data_array_input.push([form_id, input_name, input_value_check])
+
+
+    });
+    /////////TEXT AREA ////////////////////////////////
+    const form_data_array_text_area = new Array()
+    form_text_area_data.each(function (i, v) {
+      const textarea_value_check = $(v).val()
+      const textarea_name = $(v).attr("name")
+      if (textarea_value_check.length > 0) form_data_array_text_area.push([form_id, textarea_name, textarea_value_check])
+    });
+
+    all_data_post(form_data_array_input, [[form_id, form_select_name, form_select_data]], form_data_array_text_area)
+    window.location.reload();
+  });
+
+})/// user UPDATE
 $(() => {
   $("form.kullanici-ekle-form a[type='submit']").on("click", () => {
     const form_input = $("form.kullanici-ekle-form input")
@@ -78,16 +151,14 @@ $(() => {
       const axios_data = employee_register_array
       alert_message("işlem başarılı")
       axios.post("/register/employee", axios_data)
-      .then(data => {})
+        .then(data => { })
     }
   });
-  $("#user-employee .sil").on("click", (e) =>{
+  $("#user-employee .sil").on("click", (e) => {
     e.preventDefault();
-    const axios_data = {user_id : $(e.target).attr("data-user-id")}
-    axios.post("/register/user-delete", axios_data)
-    .then(data => {
-      window.location.reload()
-    })
+    const axios_data = { user_id: $(e.target).attr("data-user-id") }
+    axios_user_delete(axios_data)
+
   });
 }) // ÇALIŞAN KAYIT
 
@@ -346,4 +417,38 @@ $(function () {
   });
 })//SWİPER
 
+$(() => {
+  $("form.kullanici-bilgi-degistir-form a[type='submit']").on("click", () => {
 
+  });
+  $("#uye-sil-degistir button.sil").on("click", (e) => {
+    e.preventDefault();
+    const delete_user_id = $(e.target).attr("data-user-id")
+    if (delete_user_id) {
+      const axios_data = { user_id: delete_user_id }
+      axios_user_delete(axios_data)
+    }
+  });
+}) // PANELDE KULLANICI VERİLERİNİ TEKRAR GİRİŞ (DÜZELTME YAPMA) - KULLANICI SİLME
+$(() => {
+  $("input[name='uye-search']").on("change", (e) => {
+    const filter_data = $(e.target)[0].value.trim().toLowerCase()
+    const filter_target = $("#uye-sil-degistir .accordion-item")
+    $(filter_target).each(function (i, v) {
+      const filter_target = $(v).attr("data-filter-search")
+      const filter_array = new Array(filter_target)
+      if (filter_data.length > 0) {
+        filter_array.filter(data => {
+          if (data.indexOf(filter_data) <= -1) $(v).addClass("d-none")
+          if (data.indexOf(filter_data) > -1) $(v).removeClass("d-none")
+        })
+      } else if (filter_data.length <= 0) {
+        $(v).removeClass("d-none");
+      }
+
+
+
+      // console.log(this)
+    });
+  });
+}) //PANEL UYELER BÖLÜMÜ SEARCH

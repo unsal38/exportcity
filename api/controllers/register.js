@@ -1,7 +1,9 @@
 const bcrypt = require('bcrypt');
+
 // SCHEMA
 const userSchema = require("../db/model/users");
 // SCHEMA
+
 // FONKSİYONLAR
 function bcrypt_data(password) {
     const passForm = password
@@ -11,14 +13,73 @@ function bcrypt_data(password) {
     return bcrypt.hashSync(myPlaintextPassword, salt);
 }
 
+
+
 // FONKSİYONLAR
+async function user_logo(req ,res) {
+  res.send({message: "kayıt başarılı sayfayı yenileyiniz"})
+}
+async function user_update(req, res) {
+    try {
+        const user_data = req.body
+        user_data.forEach(async v => {
+            const new_data = v[1].split('-')
+            if (new_data[1] === undefined) {
+                if (v[1] === "fname") var data = { fname: v[2] }
+                if (v[1] === "lname") var data = { lname: v[2] }
+                if (v[1] === "email") var data = { email: v[2] }
+                if (v[1] === "pass") var data = { pass: v[2] }
+                if (v[1] === "identityNumber") var data = { identityNumber: v[2] }
+                if (v[1] === "gsmNumber") var data = { gsmNumber: v[2] }
+                if (v[1] === "billingAddressCity") var data = { billingAddressCity: v[2] }
+                if (v[1] === "billingAddressCountry") var data = { billingAddressCountry: v[2] }
+                if (v[1] === "billingAddressAddress") var data = { billingAddressAddress: v[2] }
+                if (v[1] === "billingAddressDistrict") var data = { billingAddressDistrict: v[2] }
+                if (v[1] === "ekatalog_iframe") var data = { ekatalog_iframe: v[2] }
+                if (v[1] === "diger_bilgiler") var data = { diger_bilgiler: v[2] }
+                if (v[1] === "sektor") var data = { sektor: v[2] }
+                if (v[1] === "firmaUnvani") var data = { firmaUnvani: v[2] }
+                if (v[1] === "firmaVergiNumarasi") var data = { firmaVergiNumarasi: v[2] }
+                if (v[1] === "markaismi") var data = { markaismi: v[2] }
+                const userid = v[0].split("-")[1]
+                await userSchema.findByIdAndUpdate(userid,data);
+            }
+            if (new_data[1] !== undefined) {
+                if (new_data[0] === "bilgi_bolum") {
+                    if (new_data[1] === "tr") var data = {"bilgi_bolum.tr": v[2]}
+                    if (new_data[1] === "en") var data = {"bilgi_bolum.en": v[2]}
+                    if (new_data[1] === "ar") var data = {"bilgi_bolum.ar": v[2]}
+                    if (new_data[1] === "es") var data = {"bilgi_bolum.es": v[2]}
+                    if (new_data[1] === "ru") var data = {"bilgi_bolum.ru": v[2]}
+                    if (new_data[1] === "fr") var data = {"bilgi_bolum.fr": v[2]}
+                }
+                if (new_data[0] === "hakkimizda") {
+                    if (new_data[1] === "tr") var data = {"hakkimizda.tr": v[2]}
+                    if (new_data[1] === "en") var data = {"hakkimizda.en": v[2]}
+                    if (new_data[1] === "ar") var data = {"hakkimizda.ar": v[2]}
+                    if (new_data[1] === "es") var data = {"hakkimizda.es": v[2]}
+                    if (new_data[1] === "ru") var data = {"hakkimizda.ru": v[2]}
+                    if (new_data[1] === "fr") var data = {"hakkimizda.fr": v[2]}
+                }
+                const userid = v[0].split("-")[1]
+                await userSchema.findByIdAndUpdate(userid,data);
+            }
+
+
+
+        });
+
+    } catch (error) {
+        console.log(error, "controller register js")
+    }
+}
 async function register(req, res) {
     const user_data = req.body.form_data_array
     const fname = user_data[0].data
     const lname = user_data[1].data
-    
+
     const email = user_data[2].data
-    const email_check = await userSchema.find({ email: email})
+    const email_check = await userSchema.find({ email: email })
 
     const pass_data = user_data[3].data
     const pass = bcrypt_data(pass_data)
@@ -67,7 +128,7 @@ async function register(req, res) {
                 res.send({ message: "şifrenizle girebilirsiniz" })
             }
         } else if (refkod === "yoktur") {
-            if(email_check.length <= 0){
+            if (email_check.length <= 0) {
                 const userCreate = await userSchema.create({
                     fname,
                     lname,
@@ -89,7 +150,7 @@ async function register(req, res) {
                 })
                 userCreate.save()
                 res.send({ message: "şifrenizle girebilirsiniz" })
-            }else if(email_check.length > 0) {
+            } else if (email_check.length > 0) {
                 res.send({ message: "email kullanımdadır." })
             }
 
@@ -112,10 +173,10 @@ async function employee_register(req, res) {
             'gsmNumber': employee_user[5][1],
             'uyeRole': employee_user[6][1]
         }
-    
+
         await userSchema.create(new_data)
-    
-        res.send({message: "kayıt başarılı"})
+
+        res.send({ message: "kayıt başarılı" })
     } catch (error) {
         console.log(error)
     }
@@ -124,24 +185,25 @@ async function employee_register(req, res) {
 
 }
 async function user_delete(req, res) {
-    console.log(req.body)
     const user_id = req.body.user_id
     try {
-       await userSchema.findByIdAndDelete(user_id)
-       res.send("işlem başarılı")
+        await userSchema.findByIdAndDelete(user_id)
+        res.send("işlem başarılı")
     } catch (error) {
-        if(error) res.send(error)
+        if (error) res.send(error)
     }
 }
-async function register_regrefcod_check(req, res){ 
+async function register_regrefcod_check(req, res) {
     const check_data = req.body.regRefcod
-    const regRefcod_check = await userSchema.find({refkod: check_data})
-    if(regRefcod_check.length > 0) res.send(true)
-    if(regRefcod_check.length <= 0) res.send(false)
+    const regRefcod_check = await userSchema.find({ refkod: check_data })
+    if (regRefcod_check.length > 0) res.send(true)
+    if (regRefcod_check.length <= 0) res.send(false)
 }
 module.exports = {
     register,
     employee_register,
     user_delete,
-    register_regrefcod_check
+    register_regrefcod_check,
+    user_update,
+    user_logo
 }
